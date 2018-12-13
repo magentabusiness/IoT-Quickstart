@@ -1,0 +1,441 @@
+[
+    {
+        "id": "ff51fb44.dc8908",
+        "type": "tab",
+        "label": "NB Demo",
+        "disabled": false,
+        "info": ""
+    },
+    {
+        "id": "d1a1fe10.270d9",
+        "type": "http request",
+        "z": "ff51fb44.dc8908",
+        "name": "",
+        "method": "POST",
+        "ret": "txt",
+        "url": "https://160.44.201.125:8743/iocm/app/sec/v1.1.0/login",
+        "tls": "5a34767d.889fa8",
+        "x": 570,
+        "y": 260,
+        "wires": [
+            [
+                "e8400901.63b868"
+            ]
+        ]
+    },
+    {
+        "id": "d4c7803.c6fdb8",
+        "type": "function",
+        "z": "ff51fb44.dc8908",
+        "name": "Login",
+        "func": "msg.headers={};\nmsg.headers['Content-Type']=\"application/x-www-form-urlencoded\";\nmsg.payload=\"appId=\" + global.get(\"appId\") + \"&secret=\"+ global.get(\"appSecret\");\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "x": 350,
+        "y": 260,
+        "wires": [
+            [
+                "d1a1fe10.270d9"
+            ]
+        ]
+    },
+    {
+        "id": "7e25b476.45adfc",
+        "type": "inject",
+        "z": "ff51fb44.dc8908",
+        "name": "Start Login",
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "x": 140,
+        "y": 260,
+        "wires": [
+            [
+                "d4c7803.c6fdb8"
+            ]
+        ]
+    },
+    {
+        "id": "e6386908.a1ed98",
+        "type": "debug",
+        "z": "ff51fb44.dc8908",
+        "name": "",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "false",
+        "x": 1090,
+        "y": 200,
+        "wires": []
+    },
+    {
+        "id": "e8400901.63b868",
+        "type": "json",
+        "z": "ff51fb44.dc8908",
+        "name": "",
+        "property": "payload",
+        "action": "",
+        "pretty": false,
+        "x": 810,
+        "y": 260,
+        "wires": [
+            [
+                "e6386908.a1ed98",
+                "83f4d307.b02cd"
+            ]
+        ]
+    },
+    {
+        "id": "83f4d307.b02cd",
+        "type": "change",
+        "z": "ff51fb44.dc8908",
+        "name": "",
+        "rules": [
+            {
+                "t": "set",
+                "p": "token",
+                "pt": "global",
+                "to": "payload.accessToken",
+                "tot": "msg"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 1100,
+        "y": 260,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "366d0ad9.39cab6",
+        "type": "http in",
+        "z": "ff51fb44.dc8908",
+        "name": "",
+        "url": "/data",
+        "method": "post",
+        "upload": false,
+        "swaggerDoc": "",
+        "x": 120,
+        "y": 640,
+        "wires": [
+            [
+                "b5f74c05.fb547"
+            ]
+        ]
+    },
+    {
+        "id": "b5f74c05.fb547",
+        "type": "debug",
+        "z": "ff51fb44.dc8908",
+        "name": "",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "false",
+        "x": 1090,
+        "y": 640,
+        "wires": []
+    },
+    {
+        "id": "6a2dba33.bc8f74",
+        "type": "inject",
+        "z": "ff51fb44.dc8908",
+        "name": "Do subscribe",
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "x": 150,
+        "y": 340,
+        "wires": [
+            [
+                "8a941691.92deb8"
+            ]
+        ]
+    },
+    {
+        "id": "e99edba.7d16628",
+        "type": "http request",
+        "z": "ff51fb44.dc8908",
+        "name": "",
+        "method": "POST",
+        "ret": "txt",
+        "url": "https://160.44.201.125:8743/iocm/app/sub/v1.2.0/subscribe",
+        "tls": "5a34767d.889fa8",
+        "x": 570,
+        "y": 340,
+        "wires": [
+            [
+                "2017fada.d8a896"
+            ]
+        ]
+    },
+    {
+        "id": "2017fada.d8a896",
+        "type": "debug",
+        "z": "ff51fb44.dc8908",
+        "name": "",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "true",
+        "x": 1070,
+        "y": 340,
+        "wires": []
+    },
+    {
+        "id": "8a941691.92deb8",
+        "type": "function",
+        "z": "ff51fb44.dc8908",
+        "name": "Subscribe",
+        "func": "msg.headers={};\nmsg.headers['Content-Type']=\"application/json\";\nmsg.headers['Authorization']=\"Bearer \"+global.get(\"token\");\nmsg.headers['app_key']=global.get(\"appId\");\nmsg.payload={\n    \"notifyType\": \"deviceDataChanged\",\n    \"callbackurl\": \"http://\"+global.get(\"publicIP\")+\":1880/data\",\n    \"useUnifiedUrl\": true\n}\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "x": 360,
+        "y": 340,
+        "wires": [
+            [
+                "e99edba.7d16628"
+            ]
+        ]
+    },
+    {
+        "id": "941d4391.ac837",
+        "type": "inject",
+        "z": "ff51fb44.dc8908",
+        "name": "Send Command",
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "x": 160,
+        "y": 420,
+        "wires": [
+            [
+                "8cee0300.64624"
+            ]
+        ]
+    },
+    {
+        "id": "8cee0300.64624",
+        "type": "function",
+        "z": "ff51fb44.dc8908",
+        "name": "SendCommand",
+        "func": "msg.headers={};\nmsg.headers['Content-Type']=\"application/json\";\nmsg.headers['Authorization']=\"Bearer \"+global.get(\"token\");\nmsg.headers['app_key']=global.get(\"appId\");\n\nmsg.payload = {\n        \"deviceId\": global.get(\"deviceId\"),\n        \"command\": {\n            \"serviceId\": \"IntData\",\n            \"method\": \"IntCmd\",\n            \"paras\": {\n              \"IntParamKey\": \"GREEN_LED\",\n              \"IntParamValue\": 1\n            }\n        }\n}\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "x": 380,
+        "y": 420,
+        "wires": [
+            [
+                "a34568c8.fb2118"
+            ]
+        ]
+    },
+    {
+        "id": "a34568c8.fb2118",
+        "type": "http request",
+        "z": "ff51fb44.dc8908",
+        "name": "",
+        "method": "POST",
+        "ret": "txt",
+        "url": "https://160.44.201.125:8743/iocm/app/cmd/v1.4.0/deviceCommands",
+        "tls": "5a34767d.889fa8",
+        "x": 570,
+        "y": 420,
+        "wires": [
+            [
+                "85058ca8.6c07e"
+            ]
+        ]
+    },
+    {
+        "id": "85058ca8.6c07e",
+        "type": "json",
+        "z": "ff51fb44.dc8908",
+        "name": "",
+        "property": "payload",
+        "action": "",
+        "pretty": false,
+        "x": 810,
+        "y": 420,
+        "wires": [
+            [
+                "27abb576.8f80ca"
+            ]
+        ]
+    },
+    {
+        "id": "27abb576.8f80ca",
+        "type": "debug",
+        "z": "ff51fb44.dc8908",
+        "name": "",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "false",
+        "x": 1090,
+        "y": 420,
+        "wires": []
+    },
+    {
+        "id": "26be5e04.7303d2",
+        "type": "change",
+        "z": "ff51fb44.dc8908",
+        "name": "Your Config",
+        "rules": [
+            {
+                "t": "set",
+                "p": "appId",
+                "pt": "global",
+                "to": "TODO",
+                "tot": "str"
+            },
+            {
+                "t": "set",
+                "p": "appSecret",
+                "pt": "global",
+                "to": "TODO",
+                "tot": "str"
+            },
+            {
+                "t": "set",
+                "p": "deviceId",
+                "pt": "global",
+                "to": "TODO",
+                "tot": "str"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 350,
+        "y": 120,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "1c43b0ce.f7dbbf",
+        "type": "inject",
+        "z": "ff51fb44.dc8908",
+        "name": "Set Config",
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "x": 140,
+        "y": 120,
+        "wires": [
+            [
+                "26be5e04.7303d2",
+                "82d2cd3d.76854"
+            ]
+        ]
+    },
+    {
+        "id": "82d2cd3d.76854",
+        "type": "http request",
+        "z": "ff51fb44.dc8908",
+        "name": "getPublicIP",
+        "method": "GET",
+        "ret": "txt",
+        "url": "https://api.ipify.org?format=json",
+        "tls": "",
+        "x": 350,
+        "y": 180,
+        "wires": [
+            [
+                "2da3b3cc.7b0c3c"
+            ]
+        ]
+    },
+    {
+        "id": "2da3b3cc.7b0c3c",
+        "type": "json",
+        "z": "ff51fb44.dc8908",
+        "name": "",
+        "property": "payload",
+        "action": "",
+        "pretty": false,
+        "x": 550,
+        "y": 180,
+        "wires": [
+            [
+                "fa3fe5aa.413c68"
+            ]
+        ]
+    },
+    {
+        "id": "fa3fe5aa.413c68",
+        "type": "change",
+        "z": "ff51fb44.dc8908",
+        "name": "setCallbackIP",
+        "rules": [
+            {
+                "t": "set",
+                "p": "publicIP",
+                "pt": "global",
+                "to": "payload.ip",
+                "tot": "msg"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 740,
+        "y": 180,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "64eb516e.7b89a",
+        "type": "comment",
+        "z": "ff51fb44.dc8908",
+        "name": "ENTER YOUR DATA HERE!!!",
+        "info": "",
+        "x": 380,
+        "y": 80,
+        "wires": []
+    },
+    {
+        "id": "5a34767d.889fa8",
+        "type": "tls-config",
+        "z": "",
+        "name": "T-Mobile TLS Config",
+        "cert": "",
+        "key": "",
+        "ca": "",
+        "certname": "plt-app-gw.crt",
+        "keyname": "plt-app-gw.key",
+        "caname": "",
+        "servername": "",
+        "verifyservercert": false
+    }
+]

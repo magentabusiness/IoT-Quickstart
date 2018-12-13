@@ -1,5 +1,2 @@
-# ALPINETECH_Wattens
-ALPINE TECH_ INNOVATION SPRINT
-18. - 20. Oktober 2018x
-
+# Quickstart Guides
 
