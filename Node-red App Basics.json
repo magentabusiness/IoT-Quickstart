@@ -31,7 +31,7 @@
         "func": "msg.headers={};\nmsg.headers['Content-Type']=\"application/x-www-form-urlencoded\";\nmsg.payload=\"appId=\" + global.get(\"appId\") + \"&secret=\"+ global.get(\"appSecret\");\nreturn msg;",
         "outputs": 1,
         "noerr": 0,
-        "x": 350,
+        "x": 290,
         "y": 260,
         "wires": [
             [
@@ -51,7 +51,7 @@
         "crontab": "",
         "once": false,
         "onceDelay": 0.1,
-        "x": 140,
+        "x": 120,
         "y": 260,
         "wires": [
             [
@@ -125,7 +125,7 @@
         "upload": false,
         "swaggerDoc": "",
         "x": 120,
-        "y": 640,
+        "y": 780,
         "wires": [
             [
                 "b5f74c05.fb547"
@@ -143,7 +143,7 @@
         "tostatus": false,
         "complete": "false",
         "x": 1090,
-        "y": 640,
+        "y": 780,
         "wires": []
     },
     {
@@ -158,8 +158,8 @@
         "crontab": "",
         "once": false,
         "onceDelay": 0.1,
-        "x": 150,
-        "y": 340,
+        "x": 130,
+        "y": 720,
         "wires": [
             [
                 "8a941691.92deb8"
@@ -175,8 +175,8 @@
         "ret": "txt",
         "url": "https://160.44.201.125:8743/iocm/app/sub/v1.2.0/subscribe",
         "tls": "5a34767d.889fa8",
-        "x": 570,
-        "y": 340,
+        "x": 550,
+        "y": 720,
         "wires": [
             [
                 "2017fada.d8a896"
@@ -194,7 +194,7 @@
         "tostatus": false,
         "complete": "true",
         "x": 1070,
-        "y": 340,
+        "y": 720,
         "wires": []
     },
     {
@@ -202,11 +202,11 @@
         "type": "function",
         "z": "ff51fb44.dc8908",
         "name": "Subscribe",
-        "func": "msg.headers={};\nmsg.headers['Content-Type']=\"application/json\";\nmsg.headers['Authorization']=\"Bearer \"+global.get(\"token\");\nmsg.headers['app_key']=global.get(\"appId\");\nmsg.payload={\n    \"notifyType\": \"deviceDataChanged\",\n    \"callbackurl\": \"http://\"+global.get(\"publicIP\")+\":1880/data\",\n    \"useUnifiedUrl\": true\n}\nreturn msg;",
+        "func": "msg.headers={};\nmsg.headers['Content-Type']=\"application/json\";\nmsg.headers['Authorization']=\"Bearer \"+global.get(\"token\");\nmsg.headers['app_key']=global.get(\"appId\");\nmsg.payload={\n    \"notifyType\": \"deviceDataChanged\",\n    \"callbackurl\": \"http://user:Tma2018!@\"+global.get(\"publicIP\")+\":1880/data\",\n    \"useUnifiedUrl\": true\n}\nreturn msg;",
         "outputs": 1,
         "noerr": 0,
-        "x": 360,
-        "y": 340,
+        "x": 340,
+        "y": 720,
         "wires": [
             [
                 "e99edba.7d16628"
@@ -225,8 +225,8 @@
         "crontab": "",
         "once": false,
         "onceDelay": 0.1,
-        "x": 160,
-        "y": 420,
+        "x": 140,
+        "y": 500,
         "wires": [
             [
                 "8cee0300.64624"
@@ -241,8 +241,8 @@
         "func": "msg.headers={};\nmsg.headers['Content-Type']=\"application/json\";\nmsg.headers['Authorization']=\"Bearer \"+global.get(\"token\");\nmsg.headers['app_key']=global.get(\"appId\");\n\nmsg.payload = {\n        \"deviceId\": global.get(\"deviceId\"),\n        \"command\": {\n            \"serviceId\": \"IntData\",\n            \"method\": \"IntCmd\",\n            \"paras\": {\n              \"IntParamKey\": \"GREEN_LED\",\n              \"IntParamValue\": 1\n            }\n        }\n}\nreturn msg;",
         "outputs": 1,
         "noerr": 0,
-        "x": 380,
-        "y": 420,
+        "x": 360,
+        "y": 500,
         "wires": [
             [
                 "a34568c8.fb2118"
@@ -258,8 +258,8 @@
         "ret": "txt",
         "url": "https://160.44.201.125:8743/iocm/app/cmd/v1.4.0/deviceCommands",
         "tls": "5a34767d.889fa8",
-        "x": 570,
-        "y": 420,
+        "x": 610,
+        "y": 500,
         "wires": [
             [
                 "85058ca8.6c07e"
@@ -274,8 +274,8 @@
         "property": "payload",
         "action": "",
         "pretty": false,
-        "x": 810,
-        "y": 420,
+        "x": 790,
+        "y": 500,
         "wires": [
             [
                 "27abb576.8f80ca"
@@ -292,8 +292,8 @@
         "console": false,
         "tostatus": false,
         "complete": "false",
-        "x": 1090,
-        "y": 420,
+        "x": 1070,
+        "y": 500,
         "wires": []
     },
     {
@@ -306,21 +306,21 @@
                 "t": "set",
                 "p": "appId",
                 "pt": "global",
-                "to": "TODO",
+                "to": "",
                 "tot": "str"
             },
             {
                 "t": "set",
                 "p": "appSecret",
                 "pt": "global",
-                "to": "TODO",
+                "to": "",
                 "tot": "str"
             },
             {
                 "t": "set",
                 "p": "deviceId",
                 "pt": "global",
-                "to": "TODO",
+                "to": "",
                 "tot": "str"
             }
         ],
@@ -347,7 +347,7 @@
         "crontab": "",
         "once": false,
         "onceDelay": 0.1,
-        "x": 140,
+        "x": 120,
         "y": 120,
         "wires": [
             [
@@ -423,6 +423,255 @@
         "x": 380,
         "y": 80,
         "wires": []
+    },
+    {
+        "id": "d958c655.ee40a8",
+        "type": "function",
+        "z": "ff51fb44.dc8908",
+        "name": "get all devices",
+        "func": "msg.headers={};\nmsg.headers['Content-Type']=\"application/json\";\nmsg.headers['Authorization']=\"Bearer \"+global.get(\"token\");\nmsg.headers['app_key']=global.get(\"appId\");\n\nmsg.url=\"https://160.44.201.125:8743/iocm/app/dm/v1.3.0/devices?appId=\" +global.get(\"appId\") + \"&pageNo=0&pageSize=100\";\n\nmsg.payload={\n    \"notifyType\": \"deviceDataChanged\",\n    \"callbackurl\": \"http://\"+global.get(\"publicIP\")+\":1880/data\",\n    \"useUnifiedUrl\": true\n}\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "x": 320,
+        "y": 320,
+        "wires": [
+            [
+                "9bd759e5.1deb18"
+            ]
+        ]
+    },
+    {
+        "id": "9bd759e5.1deb18",
+        "type": "http request",
+        "z": "ff51fb44.dc8908",
+        "name": "",
+        "method": "GET",
+        "ret": "txt",
+        "url": "",
+        "tls": "5a34767d.889fa8",
+        "x": 570,
+        "y": 320,
+        "wires": [
+            [
+                "fb8eb7ed.9227c8"
+            ]
+        ]
+    },
+    {
+        "id": "fb8eb7ed.9227c8",
+        "type": "json",
+        "z": "ff51fb44.dc8908",
+        "name": "",
+        "property": "payload",
+        "action": "",
+        "pretty": false,
+        "x": 810,
+        "y": 320,
+        "wires": [
+            [
+                "d2ad8eb3.4e875"
+            ]
+        ]
+    },
+    {
+        "id": "d2ad8eb3.4e875",
+        "type": "debug",
+        "z": "ff51fb44.dc8908",
+        "name": "",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "false",
+        "x": 1090,
+        "y": 320,
+        "wires": []
+    },
+    {
+        "id": "44f0d1a8.b248a",
+        "type": "inject",
+        "z": "ff51fb44.dc8908",
+        "name": "Get Devices",
+        "topic": "",
+        "payload": "",
+        "payloadType": "str",
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "x": 130,
+        "y": 320,
+        "wires": [
+            [
+                "d958c655.ee40a8"
+            ]
+        ]
+    },
+    {
+        "id": "e7d5a89b.eb4b18",
+        "type": "function",
+        "z": "ff51fb44.dc8908",
+        "name": "get history device data",
+        "func": "\nvar startDate=\"20180101T000000Z\";\nvar endDate=  \"20201231T000000Z\";\n\nmsg.headers={};\nmsg.headers['Content-Type']=\"application/json\";\nmsg.headers['Authorization']=\"Bearer \"+global.get(\"token\");\nmsg.headers['app_key']=global.get(\"appId\");\n\nmsg.url=\"https://160.44.201.125:8743/iocm/app/data/v1.1.0/deviceDataHistory?deviceId=\" + global.get(\"deviceId\") + \"&gatewayId=\" + global.get(\"deviceId\") + \"&startTime=\" + startDate + \"&endTime=\" + endDate + \"&appId=\" + global.get(\"appId\");\n\nmsg.payload=\"\";\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "x": 340,
+        "y": 380,
+        "wires": [
+            [
+                "338e9fb9.70d46"
+            ]
+        ]
+    },
+    {
+        "id": "338e9fb9.70d46",
+        "type": "http request",
+        "z": "ff51fb44.dc8908",
+        "name": "",
+        "method": "GET",
+        "ret": "txt",
+        "url": "",
+        "tls": "5a34767d.889fa8",
+        "x": 570,
+        "y": 380,
+        "wires": [
+            [
+                "c3f59b6e.055278"
+            ]
+        ]
+    },
+    {
+        "id": "c3f59b6e.055278",
+        "type": "json",
+        "z": "ff51fb44.dc8908",
+        "name": "",
+        "property": "payload",
+        "action": "",
+        "pretty": false,
+        "x": 810,
+        "y": 380,
+        "wires": [
+            [
+                "fc40ff11.ad548"
+            ]
+        ]
+    },
+    {
+        "id": "fc40ff11.ad548",
+        "type": "debug",
+        "z": "ff51fb44.dc8908",
+        "name": "",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "false",
+        "x": 1090,
+        "y": 380,
+        "wires": []
+    },
+    {
+        "id": "7184eb83.70f4a4",
+        "type": "inject",
+        "z": "ff51fb44.dc8908",
+        "name": "Get data",
+        "topic": "",
+        "payload": "",
+        "payloadType": "str",
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "x": 120,
+        "y": 380,
+        "wires": [
+            [
+                "e7d5a89b.eb4b18"
+            ]
+        ]
+    },
+    {
+        "id": "e9570d3a.df411",
+        "type": "function",
+        "z": "ff51fb44.dc8908",
+        "name": "get device commands history",
+        "func": "\nvar startDate=\"20180101T000000Z\";\nvar endDate=  \"20201231T000000Z\";\n\nmsg.headers={};\nmsg.headers['Content-Type']=\"application/json\";\nmsg.headers['Authorization']=\"Bearer \"+global.get(\"token\");\nmsg.headers['app_key']=global.get(\"appId\");\n\nmsg.url=\"https://160.44.201.125:8743/iocm/app/cmd/v1.4.0/deviceCommands?pageNo=0&pageSize=100&deviceId=\" + global.get(\"deviceId\") + \"&startTime=\" + startDate + \"&endTime=\" + endDate + \"&appId=\"+ global.get(\"appId\");\n\nmsg.payload=\"\";\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "x": 400,
+        "y": 580,
+        "wires": [
+            [
+                "4e7943f2.d9496c"
+            ]
+        ]
+    },
+    {
+        "id": "4e7943f2.d9496c",
+        "type": "http request",
+        "z": "ff51fb44.dc8908",
+        "name": "",
+        "method": "GET",
+        "ret": "txt",
+        "url": "",
+        "tls": "5a34767d.889fa8",
+        "x": 610,
+        "y": 580,
+        "wires": [
+            [
+                "63a861ff.e2445"
+            ]
+        ]
+    },
+    {
+        "id": "63a861ff.e2445",
+        "type": "json",
+        "z": "ff51fb44.dc8908",
+        "name": "",
+        "property": "payload",
+        "action": "",
+        "pretty": false,
+        "x": 810,
+        "y": 580,
+        "wires": [
+            [
+                "e57a4d9e.d7914"
+            ]
+        ]
+    },
+    {
+        "id": "e57a4d9e.d7914",
+        "type": "debug",
+        "z": "ff51fb44.dc8908",
+        "name": "",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "false",
+        "x": 1090,
+        "y": 580,
+        "wires": []
+    },
+    {
+        "id": "3a4f17d8.ff8878",
+        "type": "inject",
+        "z": "ff51fb44.dc8908",
+        "name": "Get command history",
+        "topic": "",
+        "payload": "",
+        "payloadType": "str",
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "x": 140,
+        "y": 580,
+        "wires": [
+            [
+                "e9570d3a.df411"
+            ]
+        ]
     },
     {
         "id": "5a34767d.889fa8",
