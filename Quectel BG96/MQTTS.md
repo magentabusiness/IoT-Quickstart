@@ -8,7 +8,7 @@ Port: 8883
 MQTT_Client_ID: `{deviceId}`_0_0_YYYYMMDDhh  (use any Date)  
 Username: `{deviceId}` 
 
-### 2. Generate Passwort   
+### 2. Generate Password   
    https://codebeautify.org/hmac-generator  
    Algorithm: HmacSHA256  
    Key: `YYYYMMDDhh` -- same as in the MQTT_Client_ID  
