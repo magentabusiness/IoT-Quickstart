@@ -155,4 +155,4 @@ AT+QCFG="iotopmode",2,1
 ```
 
 Further Informations:  
-BGQuectel_BG96_Network_Searching_Scheme_Introduction_V1.2.pdf
+Quectel_BG96_Network_Searching_Scheme_Introduction_V1.2.pdf @ https://www.quectel.com/Qdownload/BG96.html
