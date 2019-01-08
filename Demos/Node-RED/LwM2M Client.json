@@ -1,0 +1,183 @@
+[
+    {
+        "id": "48f30d6a.5ec854",
+        "type": "tab",
+        "label": "ALLIoT",
+        "disabled": false,
+        "info": ""
+    },
+    {
+        "id": "d5936bd8.a16e98",
+        "type": "lwm2m client in",
+        "z": "48f30d6a.5ec854",
+        "name": "",
+        "lwm2mClient": "265b06f5.f697da",
+        "subscribeObjectEvents": true,
+        "x": 451,
+        "y": 159,
+        "wires": [
+            [
+                "a32c3072.38f9b"
+            ]
+        ]
+    },
+    {
+        "id": "a32c3072.38f9b",
+        "type": "debug",
+        "z": "48f30d6a.5ec854",
+        "name": "",
+        "active": true,
+        "console": "false",
+        "complete": "true",
+        "x": 670,
+        "y": 160,
+        "wires": []
+    },
+    {
+        "id": "da9e981e.a62618",
+        "type": "inject",
+        "z": "48f30d6a.5ec854",
+        "name": "",
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "x": 160,
+        "y": 140,
+        "wires": [
+            [
+                "d5936bd8.a16e98"
+            ]
+        ]
+    },
+    {
+        "id": "d09e9709.3f75e8",
+        "type": "lwm2m client out",
+        "z": "48f30d6a.5ec854",
+        "name": "",
+        "lwm2mClient": "265b06f5.f697da",
+        "x": 587,
+        "y": 389,
+        "wires": []
+    },
+    {
+        "id": "c1bf2f31.1d359",
+        "type": "inject",
+        "z": "48f30d6a.5ec854",
+        "name": "",
+        "topic": "/19/0/0",
+        "payload": "hex:DATA",
+        "payloadType": "str",
+        "repeat": "36000",
+        "crontab": "",
+        "once": false,
+        "x": 138,
+        "y": 379,
+        "wires": [
+            [
+                "10818cd8.9523f3"
+            ]
+        ]
+    },
+    {
+        "id": "c49d687.97cd798",
+        "type": "comment",
+        "z": "48f30d6a.5ec854",
+        "name": "AllIoT Server",
+        "info": "160.44.206.237",
+        "x": 255,
+        "y": 67.5,
+        "wires": []
+    },
+    {
+        "id": "52fb6080.3f3cc",
+        "type": "comment",
+        "z": "48f30d6a.5ec854",
+        "name": "1 Fire Server",
+        "info": "62.113.246.135",
+        "x": 411,
+        "y": 68,
+        "wires": []
+    },
+    {
+        "id": "ad4cc824.a53a48",
+        "type": "inject",
+        "z": "48f30d6a.5ec854",
+        "name": "",
+        "topic": "/4/0/8",
+        "payload": "15",
+        "payloadType": "num",
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "x": 372,
+        "y": 519,
+        "wires": [
+            [
+                "d09e9709.3f75e8"
+            ]
+        ]
+    },
+    {
+        "id": "46a60ebb.d6fdd",
+        "type": "catch",
+        "z": "48f30d6a.5ec854",
+        "name": "",
+        "scope": null,
+        "x": 515,
+        "y": 241.5,
+        "wires": [
+            [
+                "f1349b4c.6bac48"
+            ]
+        ]
+    },
+    {
+        "id": "f1349b4c.6bac48",
+        "type": "debug",
+        "z": "48f30d6a.5ec854",
+        "name": "",
+        "active": true,
+        "console": "false",
+        "complete": "true",
+        "x": 661,
+        "y": 244,
+        "wires": []
+    },
+    {
+        "id": "10818cd8.9523f3",
+        "type": "function",
+        "z": "48f30d6a.5ec854",
+        "name": "SetSeconds",
+        "func": "var sec=new Date().getSeconds();\n\nmsg.payload=\"hex:01075365636f6e6473\"+(\"0000\"+sec.toString(16)).substr(-4);\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "x": 372,
+        "y": 283.5,
+        "wires": [
+            [
+                "d09e9709.3f75e8"
+            ]
+        ]
+    },
+    {
+        "id": "265b06f5.f697da",
+        "type": "lwm2m client",
+        "z": "",
+        "clientName": "mhDemo01",
+        "enableDTLS": false,
+        "clientPort": "56830",
+        "lifetimeSec": "300",
+        "reconnectSec": "300",
+        "requestBootstrap": false,
+        "useIPv4": true,
+        "serverHost": "160.44.206.237",
+        "serverPort": "5683",
+        "redirectLwm2mClientLog": true,
+        "hideSensitiveInfo": false,
+        "propagateInternalEvents": true,
+        "objects": "{\"4\":{\"0\":{\"8\":{\"type\":\"INTEGER\",\"acl\":\"R\",\"value\":77771}}},\"19\":{\"0\":{\"0\":{\"type\":\"OPAQUE\",\"acl\":\"RW\",\"value\":\"hex:4142\"}},\"1\":{\"0\":{\"type\":\"OPAQUE\",\"acl\":\"RW\",\"value\":\"hex:0\"}}}}"
+    }
+]
