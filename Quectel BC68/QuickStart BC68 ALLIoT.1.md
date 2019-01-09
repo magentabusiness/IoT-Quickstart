@@ -26,12 +26,13 @@ Reboot the Module
 Switch the radio off by:  
 `AT+CFUN=0`
 
-Then set the APN for authentication  
-`AT+CGDCONT=0,"IP","alliot.nbiot.at”`
 
 Then switch on the radio. The previous commands are ‘sticky’ (stored in NVRAM) so only need to be entered once.  
 Next time you can just start with this command:  
 `AT+CFUN=1`
+
+Then set the APN for authentication  
+`AT+CGDCONT=0,"IP","alliot.nbiot.at”`
 
 Then select the right band (in case of T-Mobile BAND 8)  
 `AT+NBAND=8`
@@ -65,14 +66,17 @@ Display network statistics. If you contact our support, check always the output 
 
 ## Init Commands
 ```
-AT+NRB                  # Reboot 
-AT+CEREG=1              # Enable network registration unsolicited result code: “+CEREG:<stat>”
-AT+CSCON=1              # Enagle Signalling Connection Status
-AT+QREGSWT=1            # Automatic registration mode (ALLIoT)
-AT+CFUN=1               # Enable Radio Module
-AT+CPSMS=1              # Enable Power Saving Mode
-AT+NPSMR=1              # Enable Power Saving Mode Status Report
-AT+COPS=1,2,"23203"    # Forces an attempt to select and register with the network operator (23203 is T-Mobile AT) wait for 30sek – 300sek 
+AT+NRB                               # Reboot 
+AT+CEREG=1                           # Enable network registration unsolicited result code: “+CEREG:<stat>”
+AT+CSCON=1                           # Enagle Signalling Connection Status
+AT+QREGSWT=1                         # Automatic registration mode (ALLIoT)
+AT+CFUN=1                            # Enable Radio Module
+AT+CGDCONT=0,"IP","alliot.nbiot.at"  # Set APN
+AT+CPSMS=1                           # Enable Power Saving Mode
+AT+NPSMR=1                           # Enable Power Saving Mode Status Report
+AT+COPS=1,2,"23203"                  # Forces an attempt to select and register with the
+                                     # network operator (23203 is T-Mobile AT) wait for 
+                                     # 30sek – 300sek 
 
 ### Responses from Modem
 

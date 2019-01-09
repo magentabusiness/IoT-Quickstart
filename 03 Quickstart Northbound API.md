@@ -15,7 +15,7 @@ Open Settings
 * Key File --> choose "plt-app-key.crt" from Northbound API Folder
 * Password: IoT2018@HW
 
-No you need the APP_ID and Password from (01 Quickstart ALLIoT)
+Now you need the APP_ID and Password from (01 Quickstart ALLIoT)
 
 ## Login
 
