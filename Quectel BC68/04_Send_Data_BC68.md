@@ -2,7 +2,7 @@
 
 ## Prerequisites:  
 * [Create your first Application](../01&#32;Create&#32;first&#32;Application.md)
-* [Add your first device](../02&#32;Add&#32;first&#32;device.md)
+* [Add your first device](../02&#32;Add&#32;first&#32;Device.md)
 * [Connect device to ALLIoT](03_Connect_device_to_ALLIoT.md)
 * Open Putty and connect to your device
 
@@ -11,11 +11,11 @@
 In this tutorial we are using the GenericKeyValue Product Model, here we always have to upload a Key and a Value (e.g Key="Tempe", Value=23).
 
 In Production you will have a specific Product Model for your Device, then you only will upload the Value. 
+
+FYI: ASCII to Hex Converter: https://www.binaryhexconverter.com/ascii-text-to-hex-converter
  
 
 ## Send Integer Data
-
-
 
 Command Syntax:
 ```

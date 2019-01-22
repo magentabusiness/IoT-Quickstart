@@ -2,7 +2,7 @@
 
 ## Prerequisites:  
 * [Create your first Application](../01&#32;Create&#32;first&#32;Application.md)
-* [Add your first device](../02&#32;Add&#32;first&#32;device.md)
+* [Add your first device](../02&#32;Add&#32;first&#32;Device.md)
 * Install Putty   
   https://www.chiark.greenend.org.uk/~sgtatham/putty/latest.html
 * Download latest Drivers  
@@ -90,7 +90,7 @@
     +QLWEVTIND=3  # Ready to send Data  
     **Otherwise start troubleshooting**
 
-12. Send data from your Device to ALLIoT  / Link: [Send DATA](Send_Data_BC68.md)
+12. Send data from your Device to ALLIoT  / Link: [Send DATA](04_Send_Data_BC68.md)
 
 # Troubleshooting
 
@@ -168,7 +168,7 @@ AT+NPING=10.112.28.10   # IP of ALLIoT, you are not able to ping any other IP ad
 ```
 
 ## Check ALLIoT  
-* [Add your first device](../02&#32;Add&#32;first&#32;device.md)
+* [Add your first device](../02&#32;Add&#32;first&#32;Device.md)
 * Check if your IMEI is correct.
 
 
