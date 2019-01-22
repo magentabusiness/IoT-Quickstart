@@ -5,7 +5,7 @@
 ![DeviceStep1](./images/DeviceStep1.png)
 
 # Import Product
-1. Download Product from Github Page  
+1. Download Product from GitHub Page  
 https://github.com/alliot-at/Quickstart/blob/master/Product%20Profiles/tmaKeyValue_TMAKeyValue_V01.zip
 
 
@@ -42,11 +42,21 @@ https://github.com/alliot-at/Quickstart/blob/master/Product%20Profiles/tmaKeyVal
    No - means that you can connect your module **with or without DTLS encryption**
 7. Enter a Device Name
 8. Region (e.g. Vienna)
-9. Set the correct Timezone
+9. Set the correct Time zone
 10. Press "Submit" to finish registration
 
 ![DeviceStep6](./images/DeviceStep6.png) 
 If you want to connect your device with DTLS encryption, save the PSK now!
 1. Press "Submit" 
+
+## Next Step: 
+
+Connect your device:
+
+* [Quectel BC68](Quectel#32;BC68)  
+* [Quectel BG96](Quectel#32;BG96)  
+* [Ublox Sara N211/Sodaq](SARA#32,N211)
+* [TODO: Generic MQTT](jfkds)
+* [TODO: Generic LWM2M](TODO)
 
 

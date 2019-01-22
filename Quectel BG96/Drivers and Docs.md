@@ -1,4 +1,5 @@
 # Quectel BG96
 
 Latest Drivers and Documentation  
-https://www.quectel.com/Qdownload/BG96.html
+
+https://www.quectel.com/product/bg96.html

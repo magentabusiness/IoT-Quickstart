@@ -28,5 +28,7 @@ https://alliot.t-mobile.at/#/login
 2. Choose your Power saving Mode (use DRX for first App)
 3. Click Save
 
+## Next Step: [Add your first device](02&#32;Add&#32;first&#32;device.md)
+
 
 

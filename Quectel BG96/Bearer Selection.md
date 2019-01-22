@@ -1,7 +1,7 @@
 Bearer Selection
 ===================
 
-**NOTICE:** At this time no NB-IoT/2G/CAT-M Multi-Simcard is available.  You can choose between a NB-IoT Simcard and a 2G/CAT-M Simcard. (December 2018)
+**NOTICE:** At this time no NB-IoT/2G/CAT-M Multi-SIM Card is available.  You can choose between a NB-IoT SIM Card and a 2G/CAT-M SIM Card. (December 2018)
 
 **NOTICE:** CAT-M is currently not available in Austria. (December 2018)
 
@@ -60,7 +60,7 @@ AT+COPS=?  // (This command can take up to 180 sec)
 +COPS: (2,"T-Mobile A","T-Mobile","23203",0),(3,"A1","A1","23201",0),,(0,1,2,3,4),(0,1,2)
 ```
 
-### Connect to Network (CAT-M)
+### Connect to Network (2G)
 ```javascript
 AT+QIACT=1
 ```

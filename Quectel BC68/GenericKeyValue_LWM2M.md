@@ -4,7 +4,7 @@
 ***Model:*** V01  
 ***ManufacturerId:*** TMAKeyValue   
 ***ManufacturerName:*** TMAKeyValue  
-***Protokoll:*** CoAP  
+***Protocol:*** CoAP / LWM2M 
 
 ## Device-Model
 
@@ -38,20 +38,22 @@ Commands
 
 
 ### Data Reports  (Device to ALLIoT)
-***Message ID: 00 ***   StringData  
+#### StringData  
+Message ID: 00 with Response or 07 without Response
 ``` 
 00<KEY_LEN><KEY><VALUE_LEN><STRING_VALUE> 
 ```   
-***Response:***    
+***Response:***  (only with Message ID 00)   
 ``` 
 AA00
 ```
 
-***Message ID 01*** IntData
+#### IntData
+Message ID: 01 with Response or 06 without Response
 ```
 01<KEY_LEN><KEY><INT_VALUE>`
 ```
-***Response*** 
+***Response***  (only with Message ID 01)
 ```
 AA01
 ```
@@ -79,7 +81,7 @@ AA01
         
 
 
-### Parameter
+## Parameter
 |Name               |Type   |Len [Byte]   |Description   
 |-------------------|-------|-------------|-----------
 |KEY_LEN            |int8u  |1            |
@@ -94,45 +96,49 @@ AA01
 
 
 ## Examples 
-Ascii to Hex Converter: https://www.binaryhexconverter.com/ascii-text-to-hex-converter
+ASCII to Hex Converter: https://www.binaryhexconverter.com/ascii-text-to-hex-converter
 
 ## Send Data  (Device to ALLIoT)
 
 ### Send String Message
 
-Key=City  (Hex: 43697479 / 4 Byte)
+Key=City  (Hex: 43697479 / 4 Byte)  
 Value=Wattens   (Hex: 57617474656e73 / 7 Byte)
 
-|Commando           |len    |Message ID   |Key_len   |Key            |value_len    |value        
+|Commando           |Len    |Message ID   |Key_len   |Key            |value_len    |value        
 |-------------------|-------|-------------|----------|---------------|-------------|-------------
-|AT+QLWULDATA=      |14,    |00           |04        |43697479       |07           |57617474656e73  
+|AT+QLWULDATAEX=      |14,    |00           |04        |43697479       |07           |57617474656e73  
 
 ```
-AT+QLWULDATA=14,0004436974790757617474656e73
+AT+QLWULDATAEX=14,0004436974790757617474656e73,0x0000
 ```
 
-### Send Json String
+### Send JSON String
 
-Key=SensorData 
+Key=SensorData   
 Value={"Temp":22.3,"Hum":20,"Weight":23}
 
 |Commando           |len    |Message ID   |Key_len   |Key                        |value_len    |value        
 |-------------------|-------|-------------|----------|---------------------------|-------------|-------------
-|AT+QLWULDATA=      |47,    |00           |0A        |53656e736f7244617461       |33           |3a32322e332c2248756d223a32302c22576569676874223a32337d  
+|AT+QLWULDATAEX=      |47,    |00           |0A        |53656e736f7244617461       |33           |3a32322e332c2248756d223a32302c22576569676874223a32337d  
 
 
-AT+QLWULDATA=47,000A53656e736f7244617461227b2254656d70223a32322e332c2248756d223a32302c22576569676874223a32337d
+```
+AT+QLWULDATAEX=47,000A53656e736f7244617461227b2254656d70223a32322e332c2248756d223a32302c22576569676874223a32337d,0x0000
+```
 
 
 ## Send IntData
 
-Key=Temp    (hex: 010454656d7 / 4 Byte)
-Value=22.3 °C / raw 223  
+Key=Temp  (hex: 010454656d7 / 4 Byte)  
+Value=223    
 
 |Commando           |len    |Message ID   |Key_len   |Key                        |value        
 |-------------------|-------|-------------|----------|---------------------------|-------------|-------------
-|AT+QLWULDATA=      |08,    |01           |04        |010454656d7                |00DF 
+|AT+QLWULDATAEX=      |08,    |01           |04        |010454656d7                |00DF 
 
-AT+QLWULDATA=8,010454656d7000DF 
+```
+AT+QLWULDATAEX=8,010454656d7000DF,0x0000
+```
 
 
