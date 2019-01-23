@@ -1,28 +1,27 @@
-# Connect BC68 to ALLIoT
+# Connect u-blox SARA N211 / SODAQ SARA AFF N211 to ALLIoT
 
 ## Prerequisites:  
 * [Create your first Application](../01&#32;Create&#32;first&#32;Application.md)
 * [Add your first device](../02&#32;Add&#32;first&#32;Device.md)
 * Install Putty   
-  https://www.chiark.greenend.org.uk/~sgtatham/putty/latest.html
-* Download latest Drivers  
-  https://www.exar.com/product/interface/uarts/usb-uarts/xr21v1412
+  https://www.chiark.greenend.org.uk/~sgtatham/putty/latest.html  
+* If you are using SODAQ SARA AFF N211 follow this instructions:  
+  https://support.sodaq.com/sodaq-one/sara/  
+  to load the Passthrough-Sketch (nbIOT_serial_passthrough) on your Arduino then  
+  close ArduinoIDE
 
 ## Configure Device
 1. Insert SIM Card
 2. Mount antenna
-3. Check if DIP-Switch (J302) is in position: MAIN UART TO USB
 4. Connect it with USB to your PC
-5. Install Drivers
-6. Check in Device Manager the correct COM-Port (Ch A)  
-   ![Step4](../images/BC68_Step1.png)
-7. Open Putty
-8. Configure Putty  
+5. Check in Device Manager the correct COM-Port (Arduino Zero)  
+6. Open Putty
+7. Configure Putty  (instead of BC68 use N211)
 ---
    ![Putty](../images/BC68_Putty_Step1.png)  
    1. Enter correct COM-Port
    3. Connection Type: Serial
-   4. Enter "BC68" as name
+   4. Enter "N211" as name
    5. Press save
 ---
    ![Putty](../images/BC68_Putty_Step2.png)  
@@ -33,34 +32,40 @@
 ---
    ![Putty](../images/BC68_Putty_Step3.png)  
    1. Press Save
-   2. Double-Click to "BC68" to connect Putty to your BC68 Module  
+   2. Double-Click to "N211" to connect Putty to your BC68 Module  
 ---
 
 9. Check Connection  
-  ![Putty](../images/BC68_Putty_Step4.png) 
-  Enter `ATI` to check module
+   Enter `ATI` to check module
+   Response:
+   `SARA-N211-02X`
 
-10. Prepare BC68  (do it only once)
+10. Prepare N211  (do it only once)
     ```
-    AT+NCONFIG=AUTOCONNECT,FALSE         # Disable Auto connect
+    AT+NCONFIG="CR_0354_0338_SCRAMBLING","TRUE"
+    AT+NCONFIG="CR_0859_SI_AVOID","FALSE
+    AT+NCONFIG="AUTOCONNECT","FALSE"     # Disable Auto connect
     AT+NRB                               # Reboot - wait until finished (10sec)
-    AT+NCDP=10.112.28.10,5683            # Set IP-Address of ALLIoT
+    AT+NCDP="10.112.28.10",5683            # Set IP-Address of ALLIoT
     AT+NRB                               # Reboot - wait until finished (10sec)
     AT+CFUN=1                            # Enable Radio Module
     AT+CGDCONT=0,"IP","alliot.nbiot.at"  # Set APN
     AT+CPSMS=0                           # Disable Power Saving Mode
-    AT+QREGSWT=1                         # Automatic registration mode (ALLIoT)
-    AT+NCONFIG=AUTOCONNECT,TRUE          # Enable Auto connect
     AT+NRB                               # Reboot - wait until finished (10sec)
     ```
 11. Connect to NB-IoT Network and ALLIoT (do it after each reboot) 
      ```
     //Enable Module Output
-    AT+NPSMR=1                           # Enable Power Saving Mode Status Report
-    AT+CEREG=1                           # Enable network registration unsolicited 
-    result code: “+CEREG:<stat>”
-    AT+NNMI=1                            # Enable New Message Indications
-    AT+CSCON=1                           # Enable Signalling Connection Status
+    
+    AT+NRB                  # Reboot 
+    AT+CEREG=1              # Enable network registration unsolicited result code: “+CEREG:<stat>”
+    AT+CSCON=1              # Enable Signalling Connection Status
+    AT+CFUN=1               # Enable Radio Module
+    AT+CGDCONT=0,"IP","alliot.nbiot.at"  # Set APN
+    AT+CPSMS=0              # Disable Power Saving Mode
+    AT+NPSMR=1              # Enable Power Saving Mode Status Report
+    AT+NNMI=1               # Enable New Message Indications
+    AT+COPS=1,2,"23203"     # Forces an attempt to select and register with the network operator (23203 is T-Mobile AT) wait for 30sek – 300sek 
     ```
     ### Responses from Module
     ```
@@ -70,10 +75,6 @@
     +CSCON:1      # Connected Mode
 
     +CEREG:5      # Attached to Network
-
-    +QLWEVTIND=0  # Registration on ALLIoT successful
-
-    +QLWEVTIND=3  # Ready to send Data
 
     ...
 
@@ -85,34 +86,12 @@
 
     ```  
 
-    **If the modem responses this 2 lines you are successfully connected to ALLIoT and able to send and receive data**  
-    +QLWEVTIND=0  # Registration on ALLIoT successful  
-    +QLWEVTIND=3  # Ready to send Data  
-    **Otherwise start troubleshooting**
+    
 
-12. Send data from your Device to ALLIoT  / Link: [Send DATA](04_Send_Data_BC68.md)
+12. Send data from your Device to ALLIoT  / Link: [Send DATA](04_Send_Data_N211.md)
 
 # Troubleshooting
 
-## Connect manually
-   ```
-    AT+NCONFIG=AUTOCONNECT,FALSE
-    AT+NCDP=10.112.28.10,5683            # Set IP-Address of ALLIoT
-    AT+NRB                               # Reboot - wait until finished (10sec)
-    AT+CFUN=1                            # Enable Radio Module
-    AT+CGDCONT=0,"IP","alliot.nbiot.at"  # Set APN
-    AT+CPSMS=0                           # Disable Power Saving Mode
-    AT+QREGSWT=1                         # Automatic registration mode (ALLIoT)
-    AT+NRB                               # Reboot - wait until finished (10sec)
-    AT+CFUN=1                            # Enable Radio Module
-    AT+NPSMR=1                           # Enable Power Saving Mode Status Report
-    AT+CEREG=1                           # Enable network registration unsolicited 
-    result code: “+CEREG:<stat>”
-    AT+NNMI=1                            # Enable New Message Indications
-    AT+CSCON=1                           # Enable Signalling Connection Status
-    AT+COPS=1,2,"23203"                  # Forces an attempt to select and register with the
-                                         # network operator (23203 is T-Mobile AT) wait for 30sec – 300sec 
-   ```
 
 
 ## Check Signal
@@ -131,7 +110,7 @@ AT+NUESTATS         # Query UE Statistics
         EARFCN:3547         # last Absolute radio-frequency channel number 
         PCI:186             # last Physical ID of the cell 
         RSRQ:-139           # Reference signal received quality in centibels
-        OPERATOR MODE:4     # operator mode
+      
 
 AT+NUESTATS=CELL    # Get neighbour cells
 
@@ -158,7 +137,7 @@ AT+CGPADDR
         +CGPADDR:0,10.X.Y.Z
 
 
-AT+NPING=10.112.28.10   # IP of ALLIoT, you are not able to ping any other IP address
+AT+NPING="10.112.28.10"   # IP of ALLIoT, you are not able to ping any other IP address
 
         Response OK:
         +NPING:10.112.28.10,61,909
@@ -170,5 +149,9 @@ AT+NPING=10.112.28.10   # IP of ALLIoT, you are not able to ping any other IP ad
 ## Check ALLIoT  
 * [Add your first device](../02&#32;Add&#32;first&#32;Device.md)
 * Check if your IMEI is correct.
+
+
+
+
 
 
