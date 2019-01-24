@@ -54,8 +54,8 @@ If you want to connect your device with DTLS encryption, save the PSK now!
 Connect your device:
 
 * [Quectel BC68](Quectel&#32;BC68/03_Connect_device_to_ALLIoT.md)  
+* [Ublox Sara N211/Sodaq](SARA&#32;N211/03_Connect_device_to_ALLIoT.md)
 * [TODO Quectel BG96](Quectel#32;BG96)  
-* [Ublox Sara N211/Sodaq](SARA#32,N211/03_Connect_device_to_ALLIoT.md)
 * [TODO: Generic MQTT](jfkds)
 * [TODO: Generic LWM2M](TODO)
 
