@@ -8,7 +8,7 @@
 
 [Detailed Information about Upload Protocol](GenericKeyValue_LWM2M.md)
 
-In this tutorial we are using the GenericKeyValue Product Model, here we always have to upload a Key and a Value (e.g Key="Tempe", Value=23).
+In this tutorial we are using the GenericKeyValue Product Model, here we always have to upload a Key and a Value (e.g Key="Temp", Value=23).
 
 In Production you will have a specific Product Model for your Device, then you only will upload the Value. 
 

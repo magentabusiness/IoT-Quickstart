@@ -1,0 +1,416 @@
+{
+	"info": {
+		"_postman_id": "06ef82d9-7f73-4b35-b43c-7e56efe32969",
+		"name": "ALLIoT Demos",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "01 Login",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "c0b1927e-7133-4115-b361-c56b95b564db",
+						"exec": [
+							"//pm.environment.set(\"accessToken\", pm.response.json().accessToken);",
+							"",
+							"",
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "appId",
+							"value": "{{appId}}",
+							"type": "text"
+						},
+						{
+							"key": "secret",
+							"value": "{{secret}}",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "https://{{server}}/iocm/app/sec/v1.1.0/login",
+					"protocol": "https",
+					"host": [
+						"{{server}}"
+					],
+					"path": [
+						"iocm",
+						"app",
+						"sec",
+						"v1.1.0",
+						"login"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "02 Get Devices",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "app_key",
+						"value": "{{appId}}",
+						"disabled": false
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"disabled": false
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "https://{{server}}/iocm/app/dm/v1.3.0/devices?appId={{appId}}&pageNo=0&pageSize=10",
+					"protocol": "https",
+					"host": [
+						"{{server}}"
+					],
+					"path": [
+						"iocm",
+						"app",
+						"dm",
+						"v1.3.0",
+						"devices"
+					],
+					"query": [
+						{
+							"key": "appId",
+							"value": "{{appId}}"
+						},
+						{
+							"key": "pageNo",
+							"value": "0"
+						},
+						{
+							"key": "pageSize",
+							"value": "10"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "03 Get Device Info",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "c0b1927e-7133-4115-b361-c56b95b564db",
+						"exec": [
+							"",
+							"",
+							"",
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "app_key",
+						"value": "{{appId}}",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "https://{{server}}/iocm/app/dm/v1.3.0/devices/{{deviceId}}?appId={{appId}}",
+					"protocol": "https",
+					"host": [
+						"{{server}}"
+					],
+					"path": [
+						"iocm",
+						"app",
+						"dm",
+						"v1.3.0",
+						"devices",
+						"{{deviceId}}"
+					],
+					"query": [
+						{
+							"key": "appId",
+							"value": "{{appId}}"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "04 Get Historical Data from Device",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "app_key",
+						"value": "{{appId}}",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "https://{{server}}/iocm/app/data/v1.1.0/deviceDataHistory?deviceId={{deviceId}}&gatewayId={{deviceId}}&startTime=20181015T000000Z&endTime=20191015T000000Z&appId={{appId}}",
+					"protocol": "https",
+					"host": [
+						"{{server}}"
+					],
+					"path": [
+						"iocm",
+						"app",
+						"data",
+						"v1.1.0",
+						"deviceDataHistory"
+					],
+					"query": [
+						{
+							"key": "deviceId",
+							"value": "{{deviceId}}"
+						},
+						{
+							"key": "gatewayId",
+							"value": "{{deviceId}}"
+						},
+						{
+							"key": "serviceId ",
+							"value": "{serviceId}",
+							"disabled": true
+						},
+						{
+							"key": "pageNo",
+							"value": "0",
+							"disabled": true
+						},
+						{
+							"key": "pageSize\n",
+							"value": "10",
+							"disabled": true
+						},
+						{
+							"key": "startTime",
+							"value": "20181015T000000Z"
+						},
+						{
+							"key": "endTime",
+							"value": "20191015T000000Z"
+						},
+						{
+							"key": "property",
+							"value": "{property}",
+							"disabled": true
+						},
+						{
+							"key": "appId",
+							"value": "{{appId}}"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "05 Subscribe Event",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "app_key",
+						"value": "{{appId}}",
+						"type": "text"
+					},
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{ \r\n  \"notifyType\" : \"deviceDataChanged\", \r\n  \"callbackurl\" : \"http://fhdemo01.free.beeceptor.com\", \r\n  \"useUnifiedUrl\" : true \r\n}\r\n"
+				},
+				"url": {
+					"raw": "https://{{server}}/iocm/app/sub/v1.2.0/subscribe",
+					"protocol": "https",
+					"host": [
+						"{{server}}"
+					],
+					"path": [
+						"iocm",
+						"app",
+						"sub",
+						"v1.2.0",
+						"subscribe"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "06 SendCommand KeyValue",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "app_key",
+						"value": "{{appId}}",
+						"type": "text"
+					},
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "\t{\r\n\t  \"deviceId\": \"{{deviceId}}\",\r\n\t  \"command\": {\r\n\t    \"serviceId\": \"IntData\",\r\n\t    \"method\": \"IntCmd\",\r\n\t    \"paras\": {\r\n\t      \"IntParamKey\": \"GREEN_LED\",\r\n\t      \"IntParamValue\": 10\r\n\t     \r\n\t    }\r\n\t  }\r\n\t}"
+				},
+				"url": {
+					"raw": "https://{{server}}/iocm/app/cmd/v1.4.0/deviceCommands",
+					"protocol": "https",
+					"host": [
+						"{{server}}"
+					],
+					"path": [
+						"iocm",
+						"app",
+						"cmd",
+						"v1.4.0",
+						"deviceCommands"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "07 Query Device Commands",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "app_key",
+						"type": "text",
+						"value": "{{appId}}"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "https://{{server}}/iocm/app/cmd/v1.4.0/deviceCommands?pageNo=0&pageSize=100&deviceId={{deviceId}}&startTime=20181015T000000Z&e\nndTime=20191015T000000Z&appId={{appId}}",
+					"protocol": "https",
+					"host": [
+						"{{server}}"
+					],
+					"path": [
+						"iocm",
+						"app",
+						"cmd",
+						"v1.4.0",
+						"deviceCommands"
+					],
+					"query": [
+						{
+							"key": "pageNo",
+							"value": "0"
+						},
+						{
+							"key": "pageSize",
+							"value": "100"
+						},
+						{
+							"key": "deviceId",
+							"value": "{{deviceId}}"
+						},
+						{
+							"key": "startTime",
+							"value": "20181015T000000Z"
+						},
+						{
+							"key": "e\nndTime",
+							"value": "20191015T000000Z"
+						},
+						{
+							"key": "appId",
+							"value": "{{appId}}"
+						},
+						{
+							"key": "serviceId ",
+							"value": "{serviceId}",
+							"disabled": true
+						},
+						{
+							"key": "property",
+							"value": "{property}",
+							"disabled": true
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"auth": {
+		"type": "bearer",
+		"bearer": [
+			{
+				"key": "token",
+				"value": "c0955e5d4d3d8baf77b4cc5eb886f8b",
+				"type": "string"
+			}
+		]
+	},
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"id": "02cef6a1-c25d-4f74-ac88-087b10b68090",
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"id": "c244ab09-7f68-474f-983d-7b10faa3b992",
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	]
+}
