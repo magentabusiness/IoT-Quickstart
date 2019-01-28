@@ -20,8 +20,8 @@ Open Settings
 #### IMPORTANT: You may only use this client Certificate only for testing.  
 #### For production use, you have to request your own client certificate from T-Mobile Austria. 
 
-* Download (Save Link to PC) [Demo Certificate](Demo_Client_Certificates/ALLIoT.crt)
-* Download (Save Link to PC) [Demo Certificate Key](Demo_Client_Certificates/ALLIoT.key)
+* Download (Save Link to PC): [Demo Certificate](https://raw.githubusercontent.com/alliot-at/Quickstart/master/Application%20Enablement/Demo_Client_Certificates/ALLIoT.crt)
+* Download (Save Link to PC): [Demo Certificate Key](https://raw.githubusercontent.com/alliot-at/Quickstart/master/Application%20Enablement/Demo_Client_Certificates/ALLIoT.key)
 
 
 
@@ -36,8 +36,8 @@ Open Settings
 
 ## Import Examples
 
-* Download Examples (Save Link to PC)
-  [ALLIoT Examples](ALLIoT_Demos.postman_collection.json)
+* Download Examples (Save Link to PC): 
+  [ALLIoT Examples](https://raw.githubusercontent.com/alliot-at/Quickstart/master/Application%20Enablement/ALLIoT_Demos.postman_collection.json)  
 Import in Postman
 1. File -> Import  
 2. Import File  
@@ -62,8 +62,8 @@ Further informations: https://learning.getpostman.com/docs/postman/environments_
 
 ### Import ALLIoT Environment
 
-* Download Examples (Save Link to PC)
-  [ALLIoT Environment](ALLIoT_Demo.postman_environment.json)
+* Download Examples (Save Link to PC):
+  [ALLIoT Environment](https://raw.githubusercontent.com/alliot-at/Quickstart/master/Application%20Enablement/ALLIoT_Demo.postman_environment.json)  
 
 ![Postman Manage Environments](../images/Postman_manage_environment.png)
 1. Click "Manage Environments"
