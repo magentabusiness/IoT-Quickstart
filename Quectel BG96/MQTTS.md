@@ -1,5 +1,13 @@
 
 # Getting Started with BG96 and MQTTS
+
+- [Getting Started with BG96 and MQTTS](#getting-started-with-bg96-and-mqtts)
+    - [Create Device in Ocean Connect with Initial Password Mode](#create-device-in-ocean-connect-with-initial-password-mode)
+    - [1. MQTT Configuration](#1-mqtt-configuration)
+    - [2. Generate Password](#2-generate-password)
+    - [3. TODO: Certificates (PEM Format)](#3-todo-certificates-pem-format)
+    - [4. BG96 AT-Commands](#4-bg96-at-commands)
+
 ### Create Device in Ocean Connect with Initial Password Mode
 
 ### 1. MQTT Configuration
@@ -12,7 +20,7 @@ Username: `{deviceId}`
    https://codebeautify.org/hmac-generator  
    Algorithm: HmacSHA256  
    Key: `YYYYMMDDhh` -- same as in the MQTT_Client_ID  
-   Plain or Chiper Text: `secret from Ocean connect`   
+   Plain or Cipher Text: `secret from Ocean connect`   
    Result Hash-Value is the **Password!**
 
 ### 3. TODO: Certificates (PEM Format)  

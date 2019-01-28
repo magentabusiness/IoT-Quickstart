@@ -1,4 +1,9 @@
 # Quickstart ALLIoT
+- [Quickstart ALLIoT](#quickstart-alliot)
+- [Add your first Device](#add-your-first-device)
+- [Import Product](#import-product)
+- [Register your first Device](#register-your-first-device)
+- [Next Step: Connect your device:](#next-step-connect-your-device)
 
 # Add your first Device
 
@@ -49,9 +54,7 @@ https://github.com/alliot-at/Quickstart/blob/master/Product%20Profiles/tmaKeyVal
 If you want to connect your device with DTLS encryption, save the PSK now!
 1. Press "Submit" 
 
-## Next Step: 
-
-Connect your device:
+# Next Step: Connect your device:
 
 * [Quectel BC68](Quectel&#32;BC68/03_Connect_device_to_ALLIoT.md)  
 * [Ublox Sara N211/Sodaq](SARA&#32;N211/03_Connect_device_to_ALLIoT.md)

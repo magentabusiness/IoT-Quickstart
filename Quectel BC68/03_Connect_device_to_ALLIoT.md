@@ -1,6 +1,20 @@
 # Connect BC68 to ALLIoT
 
-## Prerequisites:  
+- [Connect BC68 to ALLIoT](#connect-bc68-to-alliot)
+- [Prerequisites](#prerequisites)
+- [Configure Device](#configure-device)
+- [Configure Putty](#configure-putty)
+- [Check Connection](#check-connection)
+- [Prepare BC68 (do it only once)](#prepare-bc68-do-it-only-once)
+- [Connect BC68 to NB-IoT Network and ALLIoT (do it after each reboot)](#connect-bc68-to-nb-iot-network-and-alliot-do-it-after-each-reboot)
+- [Next Step: Send data from your Device to ALLIoT / Link: Send DATA](#next-step-send-data-from-your-device-to-alliot--link-send-data)
+- [Troubleshooting](#troubleshooting)
+  - [Connect manually](#connect-manually)
+  - [Check Signal](#check-signal)
+  - [Check IP Address](#check-ip-address)
+  - [Check ALLIoT](#check-alliot)
+
+# Prerequisites
 * [Create your first Application](../01&#32;Create&#32;first&#32;Application.md)
 * [Add your first device](../02&#32;Add&#32;first&#32;Device.md)
 * Install Putty   
@@ -8,7 +22,7 @@
 * Download latest Drivers  
   https://www.exar.com/product/interface/uarts/usb-uarts/xr21v1412
 
-## Configure Device
+# Configure Device
 1. Insert SIM Card
 2. Mount antenna
 3. Check if DIP-Switch (J302) is in position: MAIN UART TO USB
@@ -16,32 +30,34 @@
 5. Install Drivers
 6. Check in Device Manager the correct COM-Port (Ch A)  
    ![Step4](../images/BC68_Step1.png)
-7. Open Putty
-8. Configure Putty  
----
-   ![Putty](../images/BC68_Putty_Step1.png)  
+7. Open Putty  
+
+
+# Configure Putty     
+
+   ![Putty](../images/BC68_Putty_Step1.png)    
    1. Enter correct COM-Port
-   3. Connection Type: Serial
-   4. Enter "BC68" as name
-   5. Press save
----
-   ![Putty](../images/BC68_Putty_Step2.png)  
+   2. Connection Type: Serial
+   3. Enter "BC68" as name  
+   4. Press save
+
+   ![Putty](../images/BC68_Putty_Step2.png)    
    1. Select "Terminal"
    2. Local echo: Force On
    3. Local line editing: Force On
-   4. Select "Session"
----
-   ![Putty](../images/BC68_Putty_Step3.png)  
+   4. Select "Session"  
+
+   ![Putty](../images/BC68_Putty_Step3.png)    
    1. Press Save
    2. Double-Click to "BC68" to connect Putty to your BC68 Module  
----
 
-9. Check Connection  
-  ![Putty](../images/BC68_Putty_Step4.png) 
+
+# Check Connection  
+  ![Putty](../images/BC68_Putty_Step4.png)   
   Enter `ATI` to check module
 
-10. Prepare BC68  (do it only once)
-    ```
+# Prepare BC68  (do it only once)  
+```
     AT+NCONFIG=AUTOCONNECT,FALSE         # Disable Auto connect
     AT+NRB                               # Reboot - wait until finished (10sec)
     AT+NCDP=10.112.28.10,5683            # Set IP-Address of ALLIoT
@@ -52,18 +68,17 @@
     AT+QREGSWT=1                         # Automatic registration mode (ALLIoT)
     AT+NCONFIG=AUTOCONNECT,TRUE          # Enable Auto connect
     AT+NRB                               # Reboot - wait until finished (10sec)
-    ```
-11. Connect to NB-IoT Network and ALLIoT (do it after each reboot) 
-     ```
-    //Enable Module Output
+```
+#  Connect BC68 to NB-IoT Network and ALLIoT (do it after each reboot) 
+```
     AT+NPSMR=1                           # Enable Power Saving Mode Status Report
     AT+CEREG=1                           # Enable network registration unsolicited 
     result code: “+CEREG:<stat>”
     AT+NNMI=1                            # Enable New Message Indications
     AT+CSCON=1                           # Enable Signalling Connection Status
-    ```
-    ### Responses from Module
-    ```
+```
+**Responses from Module**
+```
 
     +CEREG:2      # Search for Network  
 
@@ -76,21 +91,20 @@
     +QLWEVTIND=3  # Ready to send Data
 
     ...
-
     +CSCON:0      # Idle Mode
 
     ...
 
     +NPSMR:1      # Power Saving Mode active
 
-    ```  
+```
 
-    **If the modem responses this 2 lines you are successfully connected to ALLIoT and able to send and receive data**  
-    +QLWEVTIND=0  # Registration on ALLIoT successful  
-    +QLWEVTIND=3  # Ready to send Data  
-    **Otherwise start troubleshooting**
+**If the modem responses this 2 lines you are successfully connected to ALLIoT and able to send and receive data**  
++QLWEVTIND=0  # Registration on ALLIoT successful  
++QLWEVTIND=3  # Ready to send Data  
+**Otherwise start troubleshooting**
 
-12. Send data from your Device to ALLIoT  / Link: [Send DATA](04_Send_Data_BC68.md)
+# Next Step: Send data from your Device to ALLIoT  / Link: [Send DATA](04_Send_Data_BC68.md)
 
 # Troubleshooting
 

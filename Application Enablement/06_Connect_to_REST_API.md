@@ -2,9 +2,14 @@
 
 After you have installed and configured Postman, you are ready to connect to the API and get your data out of ALLIoT.
 
+- [Connect to REST API (Application Entablement)](#connect-to-rest-api-application-entablement)
+- [Login](#login)
+- [How to use accessToken for the next requests](#how-to-use-accesstoken-for-the-next-requests)
+  - [Next step: Get your data out of ALLIoT](#next-step-get-your-data-out-of-alliot)
+
 # Login
 
-![API Login](../images/API_Login.png)
+![API Login](../images/API_login.png)
 1. Check you have selected the ALLIoT Demo Environment
 2. Open the Login Request
 3. Press "Send"
@@ -27,7 +32,7 @@ The response contains the `accessToken`. This token is used for Authentication i
 The accessToken is valid for 60 minutes, after this time the token gets invalid. 
 
 
-## How to use accessToken for the next requests
+# How to use accessToken for the next requests
 
 Postman can save the accessToken to use it automatically for the next requests.
 
@@ -49,4 +54,4 @@ Now Postman will automatically add the accessToken to the Request Header for all
 
 If you got a new accessToken you have to repeat this step. 
 
-### Next step: [Get your data out of ALLIoT](07_Get_your_data_out_of_ALLIoT.md)
+## Next step: [Get your data out of ALLIoT](07_Get_your_data_out_of_ALLIoT.md)

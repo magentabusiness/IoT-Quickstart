@@ -1,4 +1,11 @@
 # Send data from Device to ALLIoT
+- [Send data from Device to ALLIoT](#send-data-from-device-to-alliot)
+  - [Prerequisites:](#prerequisites)
+  - [Send Integer Data](#send-integer-data)
+  - [Send String Data](#send-string-data)
+- [Watch data on ALLIoT](#watch-data-on-alliot)
+  - [Last Data](#last-data)
+  - [Historical Data](#historical-data)
 
 ## Prerequisites:  
 * [Create your first Application](../01&#32;Create&#32;first&#32;Application.md)
