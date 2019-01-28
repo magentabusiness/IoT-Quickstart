@@ -1,6 +1,6 @@
-# Quickstart - Application Entablement with Postman
+# Quickstart - Application Enablement with Postman
 
-- [Quickstart - Application Entablement with Postman](#quickstart---application-entablement-with-postman)
+- [Quickstart - Application Enablement with Postman](#quickstart---application-enablement-with-postman)
   - [Install Postman](#install-postman)
   - [Configure Postman](#configure-postman)
   - [Import Demo Certificate](#import-demo-certificate)

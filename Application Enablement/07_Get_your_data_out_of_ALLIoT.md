@@ -1,6 +1,5 @@
 #How to get your data out of ALLIoT
 
-
 - [Get all devices of your application](#get-all-devices-of-your-application)
 - [Get historical data of your device](#get-historical-data-of-your-device)
 - [Push the data to your server](#push-the-data-to-your-server)

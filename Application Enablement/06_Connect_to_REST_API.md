@@ -1,8 +1,8 @@
-# Connect to REST API (Application Entablement)
+# Connect to REST API (Application Enablement)
 
 After you have installed and configured Postman, you are ready to connect to the API and get your data out of ALLIoT.
 
-- [Connect to REST API (Application Entablement)](#connect-to-rest-api-application-entablement)
+- [Connect to REST API (Application Enablement)](#connect-to-rest-api-application-enablement)
 - [Login](#login)
 - [How to use accessToken for the next requests](#how-to-use-accesstoken-for-the-next-requests)
   - [Next step: Get your data out of ALLIoT](#next-step-get-your-data-out-of-alliot)
