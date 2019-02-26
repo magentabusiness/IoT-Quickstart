@@ -61,6 +61,7 @@
     AT+NCONFIG=AUTOCONNECT,FALSE         # Disable Auto connect
     AT+NRB                               # Reboot - wait until finished (10sec)
     AT+NCDP=10.112.28.10,5683            # Set IP-Address of ALLIoT
+    AT+NBAND=8                           # Set Band 8 for T-Mobile Austria - speeds up time to connect
     AT+NRB                               # Reboot - wait until finished (10sec)
     AT+CFUN=1                            # Enable Radio Module
     AT+CGDCONT=0,"IP","alliot.nbiot.at"  # Set APN
@@ -69,6 +70,8 @@
     AT+NCONFIG=AUTOCONNECT,TRUE          # Enable Auto connect
     AT+NRB                               # Reboot - wait until finished (10sec)
 ```
+**NOTE: The fist time to connect can take up to 10 minutes. (until CEREG: 5)**
+
 #  Connect BC68 to NB-IoT Network and ALLIoT (do it after each reboot) 
 ```
     AT+NPSMR=1                           # Enable Power Saving Mode Status Report
@@ -113,6 +116,7 @@
     AT+NCONFIG=AUTOCONNECT,FALSE
     AT+NCDP=10.112.28.10,5683            # Set IP-Address of ALLIoT
     AT+NRB                               # Reboot - wait until finished (10sec)
+    AT+NBAND=8                           # Set Band 8 for T-Mobile Austria - speeds up time to connect
     AT+CFUN=1                            # Enable Radio Module
     AT+CGDCONT=0,"IP","alliot.nbiot.at"  # Set APN
     AT+CPSMS=0                           # Disable Power Saving Mode

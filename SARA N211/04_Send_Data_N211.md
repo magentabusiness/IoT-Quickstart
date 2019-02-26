@@ -99,3 +99,7 @@ FYI: If you don't need a response from ALLIoT to save traffic and power - just u
 3. Select Historical Data Tab
 4. Click on "All Historical Data"
 
+## Next Step:
+[Start to get your data out of ALLIoT](../Application&#32;Enablement/05_Install_and_setup_Postman.md)
+
+

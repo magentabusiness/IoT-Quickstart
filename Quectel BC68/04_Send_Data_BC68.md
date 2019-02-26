@@ -6,6 +6,7 @@
 - [Watch data on ALLIoT](#watch-data-on-alliot)
   - [Last Data](#last-data)
   - [Historical Data](#historical-data)
+  - [Next Step:](#next-step)
 
 ## Prerequisites:  
 * [Create your first Application](../01&#32;Create&#32;first&#32;Application.md)
@@ -131,4 +132,7 @@ FYI: If you don't need a response from ALLIoT to save traffic and power - just u
 2. Select your Device
 3. Select Historical Data Tab
 4. Click on "All Historical Data"
+
+## Next Step:
+[Start to get your data out of ALLIoT](../Application&#32;Enablement/05_Install_and_setup_Postman.md)
 
