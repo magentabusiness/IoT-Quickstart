@@ -1,5 +1,5 @@
-# Quickstart ALLIoT
-- [Quickstart ALLIoT](#quickstart-alliot)
+# Quickstart IoT-Gateway
+- [Quickstart IoT-Gateway](#quickstart-iot-gateway)
 - [Add your first Device](#add-your-first-device)
 - [Import Product](#import-product)
 - [Register your first Device](#register-your-first-device)
@@ -56,8 +56,8 @@ If you want to connect your device with DTLS encryption, save the PSK now!
 
 # Next Step: Connect your device:
 
-* [Quectel BC68](Quectel&#32;BC68/03_Connect_device_to_ALLIoT.md)  
-* [Ublox Sara N211/Sodaq](SARA&#32;N211/03_Connect_device_to_ALLIoT.md)
+* [Quectel BC68](Quectel&#32;BC68/03_Connect_device_to_IoT-Gateway.md)  
+* [Ublox Sara N211/Sodaq](SARA&#32;N211/03_Connect_device_to_IoT-Gateway.md)
 * [TODO Quectel BG96](Quectel#32;BG96)  
 * [TODO: Generic MQTT](jfkds)
 * [TODO: Generic LWM2M](TODO)

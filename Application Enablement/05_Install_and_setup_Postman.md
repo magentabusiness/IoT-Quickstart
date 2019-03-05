@@ -6,8 +6,8 @@
   - [Import Demo Certificate](#import-demo-certificate)
   - [Import Examples](#import-examples)
   - [Import and Configure Postman Environment](#import-and-configure-postman-environment)
-    - [Import ALLIoT Environment](#import-alliot-environment)
-    - [Configure ALLIoT Environment](#configure-alliot-environment)
+    - [Import IoT-Gateway Environment](#import-iot-gateway-environment)
+    - [Configure IoT-Gateway Environment](#configure-iot-gateway-environment)
   - [Next Step: Connect to the Rest API](#next-step-connect-to-the-rest-api)
   - [Troubleshooting](#troubleshooting)
 
@@ -31,8 +31,8 @@ Open Settings
 **IMPORTANT: You may only use this client Certificate only for testing.**  
 **For production use, you have to request your own client certificate from T-Mobile Austria.**
 
-* Download (Save Link to PC): [Demo Certificate](https://raw.githubusercontent.com/alliot-at/Quickstart/master/Application%20Enablement/Demo_Client_Certificates/ALLIoT.crt)
-* Download (Save Link to PC): [Demo Certificate Key](https://raw.githubusercontent.com/alliot-at/Quickstart/master/Application%20Enablement/Demo_Client_Certificates/ALLIoT.key)
+* Download (Save Link to PC): [Demo Certificate](https://raw.githubusercontent.com/alliot-at/Quickstart/master/Application%20Enablement/Demo_Client_Certificates/IoT-Gateway.crt)
+* Download (Save Link to PC): [Demo Certificate Key](https://raw.githubusercontent.com/alliot-at/Quickstart/master/Application%20Enablement/Demo_Client_Certificates/IoT-Gateway.key)
 
 
 
@@ -40,20 +40,20 @@ Open Settings
 
 1. Host: 160.44.201.125
 2. Port: 8743
-3. CRT File --> choose "ALLIoT.crt" 
-4. Key File --> choose "ALLIoT.key" 
+3. CRT File --> choose "IoT-Gateway.crt" 
+4. Key File --> choose "IoT-Gateway.key" 
 5. Password: alliot
 6. Click Add
 
 ## Import Examples
 
 * Download Examples (Save Link to PC): 
-  [ALLIoT Examples](https://raw.githubusercontent.com/alliot-at/Quickstart/master/Application%20Enablement/ALLIoT_Demos.postman_collection.json)  
+  [IoT-Gateway Examples](https://raw.githubusercontent.com/alliot-at/Quickstart/master/Application%20Enablement/IoT-Gateway_Demos.postman_collection.json)  
 Import in Postman
 1. File -> Import  
 2. Import File  
 ![Postman Import](../images/Postman_import.png)  
-Choose File ALLIoT_Demos.postman_collection.json
+Choose File IoT-Gateway_Demos.postman_collection.json
 3. After import   
 ![Postman Import](../images/Postman_import_ok.png)   
 
@@ -71,21 +71,21 @@ You can create, share, duplicate, export, and delete an environment. You can als
 
 Further informations: https://learning.getpostman.com/docs/postman/environments_and_globals/manage_environments/
 
-### Import ALLIoT Environment
+### Import IoT-Gateway Environment
 
 * Download Examples (Save Link to PC):
-  [ALLIoT Environment](https://raw.githubusercontent.com/alliot-at/Quickstart/master/Application%20Enablement/ALLIoT_Demo.postman_environment.json)  
+  [IoT-Gateway Environment](https://raw.githubusercontent.com/alliot-at/Quickstart/master/Application%20Enablement/IoT-Gateway_Demo.postman_environment.json)  
 
 ![Postman Manage Environments](../images/Postman_manage_environment.png)
 1. Click "Manage Environments"
 2. Click "Import"
-3. Choose "ALLIoT_Demo.postman_environment.json"
+3. Choose "IoT-Gateway_Demo.postman_environment.json"
 
-### Configure ALLIoT Environment
+### Configure IoT-Gateway Environment
 
 Open Environment<br>   
 ![Postman Manage Environments](../images/Postman_environment.png)
-1. Choose "ALLIoT Demo" 
+1. Choose "IoT-Gateway Demo" 
 2. Click "Environment quick look"
 3. Click "Edit"
 
@@ -104,7 +104,7 @@ So open the File and get your AppID and AppSecret
 
 If you have lost your AppSecret you can reset it, to get a new one. 
 But then the old secret will not work anymore.
-1. Open ALLIoT
+1. Open IoT-Gateway
 2. Got to "System Manage" and choose your App
 Click Reset to get a new AppSecret.
 

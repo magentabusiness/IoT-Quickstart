@@ -1,16 +1,16 @@
 # Connect to REST API (Application Enablement)
 
-After you have installed and configured Postman, you are ready to connect to the API and get your data out of ALLIoT.
+After you have installed and configured Postman, you are ready to connect to the API and get your data out of IoT-Gateway.
 
 - [Connect to REST API (Application Enablement)](#connect-to-rest-api-application-enablement)
 - [Login](#login)
 - [How to use accessToken for the next requests](#how-to-use-accesstoken-for-the-next-requests)
-  - [Next step: Get your data out of ALLIoT](#next-step-get-your-data-out-of-alliot)
+  - [Next step: Get your data out of IoT-Gateway](#next-step-get-your-data-out-of-iot-gateway)
 
 # Login
 
 ![API Login](../images/API_login.png)
-1. Check you have selected the ALLIoT Demo Environment
+1. Check you have selected the IoT-Gateway Demo Environment
 2. Open the Login Request
 3. Press "Send"
 4. Check the Response
@@ -43,15 +43,15 @@ Copy the accessToken Value from the response in your clipboard.
 
 1. Select Authorization
 2. Select "Inherit auth from parent"
-3. Click on AllIoT Demos
+3. Click on IoT-Gateway Demos
 
 ![API Auth](../images/API_auth2.png)
 1. Select "Bearer Token"
 2. Enter your accessToken 
 3. Press Update
 
-Now Postman will automatically add the accessToken to the Request Header for all Requests in the "ALLIoT Demos" collection.
+Now Postman will automatically add the accessToken to the Request Header for all Requests in the "IoT-Gateway Demos" collection.
 
 If you got a new accessToken you have to repeat this step. 
 
-## Next step: [Get your data out of ALLIoT](07_Get_your_data_out_of_ALLIoT.md)
+## Next step: [Get your data out of IoT-Gateway](07_Get_your_data_out_from_IoT-Gateway.md)

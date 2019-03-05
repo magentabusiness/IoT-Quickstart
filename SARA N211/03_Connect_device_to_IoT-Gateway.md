@@ -1,4 +1,4 @@
-# Connect u-blox SARA N211 / SODAQ SARA AFF N211 to ALLIoT
+# Connect u-blox SARA N211 / SODAQ SARA AFF N211 to IoT-Gateway
 
 ## Prerequisites:  
 * [Create your first Application](../01&#32;Create&#32;first&#32;Application.md)
@@ -46,14 +46,14 @@
     AT+NCONFIG="CR_0859_SI_AVOID","FALSE
     AT+NCONFIG="AUTOCONNECT","FALSE"     # Disable Auto connect
     AT+NRB                               # Reboot - wait until finished (10sec)
-    AT+NCDP="10.112.28.10",5683            # Set IP-Address of ALLIoT
+    AT+NCDP="10.112.28.10",5683            # Set IP-Address of IoT-Gateway
     AT+NRB                               # Reboot - wait until finished (10sec)
     AT+CFUN=1                            # Enable Radio Module
     AT+CGDCONT=0,"IP","alliot.nbiot.at"  # Set APN
     AT+CPSMS=0                           # Disable Power Saving Mode
     AT+NRB                               # Reboot - wait until finished (10sec)
     ```
-11. Connect to NB-IoT Network and ALLIoT (do it after each reboot) 
+11. Connect to NB-IoT Network and IoT-Gateway (do it after each reboot) 
      ```
     //Enable Module Output
     
@@ -65,7 +65,7 @@
     AT+CPSMS=0              # Disable Power Saving Mode
     AT+NPSMR=1              # Enable Power Saving Mode Status Report
     AT+NNMI=1               # Enable New Message Indications
-    AT+COPS=1,2,"23203"     # Forces an attempt to select and register with the network operator (23203 is T-Mobile AT) wait for 30sek – 300sek 
+    AT+COPS=1,2,"23203"     # Forces an attempt to select and register with the network operator (23203 is T-Mobile AT) wait for 30sec – 300sec 
     ```
     ### Responses from Module
     ```
@@ -88,7 +88,7 @@
 
     
 
-12. Send data from your Device to ALLIoT  / Link: [Send DATA](04_Send_Data_N211.md)
+12. Send data from your Device to IoT-Gateway  / Link: [Send DATA](04_Send_Data_N211.md)
 
 # Troubleshooting
 
@@ -137,7 +137,7 @@ AT+CGPADDR
         +CGPADDR:0,10.X.Y.Z
 
 
-AT+NPING="10.112.28.10"   # IP of ALLIoT, you are not able to ping any other IP address
+AT+NPING="10.112.28.10"   # IP of IoT-Gateway, you are not able to ping any other IP address
 
         Response OK:
         +NPING:10.112.28.10,61,909
@@ -146,7 +146,7 @@ AT+NPING="10.112.28.10"   # IP of ALLIoT, you are not able to ping any other IP 
         +NPINGERR:1
 ```
 
-## Check ALLIoT  
+## Check IoT-Gateway  
 * [Add your first device](../02&#32;Add&#32;first&#32;Device.md)
 * Check if your IMEI is correct.
 

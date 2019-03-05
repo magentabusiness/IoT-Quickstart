@@ -4,7 +4,7 @@
 ***Model:*** V01  
 ***ManufacturerId:*** TMAKeyValue   
 ***ManufacturerName:*** TMAKeyValue  
-***Protokoll:*** CoAP  
+***Protocol:*** CoAP  
 
 ## Device-Model
 
@@ -37,7 +37,7 @@ Commands
 ## CIG Plugin
 
 
-### Data Reports  (Device to ALLIoT)
+### Data Reports  (Device to IoT-Gateway)
 ***Message ID: 00 ***   StringData  
 ``` 
 00<KEY_LEN><KEY><VALUE_LEN><STRING_VALUE> 
@@ -56,7 +56,7 @@ AA00
 AA01
 ```
 
-### Commands  (ALLIoT to Device)
+### Commands  (IoT-Gateway to Device)
 ***Command: StringCmd***  
 ***Message ID 02*** Request:  
 ```
@@ -95,9 +95,9 @@ AA01
 
 
 ## Examples 
-Ascii to Hex Converter: https://www.binaryhexconverter.com/ascii-text-to-hex-converter
+ASCII to Hex Converter: https://www.binaryhexconverter.com/ascii-text-to-hex-converter
 
-## Send Data  (Device to ALLIoT)
+## Send Data  (Device to IoT-Gateway)
 
 ### Send String Message
 

@@ -1,12 +1,12 @@
-# Quickstart ALLIoT
-- [Quickstart ALLIoT](#quickstart-alliot)
-  - [Login to ALLIoT](#login-to-alliot)
+# Quickstart IoT-Gateway
+- [Quickstart IoT-Gateway](#quickstart-iot-gateway)
+  - [Login to IoT-Gateway](#login-to-iot-gateway)
 - [Create your first Application](#create-your-first-application)
   - [App Detail](#app-detail)
   - [Next Step: Add your first device](#next-step-add-your-first-device)
 
-## Login to ALLIoT
-https://alliot.t-mobile.at/#/login 
+## Login to IoT-Gateway
+https://iotgateway.t-mobile.at/#/login 
 
 # Create your first Application
 ![Step1](./images/Step1.png)

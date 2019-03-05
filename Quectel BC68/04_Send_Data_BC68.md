@@ -1,9 +1,9 @@
-# Send data from Device to ALLIoT
-- [Send data from Device to ALLIoT](#send-data-from-device-to-alliot)
+# Send data from Device to IoT-Gateway
+- [Send data from Device to IoT-Gateway](#send-data-from-device-to-iot-gateway)
   - [Prerequisites:](#prerequisites)
   - [Send Integer Data](#send-integer-data)
   - [Send String Data](#send-string-data)
-- [Watch data on ALLIoT](#watch-data-on-alliot)
+- [Watch data on IoT-Gateway](#watch-data-on-iot-gateway)
   - [Last Data](#last-data)
   - [Historical Data](#historical-data)
   - [Next Step:](#next-step)
@@ -11,7 +11,7 @@
 ## Prerequisites:  
 * [Create your first Application](../01&#32;Create&#32;first&#32;Application.md)
 * [Add your first device](../02&#32;Add&#32;first&#32;Device.md)
-* [Connect device to ALLIoT](03_Connect_device_to_ALLIoT.md)
+* [Connect device to IoT-Gateway](03_Connect_device_to_IoT-Gateway.md)
 * Open Putty and connect to your device
 
 [Detailed Information about Upload Protocol](GenericKeyValue_LWM2M.md)
@@ -31,8 +31,8 @@ AT+QLWULDATAEX = 8        ,06    04           54656d70       000F       , 0x0100
 AT+QLWULDATAEX = len(dec) ,MsgId key_len(hex) key(ascii_hex) value(hex) , flags  , seq_num
 ```
 Info:  
-MsgId 06 => IntData with no Response from ALLIoT  
-MsgId 01 => Int Data with Response from ALLIoT / Response = (AA01)
+MsgId 06 => IntData with no Response from IoT-Gateway  
+MsgId 01 => Int Data with Response from IoT-Gateway / Response = (AA01)
 
 "Temp" in ASCII (Hex) = 54656d70  (54 65 6d 70 => T e m p)    
 
@@ -74,7 +74,7 @@ MsgId 01 => Int Data with Response from ALLIoT / Response = (AA01)
    +CSCON:0             // Idle Mode
    ``` 
 
-FYI: If you need a response from ALLIoT - just use MsgId 01 instead of 06
+FYI: If you need a response from IoT-Gateway - just use MsgId 01 instead of 06
 
 ## Send String Data
 
@@ -84,10 +84,10 @@ AT+QLWULDATAEX = 15       ,00    05           436f6c6f72     07             4d61
 AT+QLWULDATAEX = len(dec) ,MsgId key_len(hex) key(ascii_hex) value_len(hex) value(ascii_hex) , flags  , seq_num
 ```
 Info:  
-MsgId 07 => String Data with no Response from ALLIoT  
-MsgId 00 => String Data with Response from ALLIoT / Response = (AA00)
+MsgId 07 => String Data with no Response from IoT-Gateway  
+MsgId 00 => String Data with Response from IoT-Gateway / Response = (AA00)
 
-1. Send String Data with Response from ALLIoT  
+1. Send String Data with Response from IoT-Gateway  
    In this Example we will send Key=Color / Value=Magenta     
    Color in ASCII Hex = 436f6c6f72  / Len=5  
    Magenta in ASCII Hex = 4d6167656e7461 / Len=7  
@@ -100,7 +100,7 @@ MsgId 00 => String Data with Response from ALLIoT / Response = (AA00)
 
 
 
-2. Send JSON Data with Response from ALLIoT  
+2. Send JSON Data with Response from IoT-Gateway  
    Key = "DATA",  => 44415441 / len: 4  
    Value = {"Temp":22.3,"Hum":20,"Weight":23,"Color":"Magenta"} =>  
    7b2254656d70223a32322e332c2248756d223a32302c22576569676874223a32332c22436f6c6f72223a224d6167656e7461227d  / len: 52 = 0x34
@@ -112,9 +112,9 @@ MsgId 00 => String Data with Response from ALLIoT / Response = (AA00)
    +NNMI:2,AA00 
    ```
 
-FYI: If you don't need a response from ALLIoT to save traffic and power - just use MsgId 07 instead of 00
+FYI: If you don't need a response from IoT-Gateway to save traffic and power - just use MsgId 07 instead of 00
 
-# Watch data on ALLIoT
+# Watch data on IoT-Gateway
 
 ## Last Data
 ![Latest Data](../images/Device_Data.png)
@@ -134,5 +134,5 @@ FYI: If you don't need a response from ALLIoT to save traffic and power - just u
 4. Click on "All Historical Data"
 
 ## Next Step:
-[Start to get your data out of ALLIoT](../Application&#32;Enablement/05_Install_and_setup_Postman.md)
+[Start to get your data out of IoT-Gateway](../Application&#32;Enablement/05_Install_and_setup_Postman.md)
 

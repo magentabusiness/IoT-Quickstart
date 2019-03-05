@@ -1,4 +1,4 @@
-#How to get your data out of ALLIoT
+#How to get your data out of IoT-Gateway
 
 - [Get all devices of your application](#get-all-devices-of-your-application)
 - [Get historical data of your device](#get-historical-data-of-your-device)
@@ -12,7 +12,7 @@ Be sure that you have a valid accessToken, otherwise Login again.
 
 ## Get all devices of your application
 
-1. Select `02 Get Devices`from the ALLIoT Demo Connection
+1. Select `02 Get Devices`from the IoT-Gateway Demo Connection
 2. Press "Send"
 
 Detail: 
@@ -60,12 +60,12 @@ Example Response:
 
 ## Get historical data of your device
 
-NOTE: ALLIoT will only save your data up to 30 Days.  
+NOTE: IoT-Gateway will only save your data up to 30 Days.  
 In the last command you see this Line:  
 `"deviceId": "3c9b523d-b17c-XXXX-97e0-64e1d05d1267"`  
 **This is the unique DeviceID - for the next Request you have add this ID to your Environment to deviceId.**
 
-1. Select `04 Get Historical Data from Device`from the ALLIoT Demo Connection
+1. Select `04 Get Historical Data from Device`from the IoT-Gateway Demo Connection
 2. Press "Send"
 
 Detail:  
@@ -132,7 +132,7 @@ Example Response:
 ```
 
 ## Push the data to your server
-With the ALLIoT Gateway it is also possible to push the data so your own Server.
+With the IoT-Gateway it is also possible to push the data so your own Server.
 So every time a device sends data, the data will be forwarded to your server immediately.
 
 ### Add Subscription
@@ -140,7 +140,7 @@ So every time a device sends data, the data will be forwarded to your server imm
 You only have to do this steps once.
 ![Add Subscription](../images/API_Subscribe.png)
 
-1. Select `05 Subscribe Event`from the ALLIoT Demo Connection
+1. Select `05 Subscribe Event`from the IoT-Gateway Demo Connection
 2. Change `callbackurl` to your server URL, or use e.g. [Beeceptor](https://beeceptor.com/) for testing.
 3. For this tutorial use HTTP instead of HTTPS. 
 4. Press "Send"
@@ -152,10 +152,10 @@ You only have to do this steps once.
 
 https://beeceptor.com/ is a simple web service for HTTP(S) endpoint testing.
 
-If you want to use HTTPS, you have to upload the Certificate of your Web server.  (ALLIoT -> Application -> Information -> Message Push -> certificate Manager)
+If you want to use HTTPS, you have to upload the Certificate of your Web server.  (IoT-Gateway -> Application -> Information -> Message Push -> certificate Manager)
    
 ### Delete Subscription
-   1. Login to ALLIoT
+   1. Login to IoT-Gateway
    2. Goto "System Manage"
    3. Open your Application
    4. Select Tab "North Push Configuration"

@@ -1,18 +1,18 @@
-# Connect BC68 to ALLIoT
+# Connect BC68 to IoT-Gateway
 
-- [Connect BC68 to ALLIoT](#connect-bc68-to-alliot)
+- [Connect BC68 to IoT-Gateway](#connect-bc68-to-iot-gateway)
 - [Prerequisites](#prerequisites)
 - [Configure Device](#configure-device)
 - [Configure Putty](#configure-putty)
 - [Check Connection](#check-connection)
 - [Prepare BC68 (do it only once)](#prepare-bc68-do-it-only-once)
-- [Connect BC68 to NB-IoT Network and ALLIoT (do it after each reboot)](#connect-bc68-to-nb-iot-network-and-alliot-do-it-after-each-reboot)
-- [Next Step: Send data from your Device to ALLIoT / Link: Send DATA](#next-step-send-data-from-your-device-to-alliot--link-send-data)
+- [Connect BC68 to NB-IoT Network and IoT-Gateway (do it after each reboot)](#connect-bc68-to-nb-iot-network-and-iot-gateway-do-it-after-each-reboot)
+- [Next Step: Send data from your Device to IoT-Gateway / Link: Send DATA](#next-step-send-data-from-your-device-to-iot-gateway--link-send-data)
 - [Troubleshooting](#troubleshooting)
   - [Connect manually](#connect-manually)
   - [Check Signal](#check-signal)
   - [Check IP Address](#check-ip-address)
-  - [Check ALLIoT](#check-alliot)
+  - [Check IoT-Gateway](#check-iot-gateway)
 
 # Prerequisites
 * [Create your first Application](../01&#32;Create&#32;first&#32;Application.md)
@@ -60,19 +60,19 @@
 ```
     AT+NCONFIG=AUTOCONNECT,FALSE         # Disable Auto connect
     AT+NRB                               # Reboot - wait until finished (10sec)
-    AT+NCDP=10.112.28.10,5683            # Set IP-Address of ALLIoT
+    AT+NCDP=10.112.28.10,5683            # Set IP-Address of IoT-Gateway
     AT+NBAND=8                           # Set Band 8 for T-Mobile Austria - speeds up time to connect
     AT+NRB                               # Reboot - wait until finished (10sec)
     AT+CFUN=1                            # Enable Radio Module
     AT+CGDCONT=0,"IP","alliot.nbiot.at"  # Set APN
     AT+CPSMS=0                           # Disable Power Saving Mode
-    AT+QREGSWT=1                         # Automatic registration mode (ALLIoT)
+    AT+QREGSWT=1                         # Automatic registration mode (IoT-Gateway)
     AT+NCONFIG=AUTOCONNECT,TRUE          # Enable Auto connect
     AT+NRB                               # Reboot - wait until finished (10sec)
 ```
 **NOTE: The fist time to connect can take up to 10 minutes. (until CEREG: 5)**
 
-#  Connect BC68 to NB-IoT Network and ALLIoT (do it after each reboot) 
+#  Connect BC68 to NB-IoT Network and IoT-Gateway (do it after each reboot) 
 ```
     AT+NPSMR=1                           # Enable Power Saving Mode Status Report
     AT+CEREG=1                           # Enable network registration unsolicited 
@@ -89,7 +89,7 @@
 
     +CEREG:5      # Attached to Network
 
-    +QLWEVTIND=0  # Registration on ALLIoT successful
+    +QLWEVTIND=0  # Registration on IoT-Gateway successful
 
     +QLWEVTIND=3  # Ready to send Data
 
@@ -102,25 +102,25 @@
 
 ```
 
-**If the modem responses this 2 lines you are successfully connected to ALLIoT and able to send and receive data**  
-+QLWEVTIND=0  # Registration on ALLIoT successful  
+**If the modem responses this 2 lines you are successfully connected to IoT-Gateway and able to send and receive data**  
++QLWEVTIND=0  # Registration on IoT-Gateway successful  
 +QLWEVTIND=3  # Ready to send Data  
 **Otherwise start troubleshooting**
 
-# Next Step: Send data from your Device to ALLIoT  / Link: [Send DATA](04_Send_Data_BC68.md)
+# Next Step: Send data from your Device to IoT-Gateway  / Link: [Send DATA](04_Send_Data_BC68.md)
 
 # Troubleshooting
 
 ## Connect manually
    ```
     AT+NCONFIG=AUTOCONNECT,FALSE
-    AT+NCDP=10.112.28.10,5683            # Set IP-Address of ALLIoT
+    AT+NCDP=10.112.28.10,5683            # Set IP-Address of IoT-Gateway
     AT+NRB                               # Reboot - wait until finished (10sec)
     AT+NBAND=8                           # Set Band 8 for T-Mobile Austria - speeds up time to connect
     AT+CFUN=1                            # Enable Radio Module
     AT+CGDCONT=0,"IP","alliot.nbiot.at"  # Set APN
     AT+CPSMS=0                           # Disable Power Saving Mode
-    AT+QREGSWT=1                         # Automatic registration mode (ALLIoT)
+    AT+QREGSWT=1                         # Automatic registration mode (IoT-Gateway)
     AT+NRB                               # Reboot - wait until finished (10sec)
     AT+CFUN=1                            # Enable Radio Module
     AT+NPSMR=1                           # Enable Power Saving Mode Status Report
@@ -176,7 +176,7 @@ AT+CGPADDR
         +CGPADDR:0,10.X.Y.Z
 
 
-AT+NPING=10.112.28.10   # IP of ALLIoT, you are not able to ping any other IP address
+AT+NPING=10.112.28.10   # IP of IoT-Gateway, you are not able to ping any other IP address
 
         Response OK:
         +NPING:10.112.28.10,61,909
@@ -185,7 +185,7 @@ AT+NPING=10.112.28.10   # IP of ALLIoT, you are not able to ping any other IP ad
         +NPINGERR:1
 ```
 
-## Check ALLIoT  
+## Check IoT-Gateway  
 * [Add your first device](../02&#32;Add&#32;first&#32;Device.md)
 * Check if your IMEI is correct.
 

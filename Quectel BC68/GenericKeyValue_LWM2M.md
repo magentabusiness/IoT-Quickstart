@@ -37,7 +37,7 @@ Commands
 ## CIG Plugin
 
 
-### Data Reports  (Device to ALLIoT)
+### Data Reports  (Device to IoT-Gateway)
 #### StringData  
 Message ID: 00 with Response or 07 without Response
 ``` 
@@ -58,7 +58,7 @@ Message ID: 01 with Response or 06 without Response
 AA01
 ```
 
-### Commands  (ALLIoT to Device)
+### Commands  (IoT-Gateway to Device)
 ***Command: StringCmd***  
 ***Message ID 02*** Request:  
 ```
@@ -98,7 +98,7 @@ AA01
 ## Examples 
 ASCII to Hex Converter: https://www.binaryhexconverter.com/ascii-text-to-hex-converter
 
-## Send Data  (Device to ALLIoT)
+## Send Data  (Device to IoT-Gateway)
 
 ### Send String Message
 

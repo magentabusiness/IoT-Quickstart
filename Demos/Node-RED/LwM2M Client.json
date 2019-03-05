@@ -2,7 +2,7 @@
     {
         "id": "48f30d6a.5ec854",
         "type": "tab",
-        "label": "ALLIoT",
+        "label": "IoT-Gateway",
         "disabled": false,
         "info": ""
     },
@@ -85,7 +85,7 @@
         "id": "c49d687.97cd798",
         "type": "comment",
         "z": "48f30d6a.5ec854",
-        "name": "AllIoT Server",
+        "name": "IoT-Gateway Server",
         "info": "160.44.206.237",
         "x": 255,
         "y": 67.5,
