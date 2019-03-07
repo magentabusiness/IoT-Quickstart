@@ -37,18 +37,20 @@ https://github.com/alliot-at/Quickstart/blob/master/Product%20Profiles/tmaKeyVal
 4. Press "+ Register"
 
 ![DeviceStep5](./images/DeviceStep5.png)  
-1. Register Type: Dynamic Password Mode
-2. Enter the IMEI of your module  
-   The IMEI is printed on the module, or you can get it with the command:  `AT+CGSN=1` 
-3. Choose Product
-4. Select "GenericKeyValue"
-5. Select "DefaultGroup"
-6. Is Secure: No  **(only for testing)**  
-   No - means that you can connect your module **with or without DTLS encryption**
-7. Enter a Device Name
-8. Region (e.g. Vienna)
-9. Set the correct Time zone
-10. Press "Submit" to finish registration
+1.  Choose Product
+2.  Select "GenericKeyValue"   
+3.  Enter the IMEI of your module 
+    The IMEI is printed on the module, or you can get it with the command:  `AT+CGSN=1` 
+4.  Enter a Device Name
+5.  Is Secure: No  **(only for testing)**  
+    No - means that you can connect your module **with or without DTLS encryption**
+6.  Region (e.g. Vienna)
+7.  Set the correct Time zone
+8.  Select "DefaultGroup"
+9.  Register Type: Dynamic Password Mode 
+10. Location Type : You can choose between "Latitude & Longitude" or "City &          Address"
+11. Enter the Location
+12. Press "Submit" to finish registration
 
 ![DeviceStep6](./images/DeviceStep6.png) 
 If you want to connect your device with DTLS encryption, save the PSK now!
