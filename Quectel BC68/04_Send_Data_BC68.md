@@ -123,8 +123,6 @@ FYI: If you don't need a response from IoT-Gateway to save traffic and power - j
 2. Select your Device
 3. Select Information Tab
 4. Click "See All Properties"
-   
-**NOTE: JSON Data is shown as [object Object]**
 
 ## Historical Data
 ![Historical Data](../images/Historical_Data_Step.png)
