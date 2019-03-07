@@ -29,7 +29,7 @@ https://iotgateway.t-mobile.at/#/login
 ## App Detail
 
 ![Step4](./images/Step4.png)
-1. Choose Power-Saving Configuration
+1. Choose the Power-Saving Configuration
 2. Choose your Power saving Mode (use DRX for first App)
 3. Click Save
 
