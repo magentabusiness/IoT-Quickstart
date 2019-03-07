@@ -13,11 +13,12 @@ https://iotgateway.t-mobile.at/#/login
 
 ![Step2](./images/Step2.png)
 1. Application Name
-2. Select Utility
+2. Select Enterprise [It is not mandatory, If you wish you can define and add       it from Right --> Organisations --> Create Root Organization]
 3. Select if T-Mobile should be able to trace your Devices
 4. Select Storage Mode
-5. Agree to Terms
-6. Confirm to create the App
+5. Select the Rule engine 
+6. Agree to Terms
+7. Confirm to create the App
 
 
 
