@@ -6,6 +6,7 @@
 - [Watch data on IoT-Gateway](#watch-data-on-iot-gateway)
   - [Last Data](#last-data)
   - [Historical Data](#historical-data)
+  - [ALL Historical Data](#all-historical-data)
   - [Next Step:](#next-step)
 
 ## Prerequisites:  
@@ -125,8 +126,17 @@ FYI: If you don't need a response from IoT-Gateway to save traffic and power - j
    
 **NOTE: JSON Data is shown as [object Object]**
 
-
 ## Historical Data
+![Historical Data](../images/Historical_Data_Step.png)
+1. Choose Application
+2. Select your Device
+3. Select Historical Data Tab
+4. Select the Service 
+5. Select the property
+6. Select the period (Hour,Day,Week,Year)
+7. Click on "Search"
+
+## ALL Historical Data
 ![Historical Data](../images/Device_All_Historical_Data.png)
 1. Choose Application
 2. Select your Device
