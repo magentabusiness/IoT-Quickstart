@@ -20,7 +20,7 @@ Username: `{deviceId}`
    https://codebeautify.org/hmac-generator  
    Algorithm: HmacSHA256  
    Key: `YYYYMMDDhh` -- same as in the MQTT_Client_ID  
-   Plain or Cipher Text: `secret from Ocean connect`   
+   Plain or Cipher Text: `device secret from Ocean connect, after successfully device registration`   
    Result Hash-Value is the **Password!**
 
 ### 3. TODO: Certificates (PEM Format)  
