@@ -4,6 +4,7 @@
 - [**FOTA (Firmware Over The Air) using IoT-Gateway**](#fota-firmware-over-the-air-using-iot-gateway)
 - [Introduction FOTA (Firmware Over The Air) using IoT-Gateway](#introduction-fota-firmware-over-the-air-using-iot-gateway)
 - [Configure the maintanance capabilities of the product](#configure-the-maintanance-capabilities-of-the-product)
+- [Download the Signature tool from IoT Gateway](#download-the-signature-tool-from-iot-gateway)
 - [Signature the Firmware](#signature-the-firmware)
   - [Step : 1 Generate the Private and Public Keys](#step--1-generate-the-private-and-public-keys)
   - [Step : 2 Sign the Firmware package](#step--2-sign-the-firmware-package)
@@ -35,6 +36,14 @@ For Quectel BC68 module, you can download the firmware version from GitHub Folde
 5. Enable the Firmware Upgrade by clicking Supported.
 6. Choose the Firmware Upgrade Protocol as "LWM2M"
 7. Press "Confirm"
+
+# Download the Signature tool from IoT Gateway
+
+![SignTool](./images/SignTool.png)
+
+1. Go to System Management
+2. Click on "Tools"
+3. Download the "offline plugin tool"
 
 # Signature the Firmware
 
