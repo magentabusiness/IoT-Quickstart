@@ -3,12 +3,12 @@
 
 - [**FOTA (Firmware Over The Air) using IoT-Gateway**](#fota-firmware-over-the-air-using-iot-gateway)
 - [Introduction FOTA (Firmware Over The Air) using IoT-Gateway](#introduction-fota-firmware-over-the-air-using-iot-gateway)
-- [Configure the maintanance capabilities of the product](#configure-the-maintanance-capabilities-of-the-product)
+- [Configure the maintenance capabilities of the product](#configure-the-maintenance-capabilities-of-the-product)
 - [Download the Signature tool from IoT Gateway](#download-the-signature-tool-from-iot-gateway)
 - [Signature the Firmware](#signature-the-firmware)
   - [Step : 1 Generate the Private and Public Keys](#step--1-generate-the-private-and-public-keys)
   - [Step : 2 Sign the Firmware package](#step--2-sign-the-firmware-package)
-  - [Step : 3 Varify the Firmware package](#step--3-varify-the-firmware-package)
+  - [Step : 3 Verify the Firmware package](#step--3-verify-the-firmware-package)
 - [Upload the Key and firmware](#upload-the-key-and-firmware)
   - [Step : 1 Upload Public Key](#step--1-upload-public-key)
   - [Step : 2 Upload signed Firmware version](#step--2-upload-signed-firmware-version)
@@ -23,7 +23,7 @@ Firmware is a software which is embedded in the NB-IoT radio module. The main co
 
 For Quectel BC68 module, you can download the firmware version from GitHub Folder
 
-# Configure the maintanance capabilities of the product
+# Configure the maintenance capabilities of the product
 
 ![CC.Step1](./images/CC.Step1.png)
 
@@ -32,7 +32,7 @@ For Quectel BC68 module, you can download the firmware version from GitHub Folde
 1. Choose the device Application
 2. Click on "Product Models"
 3. Click on "Details"
-4. Click on "Maintanance Capability Configuration"
+4. Click on "Maintenance Capability Configuration"
 5. Enable the Firmware Upgrade by clicking Supported.
 6. Choose the Firmware Upgrade Protocol as "LWM2M"
 7. Press "Confirm"
@@ -65,12 +65,12 @@ For Quectel BC68 module, you can download the firmware version from GitHub Folde
 7. Select the Firmware zip file
 8. Click on "Do Signature" 
 
-## Step : 3 Varify the Firmware package 
+## Step : 3 Verify the Firmware package 
 
 ![SF.Sign4](./images/SF.Sign4.png)
 
-9. Insert the Public Key (Which you recieved after finishing [Step 1](#Step1) )
-10. Select the signed zip folder (Typically named as "Firmware_signed.zip" as shoen in snapshot.)
+9. Insert the Public Key (Which you received after finishing [Step 1](#Step1) )
+10. Select the signed zip folder (Typically named as "Firmware_signed.zip" as shown in snapshot.)
 11. Click on "Do verify"
     
 # Upload the Key and firmware

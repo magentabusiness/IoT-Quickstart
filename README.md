@@ -24,3 +24,9 @@
 * [Step 5 - Install and setup Postman](Application&#32;Enablement/05_Install_and_setup_Postman.md)
 * [Step 6 - Connect to REST API](Application&#32;Enablement/06_Connect_to_REST_API.md)
 * [Step 7 - Get your data out of IoT-Gateway](Application&#32;Enablement/07_Get_your_data_out_from_IoT-Gateway.md)
+
+# Advanced Topics
+* [Firmware update over the air (FOTA) via the IoT-Gateway](Advanced_Topics/FOTA_using_IoT-Gateway.md)
+* Request your own Client Certificate for REST API
+* Product Development (*coming soon*)
+* CIG Plugin Development (*coming soon*)

@@ -20,6 +20,7 @@
 ---
    ![Putty](../images/BC68_Putty_Step1.png)  
    1. Enter correct COM-Port
+   2. Set Baud rate (Speed) to 9600
    3. Connection Type: Serial
    4. Enter "N211" as name
    5. Press save

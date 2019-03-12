@@ -37,9 +37,10 @@
 
    ![Putty](../images/BC68_Putty_Step1.png)    
    1. Enter correct COM-Port
-   2. Connection Type: Serial
-   3. Enter "BC68" as name  
-   4. Press save
+   2. Set Baud rate (Speed) to 9600
+   3. Connection Type: Serial
+   4. Enter "BC68" as name  
+   5. Press save
 
    ![Putty](../images/BC68_Putty_Step2.png)    
    1. Select "Terminal"
