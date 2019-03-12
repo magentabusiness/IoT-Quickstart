@@ -25,9 +25,9 @@ For Quectel BC68 module, you can download the firmware version from GitHub Folde
 
 # Configure the maintenance capabilities of the product
 
-![CC.Step1](./images/CC.Step1.png)
+![CC.Step1](../images/CC.Step1.png)
 
-![CC.Step2](./images/CC.Step2.png)
+![CC.Step2](../images/CC.Step2.png)
 
 1. Choose the device Application
 2. Click on "Product Models"
@@ -39,7 +39,7 @@ For Quectel BC68 module, you can download the firmware version from GitHub Folde
 
 # Download the Signature tool from IoT Gateway
 
-![SignTool](./images/SignTool.png)
+![SignTool](../images/SignTool.png)
 
 1. Go to System Management
 2. Click on "Tools"
@@ -48,16 +48,16 @@ For Quectel BC68 module, you can download the firmware version from GitHub Folde
 # Signature the Firmware
 
 ## Step : 1 Generate the Private and Public Keys
-![SF.Sign1](./images/SF.Sign1.png)
+![SF.Sign1](../images/SF.Sign1.png)
 
-![SF.Sign2](./images/SF.Sign2.png)
+![SF.Sign2](../images/SF.Sign2.png)
 
 1. Choose the Signature Algorithm (You can choose any, does not matter.)
 2. Select the Password of Private key. (Remember it, you will need it in [Step 2](#Step2))
 3. Click on "Generate Key" (Small window popup will ask for the location, Save in preferable location)
 
 ## Step : 2 Sign the Firmware package 
-![SF.Sign3](./images/SF.Sign3.png)
+![SF.Sign3](../images/SF.Sign3.png)
 
 4. Insert the Private Key file
 5. Input the Password (Same as you used in [Step 1](#Step1) )
@@ -67,7 +67,7 @@ For Quectel BC68 module, you can download the firmware version from GitHub Folde
 
 ## Step : 3 Verify the Firmware package 
 
-![SF.Sign4](./images/SF.Sign4.png)
+![SF.Sign4](../images/SF.Sign4.png)
 
 9. Insert the Public Key (Which you received after finishing [Step 1](#Step1) )
 10. Select the signed zip folder (Typically named as "Firmware_signed.zip" as shown in snapshot.)
@@ -76,7 +76,7 @@ For Quectel BC68 module, you can download the firmware version from GitHub Folde
 # Upload the Key and firmware
 
 ## Step : 1 Upload Public Key
-![UKS.Step1](./images/UKS.Step1.png)
+![UKS.Step1](../images/UKS.Step1.png)
 
 1. Select your APP and Click on "Device Management" 
 2. Click on "Repository"
@@ -89,7 +89,7 @@ For Quectel BC68 module, you can download the firmware version from GitHub Folde
 ## Step : 2 Upload signed Firmware version
 Same as [Step 1](#Step1), Go to "Repository" and follow given steps.
 
-![UKS.Step2](./images/UKS.Step2.png)
+![UKS.Step2](../images/UKS.Step2.png)
 
 1. Click on "Firmware"
 2. Click on "Upload"
@@ -104,8 +104,8 @@ Same as [Step 1](#Step1), Go to "Repository" and follow given steps.
 
 # Submit the task for Firmware Update
 
-![FOTA.Start1](./images/FOTA.Start1.png)
-![FOTA.Start2](./images/FOTA.Start2.png)
+![FOTA.Start1](../images/FOTA.Start1.png)
+![FOTA.Start2](../images/FOTA.Start2.png)
 
 1. Click on "Devices"
 2. Click on "All Device" and choose your device for the Firmware Update
@@ -116,6 +116,6 @@ Same as [Step 1](#Step1), Go to "Repository" and follow given steps.
 
 # During the FOTA Update
 
-![FOTA2](./images/FOTA.png)
+![FOTA2](../images/FOTA.png)
 
 Device Firmware updated successfully.
