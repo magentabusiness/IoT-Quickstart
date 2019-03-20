@@ -1,4 +1,3 @@
- We will add document very soon.
 # **Device Capability Profile Development Guide** 
 
 - [**Device Capability Profile Development Guide**](#device-capability-profile-development-guide)
@@ -88,11 +87,11 @@ A devicetype-capability.json file include the static information about the devic
 {
   "devices": [
     {
-      "manufacturerName": "DevangTMA",
-      "manufacturerId": "TMAusria",
-      "model": "GenericModel",
-      "protocolType": "CoAP",
-      "deviceType": "GenericDevice",
+      "manufacturerId": "ABC",
+      "manufacturerName": "XYZ",
+      "model": "NBIoTDevice",
+      "protocolType": "LWM2M",
+      "deviceType": "TestDevice",
       "omCapability":{
             "upgradeCapability" : {
                     "supportUpgrade":true,
