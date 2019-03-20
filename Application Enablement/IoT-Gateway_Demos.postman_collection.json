@@ -1,6 +1,6 @@
 {
 	"info": {
-		"_postman_id": "06ef82d9-7f73-4b35-b43c-7e56efe32969",
+		"_postman_id": "0926b71b-9412-4253-94ba-2b47a1b4a924",
 		"name": "IoT-Gateway Demos",
 		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
 	},
@@ -64,13 +64,11 @@
 				"header": [
 					{
 						"key": "app_key",
-						"value": "{{appId}}",
-						"disabled": false
+						"value": "{{appId}}"
 					},
 					{
 						"key": "Content-Type",
-						"value": "application/json",
-						"disabled": false
+						"value": "application/json"
 					}
 				],
 				"body": {
@@ -178,7 +176,7 @@
 					"raw": ""
 				},
 				"url": {
-					"raw": "https://{{server}}/iocm/app/data/v1.1.0/deviceDataHistory?deviceId={{deviceId}}&gatewayId={{deviceId}}&startTime=20181015T000000Z&endTime=20191015T000000Z&appId={{appId}}",
+					"raw": "https://{{server}}/iocm/app/data/v1.1.0/deviceDataHistory?deviceId={{deviceId}}&gatewayId={{deviceId}}&pageSize=1000&startTime=20181015T000000Z&endTime=20191015T000000Z&appId={{appId}}",
 					"protocol": "https",
 					"host": [
 						"{{server}}"
@@ -210,9 +208,8 @@
 							"disabled": true
 						},
 						{
-							"key": "pageSize\n",
-							"value": "10",
-							"disabled": true
+							"key": "pageSize",
+							"value": "1000"
 						},
 						{
 							"key": "startTime",
@@ -386,7 +383,7 @@
 		"bearer": [
 			{
 				"key": "token",
-				"value": "c0955e5d4d3d8baf77b4cc5eb886f8b",
+				"value": "a3fd375ad2c2a29b175c6af331b37c2",
 				"type": "string"
 			}
 		]

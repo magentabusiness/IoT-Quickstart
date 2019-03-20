@@ -71,7 +71,7 @@ In the last command you see this Line:
 Detail:  
 GET Request to URL:  
 ```
-https://{{server}}/iocm/app/data/v1.1.0/deviceDataHistory?deviceId={{deviceId}}&gatewayId={{deviceId}}&startTime=20181015T000000Z&endTime=20291015T000000Z&appId={{appId}}
+https://{{server}}/iocm/app/data/v1.1.0/deviceDataHistory?deviceId={{deviceId}}&gatewayId={{deviceId}}&pageSize=1000&startTime=20181015T000000Z&endTime=20291015T000000Z&appId={{appId}}
 ```
 
 {{server}}, {{appId}} and {{deviceId}} are Variables from your Environment.
@@ -89,7 +89,7 @@ Example Response:
 {
     "totalCount": 5,
     "pageNo": 0,
-    "pageSize": 5,
+    "pageSize": 1000,
     "deviceDataHistoryDTOs": [
         {
             "deviceId": "702b7c34-XXXX-4278-be01-d4587c38e077",
