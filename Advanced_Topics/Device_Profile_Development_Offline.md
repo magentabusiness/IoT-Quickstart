@@ -52,7 +52,7 @@ A devicetype-capability.json file include the static information about the devic
                         }
                 }
  ```
-4) Add services **in the field** of serviceTypeCapabilities according to your device. ( In this test model we described with the universal services. )
+5) Add services **in the field** of serviceTypeCapabilities according to your device. ( In this test model we described with the universal services. )
 ```
 "serviceTypeCapabilities": [
         {
@@ -82,7 +82,7 @@ A devicetype-capability.json file include the static information about the devic
         }
       ]
 ```
-5) After adding the om capability and services, device-capability.json will look like 
+6) After adding the om capability and services, device-capability.json will look like 
 ```
 {
   "devices": [
@@ -133,7 +133,7 @@ A devicetype-capability.json file include the static information about the devic
   ]
 }
 ```
-6) Save this file. Later we will need it for packing the profile.
+7) Save this file. Later we will need it for packing the profile.
 
 # Step 2 : Writing **"servicetype-capability.json"** file for General device
 
@@ -341,7 +341,7 @@ A devicetype-capability.json file include the static information about the devic
   ]
 }
 ```
-1) Inside the **Location** folder, create a new folder named **profile**. create **"servicetype-capability.json"** file inside the **profile** folder and add this json code.
+6) Inside the **Location** folder, create a new folder named **profile**. create **"servicetype-capability.json"** file inside the **profile** folder and add this json code.
 ```
 {
   "services": [
@@ -423,13 +423,13 @@ A devicetype-capability.json file include the static information about the devic
 
 # Step 3 : Packing the profile for the IoT Gateway
    - ## General hierarchy of device profile
-  The general file folder hierarchy should be look like this. **Names which are written in red fonts are case sensitive and your profile should have same name**
+  The general file folder hierarchy should be look like this. **Names which are written in red fonts are case sensitive and your profile should have same name.**
+
+  1) Compressed the **profile** folder and **service** folder in .zip format.
+  2) Our Device is ready for IoT Gateway.
+  3) Device model what we developed, should be look like this after the .zip compression.
 
   ![General Hierarchy](../images/Device_Profile.png)
 
-    1) Compressed the **profile** folder and **service** folder in .zip format.
-    2) Our Device is ready for IoT Gateway.
-    3) Device model what we developed, should be look like this after the .zip compression.
-   
-   - ## Example hierarchy of the General profile
+   - ## Example hierarchy of the developed General profile
   ![General Hierarchy](../images/General_NBIoTDevice.png)
