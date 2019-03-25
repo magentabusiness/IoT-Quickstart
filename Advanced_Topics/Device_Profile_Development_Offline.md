@@ -16,6 +16,8 @@
 
 Detail described device model example shown below. This device model is for temperature and clock with typical universal services. 
 
+Hint : Every files will be in **.json** format. Once you finish entering the JSON fields, try to check the validity of the JSON by using some websites.
+
 
 # Step 1 : Writing **"devicetype-capability.json"** file for General device
 
@@ -301,6 +303,7 @@ A devicetype-capability.json file include the static information about the devic
 }
 ```
 7) Inside the **Temperature** folder, create a new folder named **profile**. create **"servicetype-capability.json"** file inside the **profile** folder and add this json code.
+   - Here in this service, we will add few commands and response.
 
 ```
 {
@@ -399,14 +402,49 @@ A devicetype-capability.json file include the static information about the devic
 }
 ```
 
-8) Inside the **Clock** folder, create a new folder named **profile**. create **"servicetype-capability.json"** file inside the **profile** folder and add this json code.
+1) Inside the **Clock** folder, create a new folder named **profile**. create **"servicetype-capability.json"** file inside the **profile** folder and add this json code.
 ```
 {
   "services": [
     {
       "serviceType": "Clock",
       "description": "",
-      "commands": [],
+      "commands": [
+        {
+           "commandName": "TIME_REQ",
+           "paras": [
+               {
+                   "paraName": "request",
+                   "dataType": "int",
+                   "required": true,
+                   "min": 0,
+                   "max": 1,
+                   "step": 1,
+                   "maxLength": 10,
+                   "unit": null,
+                   "enumList": null
+                 }
+         ],
+            "responses": [
+               {
+                   "responseName": "TIME_RSP",
+                   "paras": [
+                      {
+                             "paraName": "response",
+                             "dataType": "int",
+                             "required": true,
+                             "min": -1000000,
+                             "max": 1000000,
+                             "step": 1,
+                             "maxLength": 10,
+                             "unit": null,
+                             "enumList": null
+                       }
+                   ]
+               }
+           ]
+        }  
+      ],
       "properties": [
         {
           "propertyName": "time",
