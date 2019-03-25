@@ -94,8 +94,8 @@ A devicetype-capability.json file include the static information about the devic
 {
   "devices": [
     {
-      "manufacturerId": "ABC",
-      "manufacturerName": "XYZ",
+      "manufacturerId": "IoTCompany",
+      "manufacturerName": "IoT_Company",
       "model": "NBIoTDevice",
       "protocolType": "LWM2M",
       "deviceType": "TestDevice",
@@ -180,7 +180,7 @@ A devicetype-capability.json file include the static information about the devic
                   "required": true,
                   "min": "0",
                  "max": "10",
-                  "step": 0.1,
+                  "step": 1,
                   "maxLength": 0,
                   "method": "RWE",
                  "unit": "mV",
