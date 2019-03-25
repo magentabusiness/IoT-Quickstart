@@ -28,8 +28,8 @@ A devicetype-capability.json file include the static information about the devic
    {
       "devices": [
             {
-                "manufacturerId": "ABC",
-                "manufacturerName": "XYZ",
+                "manufacturerId": "IoTCompany",
+                "manufacturerName": "IoT_Company",
                 "model": "NBIoTDevice",
                 "protocolType": "LWM2M",
                 "deviceType": "TestDevice",
@@ -119,13 +119,18 @@ A devicetype-capability.json file include the static information about the devic
                   "option": "Mandatory"
                 },
                 {
-                  "serviceId": "DM",
-                  "serviceType": "DM",
-                  "option": null
-                },
-                {
                   "serviceId": "Location",
                   "serviceType": "Location",
+                  "option": "Mandatory"
+                },
+                {
+                  "serviceId": "Temperature",
+                  "serviceType": "Temperature",
+                  "option": "Mandatory"
+                },
+                {
+                  "serviceId": "Clock",
+                  "serviceType": "Clock",
                   "option": "Mandatory"
         }
       ]
@@ -139,7 +144,7 @@ A devicetype-capability.json file include the static information about the devic
 
 1) Create the new folder named **"service"**. (Name **must** be the same.)
    
-2) Inside the **"service"** folder, create folders according to your services. As we are creating device with the general services (Battery (01), Connectivity (02), ModemBattery (03), DM (04), Location (05)), **Create five new folder with the same name as your serviceType**.
+2) Inside the **"service"** folder, create folders according to your services. As we are creating device with the services (Battery (01), Connectivity (02), ModemBattery (03), Location (04), Temperature(05), Clock(06)), **Create six new folder with the same name as your serviceType**.
    
 3) Inside the **Battery** folder, create a new folder named **profile**. create **"servicetype-capability.json"** file inside the **profile** folder and add this json code.
 ```
@@ -209,139 +214,7 @@ A devicetype-capability.json file include the static information about the devic
 }
 ```
 
-5)  Inside the **DM** folder, create a new folder named **profile**. create **"servicetype-capability.json"** file inside the **profile** folder and add this json code.
-   
-   
-```
-{
-  "services": [
-    {
-      "serviceType": "DM",
-      "description": null,
-      "commands": [
-        {
-          "commandName": "PUSH_COMMAND",
-          "paras": null,
-          "responses": null
-        },
-        {
-          "commandName": "UPDATE_CONFIGURATION",
-          "paras": null,
-          "responses": null
-        },
-        {
-          "commandName": "COLLECT_LOG",
-          "paras": null,
-          "responses": null
-        },
-        {
-          "commandName": "UPGRADE_BUNDLE",
-          "paras": null,
-          "responses": null
-        },
-        {
-          "commandName": "INSTALL_BUNDLE",
-          "paras": null,
-          "responses": null
-        },
-        {
-          "commandName": "START_BUNDLE",
-          "paras": null,
-          "responses": null
-        },
-        {
-          "commandName": "STOP_BUNDLE",
-          "paras": null,
-          "responses": null
-        },
-        {
-          "commandName": "UNINSTALL_BUNDLE",
-          "paras": null,
-          "responses": null
-        },
-        {
-          "commandName": "BUNDLE_SYNCHRONIZATION",
-          "paras": null,
-          "responses": null
-        },
-        {
-          "commandName": "UPGRADE_FIRMWARE",
-          "paras": null,
-          "responses": null
-        },
-        {
-          "commandName": "UPGRADE_SOFTWARE",
-          "paras": null,
-          "responses": null
-        },
-        {
-          "commandName": "GET",
-          "paras": null,
-          "responses": null
-        },
-        {
-          "commandName": "REST",
-          "paras": null,
-          "responses": null
-        },
-        {
-          "commandName": "REBOOT",
-          "paras": null,
-          "responses": null
-        },
-        {
-          "commandName": "DOWNLOAD_SWPACKAGE",
-          "paras": null,
-          "responses": null
-        },
-        {
-          "commandName": "SWUPDATE",
-          "paras": null,
-          "responses": null
-        },
-        {
-          "commandName": "DOWNLOAD_FWPACKAGE",
-          "paras": null,
-          "responses": null
-        },
-        {
-          "commandName": "FWUPDATE",
-          "paras": null,
-          "responses": null
-        }
-      ],
-      "properties": [
-        {
-          "propertyName": "swVersion",
-          "dataType": "string",
-          "required": true,
-          "min": "1",
-          "max": "2147483646",
-          "step": 0,
-          "maxLength": 256,
-          "method": "R",
-          "unit": null,
-          "enumList": null
-        },
-        {
-          "propertyName": "fwVersion",
-          "dataType": "string",
-          "required": true,
-          "min": "1",
-          "max": "2147483646",
-          "step": 0,
-          "maxLength": 256,
-          "method": "R",
-          "unit": null,
-          "enumList": null
-        }
-      ],
-      "events": null
-    }
-  ]
-}
-```
-6) Inside the **Location** folder, create a new folder named **profile**. create **"servicetype-capability.json"** file inside the **profile** folder and add this json code.
+5) Inside the **Location** folder, create a new folder named **profile**. create **"servicetype-capability.json"** file inside the **profile** folder and add this json code.
 ```
 {
   "services": [
@@ -356,7 +229,7 @@ A devicetype-capability.json file include the static information about the devic
           "required": true,
           "min": "-180",
           "max": "180",
-          "step": 0.1,
+          "step": 1,
           "maxLength": 0,
           "method": "RWE",
           "unit": "°",
@@ -368,7 +241,7 @@ A devicetype-capability.json file include the static information about the devic
           "required": true,
           "min": "-90",
           "max": "90",
-          "step": 0.1,
+          "step": 1,
           "maxLength": 0,
           "method": "RWE",
           "unit": "°",
@@ -380,7 +253,7 @@ A devicetype-capability.json file include the static information about the devic
   ]
 }
 ```
-7) Inside the **ModemBattery** folder, create a new folder named **profile**. create **"servicetype-capability.json"** file inside the **profile** folder and add this json code.
+6) Inside the **ModemBattery** folder, create a new folder named **profile**. create **"servicetype-capability.json"** file inside the **profile** folder and add this json code.
 
 ```
 {
@@ -420,10 +293,138 @@ A devicetype-capability.json file include the static information about the devic
   ]
 }
 ```
+7) Inside the **Temperature** folder, create a new folder named **profile**. create **"servicetype-capability.json"** file inside the **profile** folder and add this json code.
+
+```
+{
+  "services": [
+    {
+      "serviceType": "Temperature",
+      "description": "",
+      "commands": [
+        {
+           "commandName": "SET_TEMPERATURE_MESURE_PERIOD",
+           "paras": [
+               {
+                   "paraName": "value",
+                   "dataType": "int",
+                   "required": true,
+                   "min": 1,
+                   "max": 24,
+                   "step": 1,
+                   "maxLength": 10,
+                   "unit": "hour",
+                   "enumList": null
+                 }
+         ],
+            "responses": [
+               {
+                   "responseName": "SET_TEMPERATURE_MESURE_PERIOD_RSP",
+                   "paras": [
+                      {
+                             "paraName": "result",
+                             "dataType": "int",
+                             "required": true,
+                             "min": -1000000,
+                             "max": 1000000,
+                             "step": 1,
+                             "maxLength": 10,
+                             "unit": null,
+                             "enumList": null
+                       }
+                   ]
+               }
+           ]
+        },
+        {
+           "commandName": "SET_TEMPERATURE_TRANSFER_PERIOD",
+           "paras": [
+               {
+                   "paraName": "value",
+                   "dataType": "int",
+                   "required": true,
+                   "min": 1,
+                   "max": 24,
+                   "step": 1,
+                   "maxLength": 10,
+                   "unit": "hour",
+                   "enumList": null
+                 }
+         ],
+            "responses": [
+               {
+                   "responseName": "SET_TEMPERATURE_TRANSFER_PERIOD_RSP",
+                   "paras": [
+                      {
+                             "paraName": "result",
+                             "dataType": "int",
+                             "required": true,
+                             "min": -1000000,
+                             "max": 1000000,
+                             "step": 1,
+                             "maxLength": 10,
+                             "unit": null,
+                             "enumList": null
+                       }
+                   ]
+               }
+           ]
+        }        
+      ],
+
+      "properties": [
+        {
+          "propertyName": "temperature",
+          "dataType": "decimal",
+          "required": true,
+          "min": "0",
+          "max": "100",
+          "step": 1,
+          "maxLength": 0,
+          "method": "RWE",
+          "unit": "C",
+          "enumList": []
+        }
+      ],
+      "events": []
+    }
+  ]
+}
+```
+
+8) Inside the **Clock** folder, create a new folder named **profile**. create **"servicetype-capability.json"** file inside the **profile** folder and add this json code.
+```
+{
+  "services": [
+    {
+      "serviceType": "Clock",
+      "description": "",
+      "commands": [],
+      "properties": [
+        {
+          "propertyName": "time",
+          "dataType": "long",
+          "required": true,
+          "min": "0",
+          "max": "100",
+          "step": 1,
+          "maxLength": 0,
+          "method": "R",
+          "unit": "",
+          "enumList": null
+        }
+      ],
+    "events": []
+    }
+  ]
+}
+```
+    
+    
 
 # Step 3 : Packing the profile for the IoT Gateway
    - ## General hierarchy of device profile
-  The general file folder hierarchy should be look like this. **Names which are written in red fonts are case sensitive and your profile should have same name.**
+  The general file folder hierarchy should be look like this. **The Names which are written in red fonts are case sensitive and your profile should have same name.**
 
   1) Compressed the **profile** folder and **service** folder in .zip format.
   2) Our Device is ready for IoT Gateway.
