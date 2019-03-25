@@ -12,9 +12,9 @@
  -  A device capability profile file name must be **"devicetype-capability.json"** 
  -  A service capability profile file name must be      **"servicetype-capability.json"**
  -  Static information (manufacture ID, manufacture name and device model) in device model must be unique.
- -  Universal service capabilities (Battery, Connectivity, DM, Location, Modem Battery) are already defined and should be same for every device model.
+ -  Universal service capabilities (Battery, Connectivity, Location, Modem Battery) are already defined and should be same for every device model.
 
-Detail described device model example shown below. This device model is for typical universal services. 
+Detail described device model example shown below. This device model is for temperature and clock with typical universal services. 
 
 
 # Step 1 : Writing **"devicetype-capability.json"** file for General device
