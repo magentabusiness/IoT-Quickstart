@@ -479,3 +479,6 @@ A devicetype-capability.json file include the static information about the devic
 
    - ## Example hierarchy of the developed General profile
   ![General Hierarchy](../images/General_NBIoTDevice.png)
+
+
+  ### The developed offline product (TestDevice_IoTCompany_NBIoTDevice.zip) is added into the Quickstart --> Product Profile --> TestDevice_IoTCompany_NBIoTDevice.zip.
