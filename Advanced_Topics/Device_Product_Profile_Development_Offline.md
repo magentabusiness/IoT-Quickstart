@@ -167,13 +167,13 @@ A devicetype-capability.json file include the static information about the devic
              {
                  "propertyName": "batteryLevel",
                   "dataType": "int",
-                "required": true,
+                  "required": true,
                   "min": "0",
                   "max": "100",
                   "step": 1,
                   "maxLength": 0,
                   "method": "RWE",
-                 "unit": null,
+                  "unit": null,
                   "enumList": null
               },
               {
@@ -181,11 +181,11 @@ A devicetype-capability.json file include the static information about the devic
                   "dataType": "decimal",
                   "required": true,
                   "min": "0",
-                 "max": "10",
+                  "max": "10",
                   "step": 1,
                   "maxLength": 0,
                   "method": "RWE",
-                 "unit": "mV",
+                  "unit": "mV",
                   "enumList": null
              }
                  ],
@@ -402,7 +402,7 @@ A devicetype-capability.json file include the static information about the devic
 }
 ```
 
-1) Inside the **Clock** folder, create a new folder named **profile**. create **"servicetype-capability.json"** file inside the **profile** folder and add this json code.
+8) Inside the **Clock** folder, create a new folder named **profile**. create **"servicetype-capability.json"** file inside the **profile** folder and add this json code.
 ```
 {
   "services": [
@@ -419,7 +419,7 @@ A devicetype-capability.json file include the static information about the devic
           "max": "100",
           "step": 1,
           "maxLength": 0,
-          "method": "R",
+          "method": "RWE",
           "unit": "",
           "enumList": null
         }
@@ -446,7 +446,6 @@ A devicetype-capability.json file include the static information about the devic
   ![General Hierarchy](../images/General_NBIoTDevice.png)
 
 
-  ### The developed offline product (TestDevice_IoTCompany_NBIoTDevice.zip) is added into the Quickstart --> Product Profile --> TestDevice_IoTCompany_NBIoTDevice.zip.
+  ### The developed offline product (TestDevice_IoTCompany_NBIoTDevice.zip) is added into the Quickstart Guide, You can download from Download Product from GitHub Page [TestDevice_IoTCompany_NBIoTDevice.zip.](https://github.com/alliot-at/Quickstart/blob/master/Product%20Profiles/TestDevice_IoTCompany_NBIoTDevice.zip)
 
-  ### To Upload the developed product profile to IoT-Gateway, Follow   
-  [Import Product Model](../02&#32;Add&#32;first&#32;Device.md#import-product)
+  ### To Upload the developed product profile to IoT-Gateway, Follow [Import Product Model.](../02&#32;Add&#32;first&#32;Device.md#import-product)
