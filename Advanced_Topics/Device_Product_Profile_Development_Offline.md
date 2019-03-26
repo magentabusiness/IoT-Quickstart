@@ -214,7 +214,7 @@ A devicetype-capability.json file include the static information about the devic
           "maxLength": 0,
           "method": "RWE",
           "unit": "dBm",
-          "enumList": []
+          "enumList": null
         }
       ],
       "events": []
@@ -242,7 +242,7 @@ A devicetype-capability.json file include the static information about the devic
           "maxLength": 0,
           "method": "RWE",
           "unit": "°",
-          "enumList": []
+          "enumList": null
         },
         {
           "propertyName": "latitude",
@@ -294,7 +294,7 @@ A devicetype-capability.json file include the static information about the devic
           "maxLength": 0,
           "method": "RWE",
           "unit": "mV",
-          "enumList": []
+          "enumList": null
         }
       ],
       "events": []
@@ -320,10 +320,10 @@ A devicetype-capability.json file include the static information about the devic
                    "dataType": "int",
                    "required": true,
                    "min": 1,
-                   "max": 24,
+                   "max": 1000,
                    "step": 1,
                    "maxLength": 10,
-                   "unit": "hour",
+                   "unit": "minute",
                    "enumList": null
                  }
          ],
@@ -354,10 +354,10 @@ A devicetype-capability.json file include the static information about the devic
                    "dataType": "int",
                    "required": true,
                    "min": 1,
-                   "max": 24,
+                   "max": 1000,
                    "step": 1,
                    "maxLength": 10,
-                   "unit": "hour",
+                   "unit": "minute",
                    "enumList": null
                  }
          ],
@@ -393,7 +393,7 @@ A devicetype-capability.json file include the static information about the devic
           "maxLength": 0,
           "method": "RWE",
           "unit": "C",
-          "enumList": []
+          "enumList": null
         }
       ],
       "events": []
@@ -409,46 +409,11 @@ A devicetype-capability.json file include the static information about the devic
     {
       "serviceType": "Clock",
       "description": "",
-      "commands": [
-        {
-           "commandName": "TIME_REQ",
-           "paras": [
-               {
-                   "paraName": "request",
-                   "dataType": "int",
-                   "required": true,
-                   "min": 0,
-                   "max": 1,
-                   "step": 1,
-                   "maxLength": 10,
-                   "unit": null,
-                   "enumList": null
-                 }
-         ],
-            "responses": [
-               {
-                   "responseName": "TIME_RSP",
-                   "paras": [
-                      {
-                             "paraName": "response",
-                             "dataType": "int",
-                             "required": true,
-                             "min": -1000000,
-                             "max": 1000000,
-                             "step": 1,
-                             "maxLength": 10,
-                             "unit": null,
-                             "enumList": null
-                       }
-                   ]
-               }
-           ]
-        }  
-      ],
+      "commands": [],
       "properties": [
         {
-          "propertyName": "time",
-          "dataType": "long",
+          "propertyName": "timeRequest",
+          "dataType": "int",
           "required": true,
           "min": "0",
           "max": "100",
@@ -482,3 +447,6 @@ A devicetype-capability.json file include the static information about the devic
 
 
   ### The developed offline product (TestDevice_IoTCompany_NBIoTDevice.zip) is added into the Quickstart --> Product Profile --> TestDevice_IoTCompany_NBIoTDevice.zip.
+
+  ### To Upload the developed product profile to IoT-Gateway, Follow   
+  [Import Product Model](../02&#32;Add&#32;first&#32;Device.md#import-product)
