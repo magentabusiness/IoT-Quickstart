@@ -1,7 +1,7 @@
 
-# How to get your certificates (coming soon)
+# How to get your certificates
 
-- [How to get your certificates (coming soon)](#how-to-get-your-certificates-coming-soon)
+- [How to get your certificates](#how-to-get-your-certificates)
 - [Create your Certificate Signing Request](#create-your-certificate-signing-request)
   - [Create CSR Online (Option 1)](#create-csr-online-option-1)
   - [Create CSR Offline (Option 2)](#create-csr-offline-option-2)
@@ -90,7 +90,7 @@ Next Step: [Request your Certificate from T-Mobile](#request-your-certificate-fr
 
 # Request your Certificate from T-Mobile
 
-1. Send the *.csr File to "TODO"@t-mobile.at to get your certificate.  
+1. Send the *.csr File to service4iot@t-mobile.at to get your certificate.  
 Within seven days you will receive your Certificate.
 2. When you have received your Certificate, you can use it with your Key-File in your application, or with Postman instead of the Demo Certificates.
 

@@ -26,7 +26,7 @@ A devicetype-capability.json file include the static information about the devic
 1) Create new folder named **"profile"**. (Name **must** be the same.)
 2) Inside the **"profile"** folder, create the json file named **devicetype-capability.json** with using text editor. [If you using Notepad ++, File -> New]
 3) Add this json code with mandatory field.
-  - **manufactureId** should not contains any space or spacial character such as "_ , -, /".
+  - **manufactureId, manufactureName** should not contains any space or spacial character such as "_ , -, /".
   - **manufactureId, manufactureName, model** must be unique, You will need it at the time of Upload product to the IoT-Gateway.
    ```
    {

@@ -26,7 +26,8 @@
 * [Step 7 - Get your data out of IoT-Gateway](Application&#32;Enablement/07_Get_your_data_out_from_IoT-Gateway.md)
 
 # Advanced Topics
+
+* [Request your own Client Certificate for REST API](Advanced_Topics/Request_Client_Certificate.md)
+* [Device Product Profile Development](Advanced_Topics/Device_Product_Profile_Development_Offline.md)
+* CIG Plugin Development (*coming soon*)  
 * [Firmware update over the air (FOTA) via the IoT-Gateway](Advanced_Topics/FOTA_using_IoT-Gateway.md)
-* Request your own Client Certificate for REST API
-* Product Development (*coming soon*)
-* CIG Plugin Development (*coming soon*)
