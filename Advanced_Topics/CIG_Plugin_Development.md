@@ -1,6 +1,6 @@
 
-# CIG Plugin Development  (coming soon)
-- [CIG Plugin Development (coming soon)](#cig-plugin-development-coming-soon)
+# CIG Plugin Development  (coming soon.. - documentation not finished)
+- [CIG Plugin Development (coming soon.. - documentation not finished)](#cig-plugin-development-coming-soon---documentation-not-finished)
   - [Prepare Development Environment](#prepare-development-environment)
     - [Configure Maven Plugin:](#configure-maven-plugin)
   - [Import example CIG Plugin](#import-example-cig-plugin)
