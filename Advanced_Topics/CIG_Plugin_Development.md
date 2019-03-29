@@ -1,6 +1,6 @@
 
-# CIG Plugin Development  (documentation not finished)
-- [CIG Plugin Development (documentation not finished)](#cig-plugin-development-documentation-not-finished)
+# CIG Plugin Development 
+- [CIG Plugin Development](#cig-plugin-development)
   - [Prepare Development Environment](#prepare-development-environment)
     - [Configure Maven Plugin:](#configure-maven-plugin)
   - [Import example CIG Plugin](#import-example-cig-plugin)
@@ -17,8 +17,18 @@
     - [BatteryAndSignalMessage / MessageId: 0F](#batteryandsignalmessage--messageid-0f)
     - [TemperatureMessage / MessageId: 01](#temperaturemessage--messageid-01)
     - [TemperatureArrayMessage / MessageId: 02](#temperaturearraymessage--messageid-02)
+  - [Commands in the Demo Plugin](#commands-in-the-demo-plugin)
+    - [TemperatureSetMeasurePeriodCommand / MessageId: 03](#temperaturesetmeasureperiodcommand--messageid-03)
+    - [TemperatureSetTransferPeriodCommand / MessageId: 04](#temperaturesettransferperiodcommand--messageid-04)
 - [Build your own CIG - Plugin](#build-your-own-cig---plugin)
   - [Customize for your Product Model](#customize-for-your-product-model)
+  - [Examples](#examples)
+    - [Messages (Device to IoT-Gateway)](#messages-device-to-iot-gateway)
+    - [Commands (IoT-Gateway to Device)](#commands-iot-gateway-to-device)
+  - [Add a Message (Device sends Data to IoT Gateway)](#add-a-message-device-sends-data-to-iot-gateway)
+  - [Add a Command (IoT Gateway sends Data to Device)](#add-a-command-iot-gateway-sends-data-to-device)
+  - [junit Tests](#junit-tests)
+    - [How to deploy CIG Plugin (draft)](#how-to-deploy-cig-plugin-draft)
 
 
 ## Prepare Development Environment  
@@ -171,12 +181,12 @@ Response: `0E5C9DDB77`
 
 ### BatteryAndSignalMessage / MessageId: 0F
 
-| Parameter      | Len[Byte] | Type   | Desc                 |
-| -------------- | :-------: | ------ | -------------------- |
-| msgId (0F)     |     1     | uint8  | Message Id = 0F      |
-| BatteryLevel   |     1     | uint8  | BatteryLevel in %    |
-| BatteryVoltage |     2     | uint16 | BatteryVoltage in mV |
-| signalStrength |     2     | int16 | signalStrength in dBm |
+| Parameter      | Len[Byte] | Type   | Desc                  |
+| -------------- | :-------: | ------ | --------------------- |
+| msgId (0F)     |     1     | uint8  | Message Id = 0F       |
+| BatteryLevel   |     1     | uint8  | BatteryLevel in %     |
+| BatteryVoltage |     2     | uint16 | BatteryVoltage in mV  |
+| signalStrength |     2     | int16  | signalStrength in dBm |
 
 Responses:   
 Success: `0F00`  
@@ -229,6 +239,82 @@ Error: `0201`
 Example: 
 Data: `025C9DF06502000500E900F8`  
 Response: `020002`
+
+## Commands in the Demo Plugin
+
+### TemperatureSetMeasurePeriodCommand / MessageId: 03
+REST-API - SendCommand Body:
+```json
+	{
+	  "deviceId": "{{deviceId}}",
+	  "command": {
+	    "serviceId": "Temperature",
+	    "method": "SET_Measure_PERIOD",
+	    "paras": {
+	      "value": 60	     
+	    }
+	  }
+	}
+```
+
+| Parameter  | Len[Byte] | Type   | Desc                  |
+| ---------- | :-------: | ------ | --------------------- |
+| msgId (03) |     1     | uint8  | Message Id = 03       |
+| value      |     2     | uint16 | Measure Period [min] |
+| mid        |     2     | uint16 | need for response     |
+
+Example:
+Command on Device: `03003C0003`
+
+Now the Device can respond if the command was executed successfully
+
+| Parameter  | Len[Byte] | Type   | Desc                           |
+| ---------- | :-------: | ------ | ------------------------------ |
+| msgId (03) |     1     | uint8  | Message Id = 03                |
+| errCode    |     1     | uint8  | 00..success, 01..failed        |
+| mid        |     2     | uint16 | must be the same as in command |
+| result     |     2     | uint16 | any result sent back           |
+
+
+Example: 
+`03000003000A`  - Command successful, response for mid 0003 with result 10
+`03010004000B`  - Command failed, response for mid 0004 with result 11
+
+### TemperatureSetTransferPeriodCommand / MessageId: 04
+REST-API - SendCommand Body:
+```json
+	{
+	  "deviceId": "{{deviceId}}",
+	  "command": {
+	    "serviceId": "Temperature",
+	    "method": "SET_TRANSFER_PERIOD",
+	    "paras": {
+	      "value": 60	     
+	    }
+	  }
+	}
+```
+| Parameter  | Len[Byte] | Type   | Desc                  |
+| ---------- | :-------: | ------ | --------------------- |
+| msgId (03) |     1     | uint8  | Message Id = 03       |
+| value      |     2     | uint16 | Transfer Period [min] |
+| mid        |     2     | uint16 | need for response     |
+
+Example:
+Command on Device: `04003C0003`
+
+Now the Device can respond if the command was executed successfully
+
+| Parameter  | Len[Byte] | Type   | Desc                           |
+| ---------- | :-------: | ------ | ------------------------------ |
+| msgId (04) |     1     | uint8  | Message Id = 04               |
+| errCode    |     1     | uint8  | 00..success, 01..failed        |
+| mid        |     2     | uint16 | must be the same as in command |
+| result     |     2     | uint16 | any result sent back           |
+
+Example: 
+`04000003000A`  - Command successful, response for mid 0003 with result 10
+`04010004000B`  - Command failed, response for mid 0004 with result 11
 
 # Build your own CIG - Plugin
 ## Customize for your Product Model
@@ -322,8 +408,49 @@ Example:
     }]
 }
 ```
-7. Now you should be able to build the CIG-Plugin (mvn package).
-   
+7. Now, you should be able to build the CIG-Plugin (mvn package).
+
+Now, feel free to modify or add new Messages and Commands depending on your Product Profile to the CIG Plugin.
+
+## Examples
+### Messages (Device to IoT-Gateway)
+The existing Messages and Commands should show you how it works.
+ - BatteryMessage - nothing special (2 int Values)
+ - BatteryAndSignalMessage - a message that contains 2 Services
+ - ClockRequestMessage - Message to get Unix Timestamp
+ - LocationMessage - decimal(float) Variables
+ - TemperatureMessage - decimal(int/10) Variables, optional response
+ - TemperatureArrayMessage - create multiple messages, dynamic length.
+
+### Commands (IoT-Gateway to Device)
+- TemperatureSetMeasurePeriodCommand (to device) - sends int value to Device
+- TemperatureSetMeasurePeriodResponse (from device) - response from device with error code and int result. 
+
+## Add a Message (Device sends Data to IoT Gateway)
+Messages are located in the com.*.messages Package.
+Take a look in the example Messages and add or modify the existing.
+Important: If you add a new Message you have to register the message in ProtocolAdapterImpl.java.
+
+## Add a Command (IoT Gateway sends Data to Device)
+Commands are located in the com.*.commands Package.
+A command consists of a request( the command) and a response. Therefore it consists of two Classes. (*Command.java and *Response.java).
+Important: If you add a new Command you have to register the command and response in ProtocolAdapterImpl.java.
+
+## junit Tests 
+The Test-Package contains example Tests for some messages/commands. You also have to change the tests according to your messages/commands. Otherwise the build will fail.
+
+### How to deploy CIG Plugin (draft)
+After you have tested your plugin. The Plugin must be signed. Therefore download the signtool from the IoT-Gateway. https://iotgateway.t-mobile.at/#/pages/signtool  
+First you have to create a private and a public key (RSA..). Keep the password and the private key secure and never send it to us. You have to use this keys for all CIG Plugins - so don't loose them. 
+
+Sign your package.zip with your password and private key. 
+Verify.
+
+Send the public key(public.pem) with your signed CIG-Plugin (package_signed.zip) to service4iot@t-mobile.at.
+Also give us a short description, about your messages/commands and parameters.
+We will test your plugin and deploy it within 7 days. You will be informed when it is successfully deployed. 
+
+
 
 
  
