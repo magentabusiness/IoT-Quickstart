@@ -172,19 +172,19 @@ A devicetype-capability.json file include the static information about the devic
                   "max": "100",
                   "step": 1,
                   "maxLength": 0,
-                  "method": "RWE",
-                  "unit": null,
+                  "method": "R",
+                  "unit": "%",
                   "enumList": null
               },
               {
                 "propertyName": "batteryVoltage",
-                  "dataType": "decimal",
+                  "dataType": "int",
                   "required": true,
                   "min": "0",
-                  "max": "10",
+                  "max": "10000",
                   "step": 1,
                   "maxLength": 0,
-                  "method": "RWE",
+                  "method": "R",
                   "unit": "mV",
                   "enumList": null
              }
@@ -212,7 +212,7 @@ A devicetype-capability.json file include the static information about the devic
           "max": "150",
           "step": 1,
           "maxLength": 0,
-          "method": "RWE",
+          "method": "R",
           "unit": "dBm",
           "enumList": null
         }
@@ -280,19 +280,19 @@ A devicetype-capability.json file include the static information about the devic
           "max": "100",
           "step": 1,
           "maxLength": 0,
-          "method": "RWE",
+          "method": "R",
           "unit": "",
           "enumList": null
         },
         {
           "propertyName": "batteryVoltage",
-          "dataType": "decimal",
+          "dataType": "int",
           "required": true,
           "min": "0",
-          "max": "100",
-          "step": 0.1,
+          "max": "1000000",
+          "step": 1,
           "maxLength": 0,
-          "method": "RWE",
+          "method": "R",
           "unit": "mV",
           "enumList": null
         }
@@ -313,7 +313,7 @@ A devicetype-capability.json file include the static information about the devic
       "description": "",
       "commands": [
         {
-           "commandName": "SET_TEMPERATURE_MESURE_PERIOD",
+           "commandName": "SET_MEASURE_PERIOD",
            "paras": [
                {
                    "paraName": "value",
@@ -329,7 +329,7 @@ A devicetype-capability.json file include the static information about the devic
          ],
             "responses": [
                {
-                   "responseName": "SET_TEMPERATURE_MESURE_PERIOD_RSP",
+                   "responseName": "SET_MEASURE_PERIOD_RSP",
                    "paras": [
                       {
                              "paraName": "result",
@@ -347,7 +347,7 @@ A devicetype-capability.json file include the static information about the devic
            ]
         },
         {
-           "commandName": "SET_TEMPERATURE_TRANSFER_PERIOD",
+           "commandName": "SET_TRANSFER_PERIOD",
            "paras": [
                {
                    "paraName": "value",
@@ -363,7 +363,7 @@ A devicetype-capability.json file include the static information about the devic
          ],
             "responses": [
                {
-                   "responseName": "SET_TEMPERATURE_TRANSFER_PERIOD_RSP",
+                   "responseName": "SET_TRANSFER_PERIOD_RSP",
                    "paras": [
                       {
                              "paraName": "result",
