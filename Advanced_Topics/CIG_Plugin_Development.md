@@ -437,18 +437,18 @@ A command consists of a request( the command) and a response. Therefore it consi
 Important: If you add a new Command you have to register the command and response in ProtocolAdapterImpl.java.
 
 ## junit Tests 
-The Test-Package contains example Tests for some messages/commands. You also have to change the tests according to your messages/commands. Otherwise the build will fail.
+The Test-Package contains example Tests for some messages/commands. You also have to change the tests according to your messages/commands. Otherwise, the build fails.
 
 ### How to deploy CIG Plugin (draft)
 After you have tested your plugin. The Plugin must be signed. Therefore download the signtool from the IoT-Gateway. https://iotgateway.t-mobile.at/#/pages/signtool  
-First you have to create a private and a public key (RSA..). Keep the password and the private key secure and never send it to us. You have to use this keys for all CIG Plugins - so don't loose them. 
+First, you have to create a private and a public key (RSA..). Keep the password and the private key secure and never send it to us. You have to use these keys for all CIG Plugins - so don't lose them. 
 
 Sign your package.zip with your password and private key. 
 Verify.
 
 Send the public key(public.pem) with your signed CIG-Plugin (package_signed.zip) to service4iot@t-mobile.at.
 Also give us a short description, about your messages/commands and parameters.
-We will test your plugin and deploy it within 7 days. You will be informed when it is successfully deployed. 
+We will test and deploy your plugin it within 7 days. We will inform you, when it is successfully deployed. 
 
 
 
