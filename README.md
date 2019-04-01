@@ -29,5 +29,5 @@
 
 * [Request your own Client Certificate for REST API](Advanced_Topics/Request_Client_Certificate.md)
 * [Device Product Profile Development](Advanced_Topics/Device_Product_Profile_Development_Offline.md)
-* [CIG Plugin Development](Advanced_Topics\CIG_Plugin_Development.md)
+* [CIG Plugin Development](Advanced_Topics/CIG_Plugin_Development.md)
 * [Firmware update over the air (FOTA) via the IoT-Gateway](Advanced_Topics/FOTA_using_IoT-Gateway.md)
