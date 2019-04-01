@@ -28,7 +28,7 @@
   - [Add a Message (Device sends Data to IoT Gateway)](#add-a-message-device-sends-data-to-iot-gateway)
   - [Add a Command (IoT Gateway sends Data to Device)](#add-a-command-iot-gateway-sends-data-to-device)
   - [junit Tests](#junit-tests)
-    - [How to deploy CIG Plugin (draft)](#how-to-deploy-cig-plugin-draft)
+  - [How to deploy CIG Plugin (draft)](#how-to-deploy-cig-plugin-draft)
 
 
 ## Prepare Development Environment  
@@ -439,7 +439,7 @@ Important: If you add a new Command you have to register the command and respons
 ## junit Tests 
 The Test-Package contains example Tests for some messages/commands. You also have to change the tests according to your messages/commands. Otherwise, the build fails.
 
-### How to deploy CIG Plugin (draft)
+## How to deploy CIG Plugin (draft)
 After you have tested your plugin. The Plugin must be signed. Therefore download the signtool from the IoT-Gateway. https://iotgateway.t-mobile.at/#/pages/signtool  
 First, you have to create a private and a public key (RSA..). Keep the password and the private key secure and never send it to us. You have to use these keys for all CIG Plugins - so don't lose them. 
 
