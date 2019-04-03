@@ -157,8 +157,9 @@ Responses:
 Success: `0D00`  
 Error: `0D01`  
 
-Example: 
-Latitude=48.1872203 = 0x4240bfb7, Longitude=16.4025 = 0x41833852
+Example:   
+Latitude=48.1872203 = 0x4240bfb7  
+Longitude=16.4025 = 0x41833852    
 Data: `0D4240bfb741833852`  
 Response: `0D00`
 
