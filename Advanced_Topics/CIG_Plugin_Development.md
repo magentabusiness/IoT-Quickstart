@@ -208,14 +208,14 @@ Responses (if sendResponse is set):
 Success: `0100`  
 Error: `0101`  
 	 
-233 --> 23.3 °C  0x00E9
-Example 1:
-Data: `0100E9`  
-No Response
+233 --> 23.3 °C  0x00E9  
+Example 1:  
+Data: `0100E9`    
+No Response  
 	
-Example 2:
-Data: `0100E901`
-Response: `0100
+Example 2:  
+Data: `0100E901`  
+Response: `0100`
 
 ### TemperatureArrayMessage / MessageId: 02
 
@@ -430,11 +430,13 @@ The existing Messages and Commands should show you how it works.
 Messages are located in the com.*.messages Package.
 Take a look in the example Messages and add or modify the existing.
 Important: If you add a new Message you have to register the message in ProtocolAdapterImpl.java.
+![Message Flow](https://www.websequencediagrams.com/cgi-bin/cdraw?lz=dGl0bGUgRGV2aWNlIHNlbmRzIGRhdGEgdG8gSW9ULUdhdGV3YXkgKFRlbXBlcmF0dXJlTWVzc2FnZSkKCgoKADMGLT4AIQs6IDAxMDBFOSAoZABRBVJlcSkKAEELLT4qQ0lHAB4ICm5vdGUgb3ZlciBDSUc6ClByb3RvY29sQWRhcHRlckltcGwKZW5kIG5vdGUAHQ8gCiAgICBkZWNvZGUABgVnZXQAgRUHSWQgKDAxKQAcBQA1CkNJRy0-KgCBOBI6IGNyZWEAGQgrAA0UAF8HAIF0Ei0-LQCBSQVqc29uCgCBDBUAgSEFewCBJwUgICAgdACCPwo6IDIyLjMAEQkuLi4AgU0FfQCBZwoAgS0GAIJQDQBjBgCCQw1Vc2VyIEFwcGxpY2F0aW9uOiBwdXNoAIENBgCCUA8gICAgZW5jb2RlQ2xvdWRSZXNwAIIkFwCCKA4AggAVZ2V0UmVzcG9ucwCBfhwwMTAwAIE1EzAxMDAgKGMAfggAhBQPAIULBgATE2Rlc3Ryb3kgAIR-EgASCUNJRwoKCgo&s=default)
 
 ## Add a Command (IoT Gateway sends Data to Device)
 Commands are located in the com.*.commands Package.
 A command consists of a request( the command) and a response. Therefore it consists of two Classes. (*Command.java and *Response.java).
 Important: If you add a new Command you have to register the command and response in ProtocolAdapterImpl.java.
+![Command Flow](https://www.websequencediagrams.com/cgi-bin/cdraw?lz=dGl0bGUgSW9ULUdhdGV3YXkgc2VuZHMgY29tbWFuZCB0byBEZXZpY2UgKFRlbXBlcmF0dXJlU2V0TWVhc3VyZVBlcmlvZEMAKAYpCgpub3RlIGxlZnQgb2YgVXNlciBBcHBsaWNhdGlvbjogCnsKCSAgLi4KCSAgICAibWV0aG9kIjogIlNFVF9UUkFOU0ZFUl9QRVJJT0QiLAAfB3BhcmFzIjogeyAidmFsdWUiOiA2MCB9Cn0KZW5kIG5vdGUKAFoQLT4AgUgLOiBqc29uCgCBWgstPipDSUcAEQcAgS4Fb3ZlciAADwUKUHJvdG9jb2xBZGFwdGVySW1wbAplbmNvZGUAAQZlQ2xvdWRSZXF1ZXN0ABMHSGVscGVyAIEGCkNJRy0-KgCCECI6IGNyZWEAKQgACyVvbmZpZ0pzb25Ob2RlKHBhcnNlAIFbBSkAGioAgUcHAIMvIi0-AIIiBTAzMDAzQzAwMDMKZGVzdHJveSAAg2siAIF-BgCCeg0ANRNDSUcKcGFydGljaXBhbnQAPBxSZXNwb25zZQCDOw4AhRgGAIEYDCAoYwCDGgcpAINmDgCEfRJwdXNoIACFNgcgc2VudAoAhWcGAIQwD0NvQVAAgnMGcm0KACctZGVsaXZlcmVkAIYTBwCEYgUAgSsIZG8gc29tZXRoaW5nAGMWMDMwMDAwAAEFMSAoZACHBAVSZXEpIGNtZCByAIIICACFRhQALgwAhVMPAIVKFwCGQwcAhX4QICAgIGRlAIV5BSAgICBnZXRNZXNzYWdlSWQgKDAzKQAcBQCFTisAgz4IAIVsDisADSUAgQEHAIQBIy0-LQCHVwoAhREjAIRTCQCBaxUAggAFewCCBgUgICAgZXJyQ29kZTogMDAACwkAgwUIOiAxAB8JLi4uAII6BQCJHQsAhgITAIkXBQoAhCkuZXhlY3V0ZWQKCg&s=default)
 
 ## junit Tests 
 The Test-Package contains example Tests for some messages/commands. You also have to change the tests according to your messages/commands. Otherwise, the build fails.
