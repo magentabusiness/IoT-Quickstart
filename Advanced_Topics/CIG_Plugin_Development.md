@@ -48,7 +48,7 @@ This CIG Plugin works with the Product Profile which is described here:
 For Testing, you can compile and test it, without any modifications.  
 How to prepare it for your Product Profile is described below.
 
-1. Download the example CIG-Plugin and unzip it. [Download CIG-Plugin](..\Product&#32;Profiles\CIG_TestDevice_IoTCompany_NBIoTDevice\CIG_TestDevice_IoTCompany_NBIoTDevice.zip)
+1. Download the example CIG-Plugin and unzip it. [Download CIG-Plugin](https://github.com/alliot-at/Quickstart/raw/master/Product%20Profiles/CIG_TestDevice_IoTCompany_NBIoTDevice/CIG_TestDevice_IoTCompany_NBIoTDevice.zip)
 2. Open Eclipse and Import existing maven project
 3. File > Import > Maven > Existing Maven Projects > Next
 4. Choose the folder where you have unzipped the CIG-Plugin
@@ -64,6 +64,8 @@ How to prepare it for your Product Profile is described below.
 
 
 ## Prepare CIG Testing Tool
+
+**WARNING: The CIG Testing Tool works only with JAVA 8 (not with JAVA 10)**
 
 1. Download the [NB-IoT Encoding and Decoding Plugin Validation Tool](https://devcenter.huawei.com/ict/en/resource/tool)
 2. Unzip the downloaded file
@@ -357,7 +359,7 @@ Example:
     </service>
 </scr:component>
 ```
-6. Update `/target/package/package-info.json`   
+1. Update `package-info.json`   
 Update properties with ###
 ```json
 {
@@ -429,14 +431,15 @@ The existing Messages and Commands should show you how it works.
 
 ## Add a Message (Device sends Data to IoT Gateway)
 Messages are located in the com.*.messages Package.
-Take a look in the example Messages and add or modify the existing.
-Important: If you add a new Message you have to register the message in ProtocolAdapterImpl.java.
+Take a look in the example Messages and add or modify the existing.  
+**Important: If you add a new Message you have to register the message in ProtocolAdapterImpl.java.**  
+
 ![Message Flow](https://www.websequencediagrams.com/cgi-bin/cdraw?lz=dGl0bGUgRGV2aWNlIHNlbmRzIGRhdGEgdG8gSW9ULUdhdGV3YXkgKFRlbXBlcmF0dXJlTWVzc2FnZSkKCgoKADMGLT4AIQs6IDAxMDBFOSAoZABRBVJlcSkKAEELLT4qQ0lHAB4ICm5vdGUgb3ZlciBDSUc6ClByb3RvY29sQWRhcHRlckltcGwKZW5kIG5vdGUAHQ8gCiAgICBkZWNvZGUABgVnZXQAgRUHSWQgKDAxKQAcBQA1CkNJRy0-KgCBOBI6IGNyZWEAGQgrAA0UAF8HAIF0Ei0-LQCBSQVqc29uCgCBDBUAgSEFewCBJwUgICAgdACCPwo6IDIyLjMAEQkuLi4AgU0FfQCBZwoAgS0GAIJQDQBjBgCCQw1Vc2VyIEFwcGxpY2F0aW9uOiBwdXNoAIENBgCCUA8gICAgZW5jb2RlQ2xvdWRSZXNwAIIkFwCCKA4AggAVZ2V0UmVzcG9ucwCBfhwwMTAwAIE1EzAxMDAgKGMAfggAhBQPAIULBgATE2Rlc3Ryb3kgAIR-EgASCUNJRwoKCgo&s=default)
 
 ## Add a Command (IoT Gateway sends Data to Device)
 Commands are located in the com.*.commands Package.
-A command consists of a request( the command) and a response. Therefore it consists of two Classes. (*Command.java and *Response.java).
-Important: If you add a new Command you have to register the command and response in ProtocolAdapterImpl.java.
+A command consists of a request( the command) and a response. Therefore it consists of two Classes. (*Command.java and *Response.java).  
+**Important: If you add a new Command you have to register the command and response in ProtocolAdapterImpl.java.**
 ![Command Flow](https://www.websequencediagrams.com/cgi-bin/cdraw?lz=dGl0bGUgSW9ULUdhdGV3YXkgc2VuZHMgY29tbWFuZCB0byBEZXZpY2UgKFRlbXBlcmF0dXJlU2V0TWVhc3VyZVBlcmlvZEMAKAYpCgpub3RlIGxlZnQgb2YgVXNlciBBcHBsaWNhdGlvbjogCnsKCSAgLi4KCSAgICAibWV0aG9kIjogIlNFVF9UUkFOU0ZFUl9QRVJJT0QiLAAfB3BhcmFzIjogeyAidmFsdWUiOiA2MCB9Cn0KZW5kIG5vdGUKAFoQLT4AgUgLOiBqc29uCgCBWgstPipDSUcAEQcAgS4Fb3ZlciAADwUKUHJvdG9jb2xBZGFwdGVySW1wbAplbmNvZGUAAQZlQ2xvdWRSZXF1ZXN0ABMHSGVscGVyAIEGCkNJRy0-KgCCECI6IGNyZWEAKQgACyVvbmZpZ0pzb25Ob2RlKHBhcnNlAIFbBSkAGioAgUcHAIMvIi0-AIIiBTAzMDAzQzAwMDMKZGVzdHJveSAAg2siAIF-BgCCeg0ANRNDSUcKcGFydGljaXBhbnQAPBxSZXNwb25zZQCDOw4AhRgGAIEYDCAoYwCDGgcpAINmDgCEfRJwdXNoIACFNgcgc2VudAoAhWcGAIQwD0NvQVAAgnMGcm0KACctZGVsaXZlcmVkAIYTBwCEYgUAgSsIZG8gc29tZXRoaW5nAGMWMDMwMDAwAAEFMSAoZACHBAVSZXEpIGNtZCByAIIICACFRhQALgwAhVMPAIVKFwCGQwcAhX4QICAgIGRlAIV5BSAgICBnZXRNZXNzYWdlSWQgKDAzKQAcBQCFTisAgz4IAIVsDisADSUAgQEHAIQBIy0-LQCHVwoAhREjAIRTCQCBaxUAggAFewCCBgUgICAgZXJyQ29kZTogMDAACwkAgwUIOiAxAB8JLi4uAII6BQCJHQsAhgITAIkXBQoAhCkuZXhlY3V0ZWQKCg&s=default)
 
 ## junit Tests 
