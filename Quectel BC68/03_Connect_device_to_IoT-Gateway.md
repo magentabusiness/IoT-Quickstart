@@ -62,7 +62,7 @@
     AT+NCONFIG=AUTOCONNECT,FALSE         # Disable Auto connect
     AT+NRB                               # Reboot - wait until finished (10sec)
     AT+NCDP=10.112.28.10,5683            # Set IP-Address of IoT-Gateway
-    AT+NBAND=8                           # Set Band 8 for T-Mobile Austria - speeds up time to connect
+    AT+NBAND=8                           # Set Band 8 for Magenta Telekom - speeds up time to connect
     AT+NRB                               # Reboot - wait until finished (10sec)
     AT+CFUN=1                            # Enable Radio Module
     AT+CGDCONT=0,"IP","alliot.nbiot.at"  # Set APN
@@ -117,7 +117,7 @@
     AT+NCONFIG=AUTOCONNECT,FALSE
     AT+NCDP=10.112.28.10,5683            # Set IP-Address of IoT-Gateway
     AT+NRB                               # Reboot - wait until finished (10sec)
-    AT+NBAND=8                           # Set Band 8 for T-Mobile Austria - speeds up time to connect
+    AT+NBAND=8                           # Set Band 8 for Magenta Telekom - speeds up time to connect
     AT+CFUN=1                            # Enable Radio Module
     AT+CGDCONT=0,"IP","alliot.nbiot.at"  # Set APN
     AT+CPSMS=0                           # Disable Power Saving Mode
@@ -130,7 +130,7 @@
     AT+NNMI=1                            # Enable New Message Indications
     AT+CSCON=1                           # Enable Signalling Connection Status
     AT+COPS=1,2,"23203"                  # Forces an attempt to select and register with the
-                                         # network operator (23203 is T-Mobile AT) wait for 30sec – 300sec 
+                                         # network operator (23203 is Magenta Telekom AT) wait for 30sec – 300sec 
    ```
 
 

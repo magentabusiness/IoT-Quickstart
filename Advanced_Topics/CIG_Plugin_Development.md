@@ -452,7 +452,7 @@ First, you have to create a private and a public key (RSA..). Keep the password 
 Sign your package.zip with your password and private key. 
 Verify.
 
-Send the public key(public.pem) with your signed CIG-Plugin (package_signed.zip) to service4iot@t-mobile.at.
+Send the public key(public.pem) with your signed CIG-Plugin (package_signed.zip) to service4iot@magenta.at.
 Also give us a short description, about your messages/commands and parameters.
 We will test and deploy your plugin it within 7 days. We will inform you, when it is successfully deployed. 
 

@@ -5,7 +5,7 @@
 - [Create your Certificate Signing Request](#create-your-certificate-signing-request)
   - [Create CSR Online (Option 1)](#create-csr-online-option-1)
   - [Create CSR Offline (Option 2)](#create-csr-offline-option-2)
-- [Request your Certificate from T-Mobile](#request-your-certificate-from-t-mobile)
+- [Request your Certificate from Magenta Telekom](#request-your-certificate-from-magenta)
 
 While this tutorial you were using Demo Certificates to connect to the REST API. But in production, you have to use your own Client Certificates.
 
@@ -36,7 +36,7 @@ Before you create the CSR Online, please check the security considerations. http
 1. Copy/paste the CSR to a file on PC (*.csr)  
 2. Copy/paste the Private Key to a file on your PC (*.key)
 
-Next Step: [Request your Certificate from T-Mobile](#request-your-certificate-from-t-mobile)
+Next Step: [Request your Certificate from Magenta Telekom](#request-your-certificate-from-magenta)
 
 ## Create CSR Offline (Option 2)
 
@@ -86,17 +86,17 @@ Then enter the following data:
 
 Now you have created your CSR-File (`IoTGatewayTMA.csr`) and your KEY-File (`IoTGatewayTMA.key`).
 
-Next Step: [Request your Certificate from T-Mobile](#request-your-certificate-from-t-mobile)
+Next Step: [Request your Certificate from Magenta Telekom](#request-your-certificate-from-magenta)
 
-# Request your Certificate from T-Mobile
+# Request your Certificate from Magenta Telekom
 
-1. Send the *.csr File to service4iot@t-mobile.at to get your certificate.  
+1. Send the *.csr File to service4iot@magenta.at to get your certificate.  
 Within seven days you will receive your Certificate.
 2. When you have received your Certificate, you can use it with your Key-File in your application, or with Postman instead of the Demo Certificates.
 
 ---
 __Save your Key-File, you need it later to use your   Certificate.__  
-__DO NOT SEND YOUR Key-File to T-Mobile.__  
+__DO NOT SEND YOUR Key-File to Magenta Telekom.__  
 __KEEP YOUR Key-File SECURE__
 
 ---  

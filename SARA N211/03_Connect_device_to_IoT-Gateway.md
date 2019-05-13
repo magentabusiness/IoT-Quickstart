@@ -66,7 +66,7 @@
     AT+CPSMS=0              # Disable Power Saving Mode
     AT+NPSMR=1              # Enable Power Saving Mode Status Report
     AT+NNMI=1               # Enable New Message Indications
-    AT+COPS=1,2,"23203"     # Forces an attempt to select and register with the network operator (23203 is T-Mobile AT) wait for 30sec – 300sec 
+    AT+COPS=1,2,"23203"     # Forces an attempt to select and register with the network operator (23203 is Magenta Telekom AT) wait for 30sec – 300sec 
     ```
     ### Responses from Module
     ```

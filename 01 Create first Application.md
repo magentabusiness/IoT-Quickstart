@@ -6,7 +6,7 @@
   - [Next Step: Add your first device](#next-step-add-your-first-device)
 
 ## Login to IoT-Gateway
-https://iotgateway.t-mobile.at/#/login 
+https://iotgateway.magenta.at/#/login 
 
 # Create your first Application
 ![Step1](./images/Step1.png)
@@ -14,7 +14,7 @@ https://iotgateway.t-mobile.at/#/login
 ![Step2](./images/Step2.png)
 1. Application Name
 2. Select Enterprise [It is not mandatory, If you wish you can define and add       it from Right --> Organizations --> Create Root Organization]
-3. Select if T-Mobile should be able to trace your Devices
+3. Select if Magenta Telekom should be able to trace your Devices
 4. Select Storage Mode
 5. Select the Rule engine 
 6. Agree to Terms

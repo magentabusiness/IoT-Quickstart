@@ -1,4 +1,4 @@
-# Grant T-Mobile Access 
+# Grant Magenta Telekom Access 
 If you need support from us, we need access to your App.  
 ![Step5](./images/Step5.png)
 1. Click on System Management

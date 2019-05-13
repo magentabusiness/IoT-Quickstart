@@ -1,5 +1,4 @@
-[
-    {
+[{
         "id": "ff51fb44.dc8908",
         "type": "tab",
         "label": "NB Demo",
@@ -95,15 +94,13 @@
         "type": "change",
         "z": "ff51fb44.dc8908",
         "name": "",
-        "rules": [
-            {
-                "t": "set",
-                "p": "token",
-                "pt": "global",
-                "to": "payload.accessToken",
-                "tot": "msg"
-            }
-        ],
+        "rules": [{
+            "t": "set",
+            "p": "token",
+            "pt": "global",
+            "to": "payload.accessToken",
+            "tot": "msg"
+        }],
         "action": "",
         "property": "",
         "from": "",
@@ -301,8 +298,7 @@
         "type": "change",
         "z": "ff51fb44.dc8908",
         "name": "Your Config",
-        "rules": [
-            {
+        "rules": [{
                 "t": "set",
                 "p": "appId",
                 "pt": "global",
@@ -394,15 +390,13 @@
         "type": "change",
         "z": "ff51fb44.dc8908",
         "name": "setCallbackIP",
-        "rules": [
-            {
-                "t": "set",
-                "p": "publicIP",
-                "pt": "global",
-                "to": "payload.ip",
-                "tot": "msg"
-            }
-        ],
+        "rules": [{
+            "t": "set",
+            "p": "publicIP",
+            "pt": "global",
+            "to": "payload.ip",
+            "tot": "msg"
+        }],
         "action": "",
         "property": "",
         "from": "",
@@ -677,7 +671,7 @@
         "id": "5a34767d.889fa8",
         "type": "tls-config",
         "z": "",
-        "name": "T-Mobile TLS Config",
+        "name": "Magenta Telekom TLS Config",
         "cert": "",
         "key": "",
         "ca": "",

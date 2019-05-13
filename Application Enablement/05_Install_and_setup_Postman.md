@@ -29,7 +29,7 @@ Open Settings
 ## Import Demo Certificate
  
 **IMPORTANT: You may only use this client Certificate only for testing.**  
-**For production use, you have to request your own client certificate from T-Mobile Austria.**
+**For production use, you have to request your own client certificate from Magenta Telekom.**
 
 * Download (Save Link to PC): [Demo Certificate](https://raw.githubusercontent.com/alliot-at/Quickstart/master/Application%20Enablement/Demo_Client_Certificates/IoT-Gateway.crt)
 * Download (Save Link to PC): [Demo Certificate Key](https://raw.githubusercontent.com/alliot-at/Quickstart/master/Application%20Enablement/Demo_Client_Certificates/IoT-Gateway.key)
