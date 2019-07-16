@@ -18,8 +18,8 @@ Open Settings
 **IMPORTANT: You may only use this client Certificate only for testing.**  
 **For production use, you have to request your own client certificate from Magenta Telekom.**
 
-* Download (Save Link to PC): [Demo Certificate](https://raw.githubusercontent.com/alliot-at/Quickstart/master/Application%20Enablement/Demo_Client_Certificates/IoT-Gateway.crt)
-* Download (Save Link to PC): [Demo Certificate Key](https://raw.githubusercontent.com/alliot-at/Quickstart/master/Application%20Enablement/Demo_Client_Certificates/IoT-Gateway.key)
+* Download (Save Link to PC): [Demo Certificate](https://github.com/magentabusiness/IoT-Quickstart/blob/master/docs/Application_Enablement/Demo_Client_Certificates/IoT-Gateway.crt)
+* Download (Save Link to PC): [Demo Certificate Key](https://github.com/magentabusiness/IoT-Quickstart/blob/master/docs/Application_Enablement/Demo_Client_Certificates/IoT-Gateway.key)
 
 
 
@@ -35,7 +35,7 @@ Open Settings
 ## Import Examples
 
 * Download Examples (Save Link to PC): 
-  [IoT-Gateway Examples](https://raw.githubusercontent.com/alliot-at/Quickstart/master/Application%20Enablement/IoT-Gateway_Demos.postman_collection.json)  
+  [IoT-Gateway Examples](https://github.com/magentabusiness/IoT-Quickstart/blob/master/docs/Application_Enablement/IoT-Gateway_Demos.postman_collection.json)  
 Import in Postman
 1. File -> Import  
 2. Import File  
@@ -61,7 +61,7 @@ Further informations: https://learning.getpostman.com/docs/postman/environments_
 ### Import IoT-Gateway Environment
 
 * Download Examples (Save Link to PC):
-  [IoT-Gateway Environment](https://raw.githubusercontent.com/alliot-at/Quickstart/master/Application%20Enablement/IoT-Gateway_Demo.postman_environment.json)  
+  [IoT-Gateway Environment](https://github.com/magentabusiness/IoT-Quickstart/blob/master/docs/Application_Enablement/IoT-Gateway_Demo.postman_environment.json)  
 
 ![Postman Manage Environments](../images/Postman_manage_environment.png)
 1. Click "Manage Environments"
