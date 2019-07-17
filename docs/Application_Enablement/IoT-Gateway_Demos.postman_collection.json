@@ -1,6 +1,6 @@
 {
 	"info": {
-		"_postman_id": "e3bc2f7a-b401-4d2c-abcd-5a70aa89a17f",
+		"_postman_id": "e6ef5c98-43be-4b42-89ed-dffe66c37301",
 		"name": "Ocean Connect",
 		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
 	},
@@ -867,7 +867,7 @@
 			"response": []
 		},
 		{
-			"name": "*2.4.4 Querying Historical Device Shadow Data",
+			"name": "2.4.4 Querying Historical Device Shadow Data",
 			"request": {
 				"method": "GET",
 				"header": [
@@ -939,7 +939,7 @@
 			"response": []
 		},
 		{
-			"name": "*2.4.5 Querying Service Capabilities of a Device",
+			"name": "2.4.5 Querying Service Capabilities of a Device",
 			"request": {
 				"method": "GET",
 				"header": [
@@ -1018,7 +1018,7 @@
 					"raw": "{\n\t\"name\": \"test\",\n\t\"appId\": \"\",\n\t\"description\": \"\",\n\t\"deviceIds\": \n\t[\n\t\t\"\",\n\t\t\"\"\n\t],\n\t\"maxDevNum\": 2,\n\t\"id\": \"\"\n}"
 				},
 				"url": {
-					"raw": "https://{{server}}/iocm/app/devgroup/v1.3.0/devGroups",
+					"raw": "https://{{server}}/iocm/app/devgroup/v1.3.0/devGroups?",
 					"protocol": "https",
 					"host": [
 						"{{server}}"
@@ -1296,7 +1296,7 @@
 			"response": []
 		},
 		{
-			"name": "*2.5.6 Querying Members of a Specified Device Group",
+			"name": "2.5.6 Querying Members of a Specified Device Group",
 			"request": {
 				"method": "GET",
 				"header": [
@@ -2562,7 +2562,7 @@
 		"bearer": [
 			{
 				"key": "token",
-				"value": "1afa8e3a3d9482a5d23a017bad2bfb4",
+				"value": "95a7da2b80feec7995fe1210701d46c7",
 				"type": "string"
 			}
 		]
