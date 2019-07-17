@@ -1,7 +1,7 @@
 # How to get your data out of IoT-Gateway
 
 !> Be sure that you have a valid accessToken, otherwise Login again.  
-[Connect to the Rest API](06_Connect_to_REST_API.md)
+[Connect to the Rest API](./Application_Enablement/06_Connect_to_REST_API.md)
 
 ## Get all devices of your application
 
