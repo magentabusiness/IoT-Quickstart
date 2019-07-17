@@ -24,20 +24,30 @@ MsgId 01 => Int Data with Response from IoT-Gateway / Response = (AA01)
      +QLWEVTIND=0  
      +QLWEVTIND=3  
 2. Send Data **without** confirmation  
-    `AT+QLWULDATAEX=8,060454656d70000F,0x0000`     // Data: Temp=15
+    ```
+	
+	AT+QLWULDATAEX=8,060454656d70000F,0x0000     // Data: Temp=15
+	```
 3. Send Data **with** confirmation  
-    `AT+QLWULDATAEX=8,060454656d70000A,0x0100,1`   //Data Temp=10  
+    ```
+	
+	AT+QLWULDATAEX=8,060454656d70000A,0x0100,1   //Data Temp=10 
+	```
     Response:  
-    `+QLWULDATASTATUS:4,1`  //Response on Protocol Layer  
+    ```
+	
+	+QLWULDATASTATUS:4,1  //Response on Protocol Layer  
+	```
     4 ... means success  
     1 ... is the seq_num (Sequence Number) from the send command (last Parameter)
 
 4. Send Data with Early Release Flag active **without** confirmation  
    Early Release means that the Device immediately switches after sending data into Idle Mode, without Early Release it waits 20 seconds. 
    So this feature can be used to save power, if the Device normally receives no data after sending.
-
-   `AT+QLWULDATAEX=8,060454656d70000A,0x0001`      //Data: Temp=10  
-    
+   ```
+   
+   AT+QLWULDATAEX=8,060454656d70000A,0x0001      //Data: Temp=10  
+   ```
    Responses if AT+CSCON=1
    ```
    +CSCON:1  //Connected Mode
@@ -47,8 +57,10 @@ MsgId 01 => Int Data with Response from IoT-Gateway / Response = (AA01)
 5. Send Data with Early Release Flag active **with** confirmation  
    Here the UE waits for the confirmation on protocol Layer, then it
    switches immediately into Idle Mode. 
-   `AT+QLWULDATAEX=8,060454656d70000B,0x0101`
-    
+   ```
+   
+   AT+QLWULDATAEX=8,060454656d70000B,0x0101
+   ```
    Responses if AT+CSCON=1
    ```
    +CSCON:1             //Connected Mode
@@ -75,8 +87,10 @@ MsgId 00 => String Data with Response from IoT-Gateway / Response = (AA00)
    In this Example we will send Key=Color / Value=Magenta     
    Color in ASCII Hex = 436f6c6f72  / Len=5  
    Magenta in ASCII Hex = 4d6167656e7461 / Len=7  
-   
-   `AT+QLWULDATAEX=15,0005436f6c6f72074d6167656e7461,0x0000,1`  
+   ```
+
+   AT+QLWULDATAEX=15,0005436f6c6f72074d6167656e7461,0x0000,1
+   ```
    Response:
    ```
    +NNMI:2,AA00 
@@ -85,12 +99,16 @@ MsgId 00 => String Data with Response from IoT-Gateway / Response = (AA00)
 
 
 2. Send JSON Data with Response from IoT-Gateway  
+   ```
+   
    Key = "DATA",  => 44415441 / len: 4  
    Value = {"Temp":22.3,"Hum":20,"Weight":23,"Color":"Magenta"} =>  
    7b2254656d70223a32322e332c2248756d223a32302c22576569676874223a32332c22436f6c6f72223a224d6167656e7461227d  / len: 52 = 0x34
+   ```
+   ```
 
-   `AT+QLWULDATAEX=59,000444415441347b2254656d70223a32322e332c2248756d223a32302c22576569676874223a32332c22436f6c6f72223a224d6167656e7461227d,0x0000,1`  
-
+   AT+QLWULDATAEX=59,000444415441347b2254656d70223a32322e332c2248756d223a32302c22576569676874223a32332c22436f6c6f72223a224d6167656e7461227d,0x0000,1   
+   ```
     Response:  
    ```
    +NNMI:2,AA00 

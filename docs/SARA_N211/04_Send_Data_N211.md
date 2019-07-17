@@ -50,7 +50,9 @@ MsgId 00 => String Data with Response from IoT-Gateway / Response = (AA00)
    Color in ASCII Hex = 436f6c6f72  / Len=5  
    Magenta in ASCII Hex = 4d6167656e7461 / Len=7  
    
-   `AT+NMGS=15,"0005436f6c6f72074d6167656e7461"`  
+   ```
+   AT+NMGS=15,"0005436f6c6f72074d6167656e7461"
+   ```
    Response:
    ```
    +NNMI:2,AA00 
@@ -61,12 +63,16 @@ MsgId 00 => String Data with Response from IoT-Gateway / Response = (AA00)
 
 
 2. Send JSON Data with Response from IoT-Gateway  
+   ```
+   
    Key = "DATA",  => 44415441 / len: 4  
    Value = {"Temp":22.3,"Hum":20,"Weight":23,"Color":"Magenta"} =>  
    7b2254656d70223a32322e332c2248756d223a32302c22576569676874223a32332c22436f6c6f72223a224d6167656e7461227d  / len: 52 = 0x34
-
-   `AT+NMGS=59,"000444415441347b2254656d70223a32322e332c2248756d223a32302c22576569676874223a32332c22436f6c6f72223a224d6167656e7461227d"`  
-
+   ```
+   ```
+   
+   AT+NMGS=59,"000444415441347b2254656d70223a32322e332c2248756d223a32302c22576569676874223a32332c22436f6c6f72223a224d6167656e7461227d  
+   ```
     Response:  
    ```
    +NNMI:2,AA00 
