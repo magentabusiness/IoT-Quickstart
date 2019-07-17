@@ -9,7 +9,9 @@
 # General AT commands and response from Module
 * For EVK users, just click on Get info button. Do not need to enter general information commands manually.
 * For Module users, follow these AT commands.
+
 ```
+
 AT                                  //check the module 
 --> OK
 
@@ -44,11 +46,12 @@ AT+CGSN                             //IMEI identification
 AT+CSQ                              //Signal quality
 --> +CSQ: 18,99
 --> OK
-
 ```
 
 # AT commands to connect with NBIoT network and response from Module
+
 ```
+
 AT+CMEE=2            //Report mobile termination error, 2 means error code enabled and verbose value used 
 --> OK
 
@@ -97,11 +100,12 @@ AT+CSQ              //Signal Quality
 AT+CEMODE?          //Check the CE level
 --> +CEMODE: 2
 --> OK
-
 ```
 
 ## Check IP Address
+
 ``` 
+
 AT+CGPADDR = 1      //Show address of the PDP context 1
         Response:
         +CGPADDR: 1,10.***.**.**

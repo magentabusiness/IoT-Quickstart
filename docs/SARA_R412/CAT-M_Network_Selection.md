@@ -9,7 +9,9 @@
 # General AT commands and response from Module
 * For EVK users, just click on Get info button. Do not need to enter general information commands manually.
 * For Module users, follow these AT commands.
+
 ```
+
 AT                                  //check the module 
 --> OK
 
@@ -44,11 +46,11 @@ AT+CGSN                             //IMEI identification
 AT+CSQ                              //Signal quality
 --> +CSQ: 31,99
 --> OK
-
 ```
-
 # AT commands to connect with network and response from Module
+
 ```
+
 AT+CMEE=2            //Report mobile termination error, 2 means error code enabled and verbose value used 
 --> OK
 
@@ -93,11 +95,11 @@ AT+UCGED=5          //Channel and network environment description, 5 means RSRP 
 AT+UCGED?           //RSRP and RSRQ report
 --> +RSRP: 175,6400,"-053.70",
 --> +RSRQ: 175,6400,"-03.20",
-
 ```
-
 ## Check IP Address
+
 ``` 
+
 AT+CGPADDR = 1      //Show address of the PDP context 1
         Response:
         +CGPADDR: 1,10.184.84.84

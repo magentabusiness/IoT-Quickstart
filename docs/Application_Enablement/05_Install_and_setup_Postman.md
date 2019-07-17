@@ -23,9 +23,9 @@ Open Settings
 
 
 
-![Postman Client Certificate](../images/Postman_settings_certificate.png)
+![Postman Client Certificate](../images_new/Import_Demo_Certificate.png)
 
-1. Host: 160.44.201.125
+1. Host: api.iotgateway.magenta.at
 2. Port: 8743
 3. CRT File --> choose "IoT-Gateway.crt" 
 4. Key File --> choose "IoT-Gateway.key" 
@@ -42,7 +42,7 @@ Import in Postman
 ![Postman Import](../images/Postman_import.png)  
 Choose File IoT-Gateway_Demos.postman_collection.json
 3. After import   
-![Postman Import](../images/Postman_import_ok.png)   
+![Postman Import](../images_new/After_Import.png)   
 
 ## Import and Configure Postman Environment
 
@@ -56,7 +56,7 @@ You won’t have to remember all those values once they are in Postman. You can 
 
 You can create, share, duplicate, export, and delete an environment. You can also import an environment as a single JSON file. 
 
-Further informations: https://learning.getpostman.com/docs/postman/environments_and_globals/manage_environments/
+Further informations: [Here](https://learning.getpostman.com/docs/postman/environments_and_globals/manage_environments/)
 
 ### Import IoT-Gateway Environment
 
@@ -71,7 +71,7 @@ Further informations: https://learning.getpostman.com/docs/postman/environments_
 ### Configure IoT-Gateway Environment
 
 Open Environment<br>   
-![Postman Manage Environments](../images/Postman_environment.png)
+![Postman Manage Environments](../images_new/Configure_IoT-Gateway_Environment.png)
 1. Choose "IoT-Gateway Demo" 
 2. Click "Environment quick look"
 3. Click "Edit"
@@ -80,7 +80,7 @@ Configure the Environment for your Application and Device<br>
 Now you need your Application Credentials, which you have downloaded in the first Part of the Tutorial ( [Create your first Application](../01&#32;Create&#32;first&#32;Application.md) )  (Step: Save Secert to Local)  
 So open the File and get your AppID and AppSecret
 
-![Postman Manage Environments](../images/Postman_environment_edit.png)
+![Postman Manage Environments](../images_new/Enter_appId&secret.png)
 1. Enter your AppId
 2. Enter your App Secret
 

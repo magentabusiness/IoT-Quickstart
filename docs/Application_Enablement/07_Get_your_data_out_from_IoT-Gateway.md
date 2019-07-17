@@ -5,12 +5,16 @@
 
 ## Get all devices of your application
 
-1. Select `02 Get Devices`from the IoT-Gateway Demo Connection
+1. Select `2.4.2 Querying Device Information in Batches`from the IoT-Gateway Demo Connection
 2. Press "Send"
 
 Detail: 
 GET Request to URL with access Token  
-`https://{{server}}/iocm/app/dm/v1.3.0/devices?appId={{appId}}&pageNo=0&pageSize=10  `  
+
+```
+
+https://{{server}}/iocm/app/dm/v1.4.0/devices?:appId={{appId}}&:gatewayId={{appId}}&:name&:status&:nodeType&:deviceType&:location&pageNo=0&pageSize=25&:startTime&:endTime&:sort&:select
+``` 
 
 {{server}} and {{appId}} are Variables from your Environment.
 
@@ -58,13 +62,13 @@ In the last command you see this Line:
 `"deviceId": "3c9b523d-b17c-XXXX-97e0-64e1d05d1267"`  
 **This is the unique DeviceID - for the next Request you have add this ID to your Environment to deviceId.**
 
-1. Select `04 Get Historical Data from Device`from the IoT-Gateway Demo Connection
+1. Select `2.4.3 Querying Historical Device Data`from the IoT-Gateway Demo Connection
 2. Press "Send"
 
 Detail:  
 GET Request to URL:  
 ```
-https://{{server}}/iocm/app/data/v1.1.0/deviceDataHistory?deviceId={{deviceId}}&gatewayId={{deviceId}}&pageSize=1000&startTime=20181015T000000Z&endTime=20291015T000000Z&appId={{appId}}
+https://{{server}}/iocm/app/data/v1.1.0/deviceDataHistory?deviceId={{deviceId}}&gatewayId={{deviceId}}&pageSize=1000&startTime=20181015T000000Z&endTime=20191015T000000Z&appId={{appId}}
 ```
 
 {{server}}, {{appId}} and {{deviceId}} are Variables from your Environment.
@@ -131,9 +135,9 @@ So every time a device sends data, the data will be forwarded to your server imm
 ### Add Subscription
 
 You only have to do this steps once.
-![Add Subscription](../images/API_Subscribe.png)
+![Add Subscription](../images_new/Subscribe.png)
 
-1. Select `05 Subscribe Event`from the IoT-Gateway Demo Connection
+1. Select `2.8.1 Creating a Subscription`from the IoT-Gateway Demo Connection
 2. Change `callbackurl` to your server URL, or use e.g. [Beeceptor](https://beeceptor.com/) for testing.
 3. For this tutorial use HTTP instead of HTTPS. 
 4. Press "Send"
@@ -154,6 +158,10 @@ If you want to use HTTPS, you have to upload the Certificate of your Web server.
    4. Select Tab "North Push Configuration"
    5. Delete your subscription from the "callback list"
    
+##### OR
+	 
+* Use `2.8.3 Deleting a Specified Subscription`
+	
 
 
 

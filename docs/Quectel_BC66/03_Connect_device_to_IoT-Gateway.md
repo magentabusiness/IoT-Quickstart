@@ -1,11 +1,9 @@
 # Connect Quectel BC66 to IoT-Gateway
 
 !> **Prerequisites**
- > * Install Putty   
- > https://www.chiark.greenend.org.uk/~sgtatham/putty/latest.html
- > * Download latest Drivers  
- > https://www.exar.com/product/interface/uarts/usb-uarts/xr21v1412
-
+ > * [Install Putty](https://www.chiark.greenend.org.uk/~sgtatham/putty/latest.html)   
+ > * [Download latest Drivers](https://www.exar.com/product/interface/uarts/usb-uarts/xr21v1412)
+ 
 # Configure Device
 1. Insert SIM Card
 2. Mount antenna

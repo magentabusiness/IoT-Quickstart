@@ -4,7 +4,7 @@
 
 # Import Product
 1. Download Product from GitHub Page  
-https://github.com/magentabusiness/IoT-Quickstart/raw/master/docs/Product%20Profiles/tmaKeyValue_TMAKeyValue_V01.zip
+[Download Product](https://github.com/magentabusiness/IoT-Quickstart/raw/master/docs/Product%20Profiles/tmaKeyValue_TMAKeyValue_V01.zip)
 
 
 ![DeviceStep2](./images/DeviceStep2.png)  

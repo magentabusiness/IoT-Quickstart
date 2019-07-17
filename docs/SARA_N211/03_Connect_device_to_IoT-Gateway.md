@@ -1,10 +1,9 @@
 # Connect u-blox SARA N211 / SODAQ SARA AFF N211 to IoT-Gateway
 
 !> **Prerequisites**
- > * Install Putty   
- > https://www.chiark.greenend.org.uk/~sgtatham/putty/latest.html
+ > * [Install Putty](https://www.chiark.greenend.org.uk/~sgtatham/putty/latest.html)   
  > * If you are using SODAQ SARA AFF N211 follow this instructions:  
- > https://support.sodaq.com/sodaq-one/sara/  
+ > [View instructions](https://support.sodaq.com/sodaq-one/sara/)   
  > to load the Passthrough-Sketch (nbIOT_serial_passthrough) on your Arduino then  
  > close ArduinoIDE
 

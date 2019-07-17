@@ -4,9 +4,9 @@ After you have installed and configured Postman, you are ready to connect to the
 
 # Login
 
-![API Login](../images/API_login.png)
+![API Login](../images_new/Login.png)
 1. Check you have selected the IoT-Gateway Demo Environment
-2. Open the Login Request
+2. Open the `2.1.1 Authentication Request`
 3. Press "Send"
 4. Check the Response
 
@@ -33,7 +33,7 @@ Postman can save the accessToken to use it automatically for the next requests.
 
 Copy the accessToken Value from the response in your clipboard. 
 
-![API Auth](../images/API_auth1.png)
+![API Auth](../images_new/How_to_use_accessToken.png)
 
 
 1. Select Authorization
