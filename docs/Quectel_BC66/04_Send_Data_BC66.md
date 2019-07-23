@@ -11,7 +11,7 @@ FYI: ASCII to Hex Converter: https://www.binaryhexconverter.com/ascii-text-to-he
 
 Command Syntax:
 ```
-AT+QLWDATASEND = 19,0,0,8,060454656d70000F,0x0100 
+AT+QLWDATASEND=19,0,0,8,060454656d70000F,0x0100 
 // Syntax Parameters Details : 
 // <obj_id> :         19       : Integer; Object ID 
 // <ins_id> :          0       : Integer; Instance ID
@@ -35,12 +35,12 @@ MsgId 01 => Int Data with Response from IoT-Gateway / Response = (AA01)
 2. Send Data **without** confirmation  
     
 	```
-	AT+QLWDATASEND = 19,0,0,8,060454656d70000F,0x0000     // Data: Temp=15
+	AT+QLWDATASEND=19,0,0,8,060454656d70000F,0x0000     // Data: Temp=15
 	```
 3. Send Data **with** confirmation  
     ```
 	
-	AT+QLWDATASEND = 19,0,0,8,060454656d70000F,0x0100   //Data Temp=10
+	AT+QLWDATASEND=19,0,0,8,060454656d70000F,0x0100   //Data Temp=10
 	```
     Response:  
     `OK`    
@@ -57,7 +57,7 @@ FYI: If you need a response from IoT-Gateway - just use MsgId 01 instead of 06
 
 Command Syntax:
 ```
-AT+QLWDATASEND = 19,0,0,15,0005436f6c6f72074d6167656e7461,0x0100
+AT+QLWDATASEND=19,0,0,15,0005436f6c6f72074d6167656e7461,0x0100
 // Syntax Parameters Details : 
 // <obj_id> :         19       : Integer; Object ID 
 // <ins_id> :          0       : Integer; Instance ID
