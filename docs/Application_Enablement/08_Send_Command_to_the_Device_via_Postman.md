@@ -1,4 +1,4 @@
-# How to send command to the Device.
+# How to send command to the Device via Postman.
 
 ## Make sure following things checked before proceed further.
 1. Check that you have a valid accessToken, Otherwise Login again and get the accessToken. [You can follow `Application Enablement --> Connect to the Rest API` for the accessToken.]
