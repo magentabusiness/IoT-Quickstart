@@ -29,6 +29,7 @@
 	- [06 Connect to REST API](./Application_Enablement/06_Connect_to_REST_API.md)
 	- [07 Get your data out from IoT-Gateway](./Application_Enablement/07_Get_your_data_out_from_IoT-Gateway.md)
 	- [08 Send Command to the Device via Postman (Northbound App)](./Application_Enablement/08_Send_Command_to_the_Device_via_Postman.md)
+	- [09 Send Command to the Device via IoT-Gateway](./Application_Enablement/09_Send_Command_to_the_Device_via_IoT-Gateway.md)
 
 - **Advanced Topics**
 	- [CIG Plugin Development](./Advanced_Topics/CIG_Plugin_Development.md)
