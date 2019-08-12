@@ -10,7 +10,7 @@ First and foremost check your respective device model or Product profile, whethe
 
 ## Step 2 Send the Command 
 1. Select the Command 
-2. Select the Mode. (Mode is command for Irrigation, It is depending on your product model. If you use another product model, you might get another option depending on your product model commands.)
+2. Select the Mode. (Mode is command for Irrigation, It is depending on your product model. If you use another product model, you might get another option.)
 3. Click on Confirm.
 
 ![Putty](../images/PM_Send_Command.png)  
