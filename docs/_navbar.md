@@ -16,6 +16,7 @@
 	- [05 Install and setup Postman](./Application_Enablement/05_Install_and_setup_Postman.md)
 	- [06 Connect to REST API](./Application_Enablement/06_Connect_to_REST_API.md)
 	- [07 Get your data out from IoT-Gateway](./Application_Enablement/07_Get_your_data_out_from_IoT-Gateway.md)
+	- [08 Send Command to the Device (Northbound App)](./Application_Enablement/08_Send_Command_to_the_Device.md)
 
 - Advanced Topics
 	- [CIG Plugin Development](./Advanced_Topics/CIG_Plugin_Development.md)
