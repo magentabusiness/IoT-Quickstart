@@ -13,7 +13,7 @@ For Quectel BC68 module, you can download the firmware version from GitHub Folde
 ![CC.Step2](../images/CC.Step2.png)
 
 1. Choose the device Application
-2. Click on "Product Models"
+2. Click on "Product Models" (In new updated version of IoT-Gateway, you may find the Product models 2nd in the list after "Home" field.)
 3. Click on "Details"
 4. Click on "Maintenance Capability Configuration"
 5. Enable the Firmware Upgrade by clicking Supported.

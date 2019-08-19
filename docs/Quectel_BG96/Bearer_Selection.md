@@ -13,7 +13,7 @@ Connect to NB-IoT with BG96
 AT+QCFG="nwscanseq",03,1
 AT+QCFG="nwscanmode",3,1
 AT+QCFG="iotopmode",1,1
-AT+QICSGP=1,1,"alliot.nbiot.at","","",1  //Set APN
+AT+QICSGP=1,1,"APN-Name","","",1  //Set APN
 ``` 
 ### Check available Networks
 ```javascript 
@@ -49,7 +49,7 @@ Connect to 2G (GPRS) with BG96
 ```javascript
 AT+QCFG="nwscanseq",01,1
 AT+QCFG="nwscanmode",1,1
-AT+QICSGP=1,1,"business.gprsinternet","","",1  //Set APN
+AT+QICSGP=1,1,"APN-Name","","",1  //Set APN
 ```
 
 ### Check available Networks
