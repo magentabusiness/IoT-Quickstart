@@ -94,7 +94,7 @@ Connect to CAT-M  with BG96
 AT+QCFG="nwscanseq",02,1
 AT+QCFG="nwscanmode",3,1
 AT+QCFG="iotopmode",0,1
-AT+QICSGP=1,1,"business.gprsinternet","","",1  //Set APN
+AT+QICSGP=1,1,"APN-NAme","","",1  //Set APN
 ```
 
 ### Check available Networks
