@@ -320,82 +320,82 @@ Line 85: `<Bundle-SymbolicName>deviceType-manufacturerId-model</Bundle-SymbolicN
 5. Update `/src/main/resources/OSGI-INF/CodecProvideHandler.xml`
 Update properties with ###
 
-```xml
-<?xml version="1.0" encoding="UTF-8"?>
-<scr:component xmlns:scr="http://www.osgi.org/xmlns/scr/v1.1.0" immediate="true" name="###com.manufacturerName.model.deviceType###.ProtocolAdapterImpl">
-    <implementation class="###com.manufacturerName.model.deviceType###.ProtocolAdapterImpl"/>
-    <service>
-        <provide interface="com.huawei.m2m.cig.tup.modules.protocol_adapter.IProtocolAdapter" />
-    </service>
-</scr:component>
-```
+    ```xml
+   <?xml version="1.0" encoding="UTF-8"?>
+    <scr:component xmlns:scr="http://www.osgi.org/xmlns/scr/v1.1.0" immediate="true" name="###com.manufacturerName.model.deviceType###.ProtocolAdapterImpl">
+        <implementation class="###com.manufacturerName.model.deviceType###.ProtocolAdapterImpl"/>
+        <service>
+          <provide interface="com.huawei.m2m.cig.tup.modules.protocol_adapter.IProtocolAdapter" />
+         </service>
+    </scr:component>
+    ```
 
-Example:
+    Example:
 
-```xml
-<?xml version="1.0" encoding="UTF-8"?>
-<scr:component xmlns:scr="http://www.osgi.org/xmlns/scr/v1.1.0" immediate="true" name="com.IoT_Company.NBIoTDevice.TestDevice.ProtocolAdapterImpl">
-    <implementation class="com.IoT_Company.NBIoTDevice.TestDevice.ProtocolAdapterImpl"/>
-    <service>
-        <provide interface="com.huawei.m2m.cig.tup.modules.protocol_adapter.IProtocolAdapter" />
-    </service>
-</scr:component>
-```
+    ```xml
+    <?xml version="1.0" encoding="UTF-8"?>
+    <scr:component xmlns:scr="http://www.osgi.org/xmlns/scr/v1.1.0" immediate="true" name="com.IoT_Company.NBIoTDevice.TestDevice.ProtocolAdapterImpl">
+        <implementation class="com.IoT_Company.NBIoTDevice.TestDevice.ProtocolAdapterImpl"/>
+        <service>
+            <provide interface="com.huawei.m2m.cig.tup.modules.protocol_adapter.IProtocolAdapter" />
+        </service>
+    </scr:component>
+    ```
 
 6. Update `package-info.json`
 Update properties with ###
 
-```json
-{
-    "specVersion":"1.0",
-    "fileName":"###deviceType-manufacturerId-model###",
-    "version":"1.0.0",
-    "deviceType":"###deviceType###",
-    "manufacturerName":"###manufacturerId###",
-    "model":"###model###",
-    "description":"codec",
-    "platform":"linux",
-    "packageType":"CIGPlugin",
-    "date":"2019-03-06 12:16:59",
-    "ignoreList":[],
-    "bundles":[
+    ```json
     {
-        "bundleName": "###deviceType-manufacturerId-model###",
-        "bundleVersion": "1.0.0",
-        "priority":5,
-        "fileName": "###deviceType-manufacturerId-model###-1.0.0.jar",
-        "bundleDesc":"",
-        "versionDesc":""
-    }]
-}
-```
+        "specVersion":"1.0",
+        "fileName":"###deviceType-manufacturerId-model###",
+        "version":"1.0.0",
+        "deviceType":"###deviceType###",
+        "manufacturerName":"###manufacturerId###",
+        "model":"###model###",
+        "description":"codec",
+        "platform":"linux",
+        "packageType":"CIGPlugin",
+        "date":"2019-03-06 12:16:59",
+        "ignoreList":[],
+        "bundles":[
+        {
+            "bundleName": "###deviceType-manufacturerId-model###",
+            "bundleVersion": "1.0.0",
+            "priority":5,
+            "fileName": "###deviceType-manufacturerId-model###-1.0.0.jar",
+            "bundleDesc":"",
+            "versionDesc":""
+        }]
+    }
+    ```
 
-Example:
+    Example:
 
-```json
-{
-    "specVersion":"1.0",
-    "fileName":"TestDevice-IoTCompany-NBIoTDevice",
-    "version":"1.0.0",
-    "deviceType":"TestDevice",
-    "manufacturerName":"IoTCompany",
-    "model":"NBIoTDevice",
-    "description":"codec",
-    "platform":"linux",
-    "packageType":"CIGPlugin",
-    "date":"2017-02-06 12:16:59",
-    "ignoreList":[],
-    "bundles":[
+    ```json
     {
-        "bundleName": "TestDevice-IoTCompany-NBIoTDevice",
-        "bundleVersion": "1.0.0",
-        "priority":5,
-        "fileName": "TestDevice-IoTCompany-NBIoTDevice-1.0.0.jar",
-        "bundleDesc":"",
-        "versionDesc":""
-    }]
-}
-```
+        "specVersion":"1.0",
+        "fileName":"TestDevice-IoTCompany-NBIoTDevice",
+        "version":"1.0.0",
+        "deviceType":"TestDevice",
+        "manufacturerName":"IoTCompany",
+        "model":"NBIoTDevice",
+        "description":"codec",
+        "platform":"linux",
+        "packageType":"CIGPlugin",
+        "date":"2017-02-06 12:16:59",
+        "ignoreList":[],
+        "bundles":[
+        {
+            "bundleName": "TestDevice-IoTCompany-NBIoTDevice",
+            "bundleVersion": "1.0.0",
+            "priority":5,
+            "fileName": "TestDevice-IoTCompany-NBIoTDevice-1.0.0.jar",
+            "bundleDesc":"",
+            "versionDesc":""
+        }]
+    }
+    ```
 
 7. Now, you should be able to build the CIG-Plugin (mvn package).
 

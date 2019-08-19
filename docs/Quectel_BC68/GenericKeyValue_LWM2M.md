@@ -10,7 +10,7 @@
 
 ### ServiceName: StringData
 
-```
+```shell
 Attributes
     StringKey  (length 20)
     StringValue (length 200)
