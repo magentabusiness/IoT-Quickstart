@@ -8,9 +8,12 @@
 	- **Quectel BC66**
 		- [03 Connect BC66 to IoT-Gateway](./Quectel_BC66/03_Connect_device_to_IoT-Gateway.md)
 		- [04 Send Data BC66](./Quectel_BC66/04_Send_Data_BC66.md)
-	- **Quectel BC68**
+    - **Quectel BC68**
 		- [03 Connect BC68 to IoT-Gateway](./Quectel_BC68/03_Connect_device_to_IoT-Gateway.md)
 		- [04 Send Data BC68](./Quectel_BC68/04_Send_Data_BC68.md)
+    - **Lierda NB-IoT USB Dongle**
+		- [03 Connect Lierda NB-IoT USB Dongle to IoT-Gateway](./Lierda_NB-IoT_USB_Dongle/03_Connect_device_to_IoT-Gateway.md)
+		- [04 Send Data](./Lierda_NB-IoT_USB_Dongle/04_Send_Data_Lierda.md)
 	- **Quectel BG96**
 		- [Bearer Selection](./Quectel_BG96/Bearer_Selection.md)
 		- [Drivers and Docs](./Quectel_BG96/Drivers_and_Docs.md)
