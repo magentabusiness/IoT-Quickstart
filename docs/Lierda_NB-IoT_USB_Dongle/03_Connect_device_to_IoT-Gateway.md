@@ -1,40 +1,30 @@
 # Connect Lierda NB-IoT USB Dongle to IoT-Gateway
 
-- [Connect Lierda NB-IoT USB Dongle to IoT-Gateway](#connect-lierda-nb-iot-usb-dongle-to-iot-gateway)
-- [Prerequisites](#prerequisites)
-- [Configure Device](#configure-device)
-- [Configure Putty](#configure-putty)
-- [Check Connection](#check-connection)
-- [Prepare Lierda NB-IoT USB Dongle (do it only once)](#prepare-lierda-nb-iot-usb-dongle-do-it-only-once)
-- [Connect Lierda NB-IoT USB Dongle to NB-IoT Network and IoT-Gateway (do it after each reboot)](#connect-lierda-nb-iot-usb-dongle-to-nb-iot-network-and-iot-gateway-do-it-after-each-reboot)
-- [Next Step: Send data from your Device to IoT-Gateway / Link: Send DATA](#next-step-send-data-from-your-device-to-iot-gateway--link-send-data)
-- [Troubleshooting](#troubleshooting)
-  - [Connect manually](#connect-manually)
-  - [Check Signal](#check-signal)
-  - [Check IP Address](#check-ip-address)
-  - [Check IoT-Gateway](#check-iot-gateway)
 
 # Prerequisites
-* [Create your first Application](../01&#32;Create&#32;first&#32;Application.md)
-* [Add your first device](../02&#32;Add&#32;first&#32;Device.md)
-* Install Putty   
+
+* [Create your first Application](../01_Create_first_Application.md)
+* [Add your first device](../02_Add_first_Device.md)
+* Install Putty
   https://www.chiark.greenend.org.uk/~sgtatham/putty/latest.html
 * Download latest Drivers  
   https://www.exar.com/product/interface/uarts/usb-uarts/xr21v1412
 
 # Configure Device
+
 1. Insert SIM Card
 2. Mount antenna
 3. Connect it with USB to your PC
 4. Install Drivers
-5. Check in Device Manager the correct COM-Port (Ch B)  
+5. Check in Device Manager the correct **COM-Port (Ch B)**  
    ![Step4](../images/BC68_Step1.png)
 6. Open Putty  
 
 
 # Configure Putty     
 
-   ![Putty](../images/BC68_Putty_Step1.png)    
+   ![Putty](../images/BC68_Putty_Step1.png)   
+
    1. Enter correct COM-Port
    2. Set Baud rate (Speed) to 9600
    3. Connection Type: Serial
@@ -42,22 +32,26 @@
    5. Press save
 
    ![Putty](../images/BC68_Putty_Step2.png)    
+
    1. Select "Terminal"
    2. Local echo: Force On
    3. Local line editing: Force On
    4. Select "Session"  
 
-   ![Putty](../images/BC68_Putty_Step3.png)    
+   ![Putty](../images/BC68_Putty_Step3.png)  
+
    1. Press Save
    2. Double-Click to "Lierda_NB-IoT" to connect Putty to your Lierda NB-IoT Module  
 
 
 # Check Connection  
-  ![Putty](../images/BC68_Putty_Step4.png)   
-  Enter `ATI` to check module
+
+   Enter `AT` to check module
+   Response sould be `OK`
 
 # Prepare Lierda NB-IoT USB Dongle  (do it only once)  
-```
+
+```shell
     AT+NCONFIG=AUTOCONNECT,FALSE         # Disable Auto connect
     AT+NRB                               # Reboot - wait until finished (10sec)
     AT+NCDP=10.112.28.10,5683            # Set IP-Address of IoT-Gateway
@@ -70,18 +64,22 @@
     AT+NCONFIG=AUTOCONNECT,TRUE          # Enable Auto connect
     AT+NRB                               # Reboot - wait until finished (10sec)
 ```
+
 **NOTE: The fist time to connect can take up to 10 minutes. (until CEREG: 5)**
 
 #  Connect Lierda NB-IoT USB Dongle to NB-IoT Network and IoT-Gateway (do it after each reboot) 
-```
+
+```shell
     AT+NPSMR=1                           # Enable Power Saving Mode Status Report
     AT+CEREG=1                           # Enable network registration unsolicited 
     result code: “+CEREG:<stat>”
     AT+NNMI=1                            # Enable New Message Indications
     AT+CSCON=1                           # Enable Signalling Connection Status
 ```
+
 **Responses from Module**
-```
+
+```shell
 
     +CEREG:2      # Search for Network  
 
@@ -112,7 +110,8 @@
 # Troubleshooting
 
 ## Connect manually
-   ```
+
+   ```shell
     AT+NCONFIG=AUTOCONNECT,FALSE
     AT+NCDP=10.112.28.10,5683            # Set IP-Address of IoT-Gateway
     AT+NRB                               # Reboot - wait until finished (10sec)
@@ -132,9 +131,9 @@
                                          # network operator (23203 is Magenta Telekom AT) wait for 30sec – 300sec 
    ```
 
-
 ## Check Signal
-```
+
+```shell
 AT+NUESTATS         # Query UE Statistics
 
         Response:
@@ -164,13 +163,14 @@ AT+NUESTATS=CELL    # Get neighbour cells
         NUESTATS:CELL,3547,338,0,-874,-108,-1354,200
 
         NUESTATS:CELL,3547,464,0,-880,-108,-1354,200
-    
+
 ```  
 
 In case that you need support, please attach the output of `AT+NUESTATS=ALL` to your support request.
 
 ## Check IP Address
-``` 
+
+```shell
 AT+CGPADDR
         Response:
         +CGPADDR:0,10.X.Y.Z
@@ -186,7 +186,6 @@ AT+NPING=10.112.28.10   # IP of IoT-Gateway, you are not able to ping any other 
 ```
 
 ## Check IoT-Gateway  
-* [Add your first device](../02&#32;Add&#32;first&#32;Device.md)
+
+* [Add your first device](../02_Add_first_Device.md)
 * Check if your IMEI is correct.
-
-
