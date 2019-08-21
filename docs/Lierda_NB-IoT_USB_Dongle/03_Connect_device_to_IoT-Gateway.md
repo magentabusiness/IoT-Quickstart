@@ -46,7 +46,7 @@
 
 # Check Connection  
 
-   Enter `AT` to check module
+   Enter `AT` to check module - 
    Response sould be `OK`
 
 # Prepare Lierda NB-IoT USB Dongle  (do it only once)  
