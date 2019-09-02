@@ -488,4 +488,4 @@ A devicetype-capability.json file include the static information about the devic
 
 ## Step 4: Import Product Model  
 
-[Import Product Model.](../02_Add_first_Device.md#import-product)
+[Import Product Model.](02_Add_first_Device.md#import-product)

@@ -43,7 +43,7 @@ e.g. [Download OpenJDK 1.8.0](https://github.com/ojdkbuild/ojdkbuild) and set JA
 
 1. Download the "NB-IoT Encoding and Decoding Plugin Validation Tool"  
 [Huawei Server](https://devcenter.huawei.com/ict/en/resource/tool)  
-[Alternative Server](./Tools/NB-IoT_Encoding_and_Decoding_Plug-in_Check_Tool_en.zip)  
+[Alternative Server](https://github.com/magentabusiness/IoT-Quickstart/raw/master/docs/Tools/NB-IoT_Encoding_and_Decoding_Plug-in_Check_Tool_en.zip)  
 2. Unzip the downloaded file
 3. Copy your `devicetype-capability.json` from the Product Profile and the `package.zip` from the target Folder of your CIG Plugin into the same folder where `pluginDetector.jar` (from the downloaded zip) is located.
 
