@@ -82,7 +82,7 @@ So you can install the Product Model in your Application on the IoT-Gateway and 
 
 Now you can send Messages from your Device to the IoT-Gateway.
 
-## Messages in the Demo Plugin
+## Messages in the Example Plugin (DemoSensor_MagentaIoT_V001)
 
 ### BatteryMessage / MessageId: 0A
 
@@ -225,7 +225,7 @@ Example:
 Data: `025C9DF06502000500E900F8`  
 Response: `020002`
 
-## Commands in the Demo Plugin
+## Commands in the Demo Plugin (DemoSensor_MagentaIoT_V001)
 
 ### TemperatureSetMeasurePeriodCommand / MessageId: 03
 
