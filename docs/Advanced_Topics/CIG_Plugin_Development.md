@@ -3,7 +3,7 @@
 
 ## Prepare Development Environment  
 
-1. Download and extract Eclipse: <https://www.eclipse.org/downloads/>
+1. Download and extract Eclipse: <https://www.eclipse.org/downloads/>  
   [Installation Help](https://wiki.eclipse.org/Eclipse/Installation)
 2. Download an install Maven: <http://maven.apache.org/download.cgi>  (Binary zip archive)
 
@@ -18,14 +18,14 @@
 ## Import example CIG Plugin
 
 This CIG Plugin works with the Product Profile which is described here:
-[Device_Product_Profile_Development_Offline](Device_Product_Profile_Development_Offline.md)  
+[Device_Product_Profile_Development_Offline](../Advanced_Topics/Device_Product_Profile_Development_Offline.md)  
 For Testing, you can compile and test it, without any modifications.  
 How to prepare it for your Product Profile is described below.
 
-1. Download the example CIG-Plugin and unzip it. [Download CIG-Plugin](https://github.com/alliot-at/Quickstart/raw/master/Product%20Profiles/CIG_TestDevice_IoTCompany_NBIoTDevice/CIG_TestDevice_IoTCompany_NBIoTDevice.zip)
+1. Download or clone the example Project. [GitHub: DemoSensor_MagentaIoT_V001](https://github.com/magentabusiness/DemoSensor_MagentaIoT_V001)
 2. Open Eclipse and Import existing maven project
 3. File > Import > Maven > Existing Maven Projects > Next
-4. Choose the folder where you have unzipped the CIG-Plugin
+4. Choose in the Projectdirectory the `CIG_Plugin` folder.
 5. Select pom.xml in the Projects-List.  
 6. Click Finish.
 
@@ -38,9 +38,12 @@ How to prepare it for your Product Profile is described below.
 
 ## Prepare CIG Testing Tool
 
-- **WARNING: The CIG Testing Tool works only with JAVA 8 (not with JAVA 10)**
+- **WARNING: The CIG Testing Tool works only with JAVA 8 (not with JAVA 10)**  
+e.g. [Download OpenJDK 1.8.0](https://github.com/ojdkbuild/ojdkbuild) and set JAVA_HOME environment Variable
 
-1. Download the [NB-IoT Encoding and Decoding Plugin Validation Tool](https://devcenter.huawei.com/ict/en/resource/tool)
+1. Download the "NB-IoT Encoding and Decoding Plugin Validation Tool"  
+[Huawei Server](https://devcenter.huawei.com/ict/en/resource/tool)  
+[Alternative Server](./Tools/NB-IoT_Encoding_and_Decoding_Plug-in_Check_Tool_en.zip)  
 2. Unzip the downloaded file
 3. Copy your `devicetype-capability.json` from the Product Profile and the `package.zip` from the target Folder of your CIG Plugin into the same folder where `pluginDetector.jar` (from the downloaded zip) is located.
 
@@ -68,8 +71,14 @@ According to the CIG Plugin that means:
 
 The downloaded CIG-Plugin is already installed on the IoT-Gateway.
 So you can install the Product Model in your Application on the IoT-Gateway and register a new Device.
-[Download Product Model](../Product&#32;Profiles/TestDevice_IoTCompany_NBIoTDevice.zip)  
-[How to Import Product Model.](../02_Add_first_Device.md#import-product)
+
+1. Goto `DemoSensor_MagentaIoT_V001/Product_Model/` in your Project Folder and zip the Product Model.
+
+2. [How to package your Product Model](../Advanced_Topics/Device_Product_Profile_Development_Offline.md#step-3-packing-the-profile-for-the-iot-gateway)
+
+3. [How to Import Product Model.](../02_Add_first_Device.md#import-product)
+
+4. Register a new Device using the imported Product Model
 
 Now you can send Messages from your Device to the IoT-Gateway.
 
@@ -91,36 +100,35 @@ Example:
 Data: `0A170ABC`  
 Response: `0A00`
 
-### ConnectivityMessage / MessageId: 0B
+### ConnectivityMessage / MessageId: 1B
 
 | Parameter      | Len[Byte] | Type  | Desc                  |
 | -------------- | :-------: | ----- | --------------------- |
-| msgId (0B)     |     1     | uint8 | Message Id = 0B       |
-| signalStrength |     2     | int16 | signalStrength in dBm |
+| msgId (1B)     |     1     | uint8 | Message Id = 0B       |
+| cellId         |     4     | uint32| cellId ECI            |
+| pci            |     2     | uint16|           optional    |
+| celevel        |     1     | unt8  | 0,1,2     optional    |
+| rsrp           |     2     | int16 | dBm*10    optional    |
+| rsrq           |     2     | int16 | dBm*10    optional    |
+| rssi           |     2     | int16 | dBm*10    optional    |
+| snr            |     2     | int16 | dB*10     optional    |
+| sinr           |     2     | int16 | dB*10     optional    |
 
 Responses:
-Success: `0B00`  
-Error: `0B01`  
+none  
 
 Example:  
-Data: `0BFFAA`  -> -86 dBm  
-Response: `0B00`
+1B 00490A65 01C8 01 FCF7 FF94 FD32 0053 0000
+1B00490A6501C801FCF7FF94FD3200530000
 
-### ModemBatteryMessage / MessageId: 0C
-
-| Parameter      | Len[Byte] | Type   | Desc                 |
-| -------------- | :-------: | ------ | -------------------- |
-| msgId (0C)     |     1     | uint8  | Message Id = 0C      |
-| BatteryLevel   |     1     | uint8  | BatteryLevel in %    |
-| BatteryVoltage |     2     | uint16 | BatteryVoltage in mV |
-
-Responses:
-Success: `0C00`  
-Error: `0C01`  
-
-Example:  
-Data: `0C170ABC`  
-Response: `0C00`
+cellId: 4786789  --> 0x00490A65
+pci: 456   --> 0x01C8
+celevel: 1  --> 0x01
+rsrp: -777 --> 0xFCF7
+rsrq: -108 --> 0xFF94
+rssi: -718 --> 0xFD32
+snr: 83 --> 0x0053
+sinr: 0 --> 0x0000
 
 ### LocationMessage / MessageId: 0D
 
@@ -302,21 +310,21 @@ Example:
 ## Customize for your Product Model
 
 1. Rename Project in Eclipse to `deviceType-manufacturerId-model` depending on your Product Profile. In our example it would be:  
-deviceType: TestDevice  
-manufacturerName: IoT_Company  
-manufacturerId: IotCompany  
-model: NBIoTDevice  
-So the Project name is: `TestDevice-IoTCompany-NBIoTDevice`
+deviceType: DemoSensor  
+manufacturerName: Magenta_IoT  
+manufacturerId: MagentaIoT  
+model: V001  
+So the Project name is: `DemoSensor-MagentaIoT-V001`
 2. Rename src/main/java Package Names to: `com.manufacturerName.model.deviceType`  
-So the Package Name is: `com.IoT_Company.NBIoTDevice.TestDevice`
+So the Package Name is: `com.Magenta_IoT.V001.DemoSensor`
 **Enable Rename subpackages**
 3. Rename src/test/java Package Names to: `com.manufacturerName.model.deviceType.Test`  
-So the Package Name is: `com.IoT_Company.NBIoTDevice.TestDevice.Test`
+So the Package Name is: `com.Magenta_IoT.V001.DemoSensor.Test`
 **Enable Rename subpackages**  
 4. Update pom.xml  
-Line 7: `<groupId>com.manufacturerName.model.deviceType</groupId>` (com.IoT_Company.NBIoTDevice.TestDevice)  
-Line 9:  `<artifactId>deviceType-manufacturerId-model</artifactId>` (TestDevice-IoTCompany-NBIoTDevice)  
-Line 85: `<Bundle-SymbolicName>deviceType-manufacturerId-model</Bundle-SymbolicName>` (TestDevice-IoTCompany-NBIoTDevice)
+Line 7: `<groupId>com.manufacturerName.model.deviceType</groupId>` (com.Magenta_IoT.V001.DemoSensor)  
+Line 9:  `<artifactId>deviceType-manufacturerId-model</artifactId>` (DemoSensor-MagentaIoT-V001)  
+Line 109: `<Bundle-SymbolicName>deviceType-manufacturerId-model</Bundle-SymbolicName>` (DemoSensor-MagentaIoT-V001)
 5. Update `/src/main/resources/OSGI-INF/CodecProvideHandler.xml`
 Update properties with ###
 
@@ -334,8 +342,8 @@ Update properties with ###
 
     ```xml
     <?xml version="1.0" encoding="UTF-8"?>
-    <scr:component xmlns:scr="http://www.osgi.org/xmlns/scr/v1.1.0" immediate="true" name="com.IoT_Company.NBIoTDevice.TestDevice.ProtocolAdapterImpl">
-        <implementation class="com.IoT_Company.NBIoTDevice.TestDevice.ProtocolAdapterImpl"/>
+    <scr:component xmlns:scr="http://www.osgi.org/xmlns/scr/v1.1.0" immediate="true" name="com.Magenta_IoT.V001.DemoSensor.ProtocolAdapterImpl">
+        <implementation class="com.Magenta_IoT.V001.DemoSensor.ProtocolAdapterImpl"/>
         <service>
             <provide interface="com.huawei.m2m.cig.tup.modules.protocol_adapter.IProtocolAdapter" />
         </service>
@@ -375,11 +383,11 @@ Update properties with ###
     ```json
     {
         "specVersion":"1.0",
-        "fileName":"TestDevice-IoTCompany-NBIoTDevice",
+        "fileName":"DemoSensor-MagentaIoT-V001",
         "version":"1.0.0",
-        "deviceType":"TestDevice",
-        "manufacturerName":"IoTCompany",
-        "model":"NBIoTDevice",
+        "deviceType":"DemoSensor",
+        "manufacturerName":"MagentaIoT",
+        "model":"V001",
         "description":"codec",
         "platform":"linux",
         "packageType":"CIGPlugin",
@@ -387,10 +395,10 @@ Update properties with ###
         "ignoreList":[],
         "bundles":[
         {
-            "bundleName": "TestDevice-IoTCompany-NBIoTDevice",
+            "bundleName": "DemoSensor-MagentaIoT-V001",
             "bundleVersion": "1.0.0",
             "priority":5,
-            "fileName": "TestDevice-IoTCompany-NBIoTDevice-1.0.0.jar",
+            "fileName": "DemoSensor-MagentaIoT-V001-1.0.0.jar",
             "bundleDesc":"",
             "versionDesc":""
         }]
@@ -398,6 +406,8 @@ Update properties with ###
     ```
 
 7. Now, you should be able to build the CIG-Plugin (mvn package).
+
+8. Update ProtocolAdapterImpl - MANUCAFUTER_ID and MODEL
 
 Now, feel free to modify or add new Messages and Commands depending on your Product Profile to the CIG Plugin.
 
