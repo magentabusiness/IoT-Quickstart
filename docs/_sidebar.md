@@ -40,6 +40,7 @@
 	- [FOTA using IoT-Gateway](./Advanced_Topics/FOTA_using_IoT-Gateway.md)
 	- [Request Client Certificate](./Advanced_Topics/Request_Client_Certificate.md)
 	- [Raw Data model with IoT-Gateway](./Advanced_Topics/Raw_Data_with_IoT-Gateway.md)
+	- [Network connection and UDP data send to private UDP server with Public APN](./Advanced_Topics/Send_UDP_DATA_with_Public_APN_without_IoT-Gateway.md)
 
 - **Other**
 	- [Prepare for Support](00_Prepare_for_Support.md)
