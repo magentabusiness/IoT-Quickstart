@@ -166,5 +166,17 @@ Response : 1,IP,PORT,5,Command,0            # 1 : Socket
                                             # PORT : Port
                                             # 5 : Length of the command
                                             # "MSG" : Command
+```
+
+# Note
+```
+For an every device establishing connection through public APN, all incoming and outgoing traffic must pass through a router (Typically a NAT device, which used to solve address depletion and routing scalability problem). 
+
+When performing NAT on UDP, it has some issues due to:
+1. UDP has no connection establishment and clearing procedures as in TCP.
+
+2. An association may not be completely clear: UDP is connectionless; it can rely on only the two endpoint address/port number combinations.
+
+Due to the NAT device and routing, your device will re-establish network connection every 30 minutes and so on.
 
 ```
