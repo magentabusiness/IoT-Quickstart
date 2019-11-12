@@ -1,7 +1,7 @@
 # Send a Raw Data and Command to the IoT-Gateway
 Before following this document, make sure you have registered your device with product model called `"Raw_Data"` in IoT-Gateway. 
 
-The product model `"Raw_Data"`  can be found in [Product Profile Section](../Product%20Profiles/RawData_MagentaIoT_RawDataModel.zip).
+The product model `"Raw_Data"`  can be found in [Product Profile Section](https://github.com/magentabusiness/IoT-Quickstart/blob/master/docs/Product%20Profiles/RawData_MagentaIoT_RawDataModel.zip).
 
 ## Step:1 Register device successfully with Demo product model (Raw_Data_with_Command)
 
