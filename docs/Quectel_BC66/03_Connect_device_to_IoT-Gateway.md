@@ -37,11 +37,11 @@
 
 # Check Connection  
   ![Putty](../images/BC66_Putty_Step4.png) 
-  Press `PWR_Key` on the module  
-  Enter `AT` to check module  
-  Enter `ATI` to check module
+  1. Press `PWR_Key` on the module  
+  2. Enter `AT` to check module  
+  3. Enter `ATI` to check module
 
-# Prepare BC66 / Connect to the NB-IoT Network  
+# Prepare BC66 (Do it only once)
 ```
     **"Press the PWR_Key on the Module"**
      F1: 0000 0000
@@ -52,21 +52,22 @@
      T0: 0000 00B4
      Leaving the BROM
 
-    AT                                      #check the module
-    --> OK                                  
+     AT                                      #check the module
+     --> OK                                  
     
-    ATI                                     # check the revision of the module
-    --> Quectel_Ltd
+     ATI                                     # check the revision of the module, Currentely our IoT Gateway 
+                                               supports BC66NBR01A06 or older firmware for this module.
+     --> Quectel_Ltd
         Quectel_BC66
         Revision: BC66NBR01A06
 
         OK
 
-    AT+QCGDEFCONT="IP","alliot.nbiot.at"    # Set APN
-    --> OK 
+     AT+QCGDEFCONT="IP","alliot.nbiot.at"    # Set APN
+     --> OK 
 
-    AT+QRST=1                               # Restart, will take 5 sec
-    --> F1: 0000 0000
+     AT+QRST=1                               # Restart, will take 5 sec
+     --> F1: 0000 0000
         V0: 0000 0000 [0001]
         00: 0006 000C
         01: 0000 0000
@@ -74,75 +75,78 @@
         T0: 0000 00B4
         Leaving the BROM    
 
-    AT                                      # Auto baud synchronization
-    --> OK
+     AT                                      # Auto baud synchronization
+     --> OK
 
-    AT+CFUN?                                # Radio Module Functionality 
-    --> +CFUN : 1                           # 1 means fully functionality
+     AT+CFUN?                                # Radio Module Functionality 
+     --> +CFUN : 1                           # 1 means fully functionality
 
-    AT+QCGDEFCONT?                          # Check the APN
-    --> +QCGDEFCONT: "IP","alliot.nbiot.at"
+     AT+QSCLK=0                              # See Notes at end of this document
+     --> OK                            
 
-    AT+CEREG=1                              # Enable network registration unsolicited 
-    --> OK
+     AT+QCGDEFCONT?                          # Check the APN
+     --> +QCGDEFCONT: "IP","alliot.nbiot.at"
 
-    AT+CPSMS=0                              # Disable Power Saving Mode
-    --> OK
+     AT+CGSN=1
+     --> You will get your IMEI in response.
 
-    AT+CSCON=1                              # Enable Signalling Connection Status
-    --> OK  
+     // Configure the Ip and port of the IoT-Gateway
+     AT+QLWCONFIG=0,10.112.28.10,5683,86***********77,900,3
+     --> OK
+
+     AT+QLWCFG="auto_reg",1                  # Auto register to the IoT Platform
+     --> OK
+
+     AT+CEREG=1                              # Enable network registration unsolicited 
+     --> OK
+
+     AT+CPSMS=0                              # Disable Power Saving Mode
+     --> OK
+
+     AT+CSCON=1                              # Enable Signalling Connection Status
+     --> OK  
     
-    --> +CSCON: 1                           # Connected Mode
+     --> +CSCON: 1                           # Connected Mode
 
-    --> +CEREG: 5                           # Attached to Network
+     --> +CEREG: 5                           # Attached to Network
 
-    --> +IP: 1*.*.*.***                     # IP Address
+     --> +IP: 1*.*.*.***                     # IP Address
+     
+     --> +QLWURC: reg,0                      # Module registered to IoTGateway successfully
+
+     --> +QLWOBSERVE: 0,19,0,0               # Module is ready to send Data
                       
 ```
-**NOTE: The fist time to connect can take up to 5-7 minutes. (until CEREG: 5)**
 
-## Next Step: Send data from your Device to IoT-Gateway  / Link: [Send DATA](./Quectel_BC66/04_Send_Data_BC66.md) {docsify-ignore}
-
-# Troubleshooting
-
-##  Connect BC66 to IoT-Gateway Manually 
+##  Connect BC66 to NB-IoT Network and IoT-Gateway (Do it after each reboot, If you are not connected automatically to Network and Gateway)
 
 ``` 
---After Connecting to the Network follow these AT commands--
+        AT+QSCLK=0
+        --> OK
 
-AT+CGATT?                                   # Query the attach status
---> +CGATT: 1                               # Attached to the PS service
+        AT+CEREG=5
+        --> OK
 
-AT+CGPADDR=1                                # IP Address
---> +CGPADDR: 1,1**.**.**.***
+        AT+CSCON=1
+       --> OK
 
-AT+QLWCFG="auto_reg",1                      # Auto register to the IoT Platform
---> OK
+       --> +CEREG: 5,"XXXX","XXXX",9,0,0,"XXXX","XXXX"
 
-// Configure the Ip and port of the IoT-Gateway
-AT+QLWCONFIG=0,10.112.28.10,5683,86***********77,900,3
---> OK
+       --> +IP: 10.XX.XX.XX
 
-AT+QLWCONFIG?                               # Query for the IP and port
---> +QLWCONFIG:0,10.112.28.10,5683,"86***********77",900,3
+       --> +QLWURC: reg,0
 
-AT+ QLWREG                                  # Registration Request
---> OK
+       --> +QLWOBSERVE: 0,19,0,0
 
-    +QLWURC: reg,0
+ ```
 
-    +QLWOBSERVE: 0,19,0,0
+    
 
-```
-
-**If the modem responses this 2 lines you are successfully connected to IoT-Gateway and able to send and receive data**
-```
-+QLWURC: reg,0                     # Registration on IoT-Gateway successful  
-+QLWOBSERVE: 0,19,0,0              # Observe an object 19  
-```
 **Once you receive the notification of successful registration and observe an object 19, after every reboot module will connect to the IoT-Gateway automatically.**
 
 ![After reboot](../images/BC66_Putty_Step5.png)
+
+## Next Step: Send data from your Device to IoT-Gateway  / Link: [Send DATA](./Quectel_BC66/04_Send_Data_BC66.md) {docsify-ignore}
 
 ## Check Signal
 ```
@@ -168,6 +172,9 @@ AT+CGPADDR=1
 ## Check IoT-Gateway  
 * [Add your first device](./02_Add_first_Device.md)
 * Check if your IMEI is correct.
+
+NOTE : Quectel BC66 module switch off the UART interface for the power saving purpose. Therefor it may happen that Module accept the AT commands only when yyou enter same AT command two times. To avoid this, please excecute AT+QSCLK=0 after every reboot and power on.
+
 
 
 
