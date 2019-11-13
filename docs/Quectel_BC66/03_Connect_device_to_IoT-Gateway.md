@@ -3,6 +3,7 @@
 !> **Prerequisites**
  > * [Install Putty](https://www.chiark.greenend.org.uk/~sgtatham/putty/latest.html)   
  > * [Download latest Drivers](https://www.exar.com/product/interface/uarts/usb-uarts/xr21v1412)
+ > * check the revision of the module, currentely our IoT Gateway supports BC66NBR01A06 or older firmware for BC66 module.
  
 # Configure Device
 1. Insert SIM Card
@@ -40,6 +41,8 @@
   1. Press `PWR_Key` on the module  
   2. Enter `AT` to check module  
   3. Enter `ATI` to check module
+
+  NOTE : Quectel BC66 module switch off the UART interface for the power saving purpose. Therefor it may happen that Module accept the AT commands only when yyou enter same AT command two times. To avoid this, please excecute AT+QSCLK=0 after every reboot and power on.
 
 # Prepare BC66 (Do it only once)
 ```
@@ -173,7 +176,7 @@ AT+CGPADDR=1
 * [Add your first device](./02_Add_first_Device.md)
 * Check if your IMEI is correct.
 
-NOTE : Quectel BC66 module switch off the UART interface for the power saving purpose. Therefor it may happen that Module accept the AT commands only when yyou enter same AT command two times. To avoid this, please excecute AT+QSCLK=0 after every reboot and power on.
+
 
 
 
