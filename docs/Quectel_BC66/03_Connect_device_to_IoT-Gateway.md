@@ -84,7 +84,7 @@
      AT+CFUN?                                # Radio Module Functionality 
      --> +CFUN : 1                           # 1 means fully functionality
 
-     AT+QSCLK=0                              # See Notes at end of this document
+     AT+QSCLK=0                              # See Notes above
      --> OK                            
 
      AT+QCGDEFCONT?                          # Check the APN
