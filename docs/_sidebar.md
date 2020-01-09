@@ -27,6 +27,8 @@
 	- **SARA R412**
 		- [CAT-M  Network Selection](./SARA_R412/CAT-M_Network_Selection.md)
 		- [NBIoT Network Selection](./SARA_R412/NBIoT_Network_Selection.md)
+	- **TELIT ME910C1-E2**
+		- [NBIoT Network Selection](./Telit_ME910C1-E2/NBIoT_Network_Selection.md)
 
 - **Get Data to Endpoint**
 	- [05 Install and setup Postman](./Application_Enablement/05_Install_and_setup_Postman.md)
