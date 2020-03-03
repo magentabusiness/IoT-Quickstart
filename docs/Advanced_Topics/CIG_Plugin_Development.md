@@ -359,7 +359,7 @@ Update properties with ###
         "fileName":"###deviceType-manufacturerId-model###",
         "version":"1.0.0",
         "deviceType":"###deviceType###",
-        "manufacturerName":"###manufacturerId###",
+        "manufacturerName":"###manufacturerName###",
         "model":"###model###",
         "description":"codec",
         "platform":"linux",
