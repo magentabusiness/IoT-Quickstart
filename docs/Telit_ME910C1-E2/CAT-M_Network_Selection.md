@@ -15,7 +15,7 @@
 
 
 
-# AT commands to connect with NBIoT network and response from Module
+# AT commands to connect with CAT-M network and response from Module
 
 ```
 
