@@ -21,6 +21,11 @@
 		- [MQTTS](./Quectel_BG96/MQTTS.md)
 		- [MQTTS_Example](./Quectel_BG96/MQTTS_Example.md)
 		- [LWM2M](./Quectel_BG96/LWM2M.md)
+	- **Quectel EC21**
+		- [Bearer Selection (2G,3G & 4G)](./Quectel_EC21/Bearer_Selection_(2G,3G,4G).md)
+		- [Drivers and docs](./Quectel_EC21/Drivers_and_docs.md)
+		- [MQTT with IoT-Gateway](./Quectel_EC21/MQTT_with_IoT-Gateway.md)
+		- [TCP and UDP without IoT-Gateway](./Quectel_EC21/TCP_and_UDP_without_IoT-Gateway.md)
 	- **SARA N211**
 		- [03 Connect N211 to IoT-Gateway](./SARA_N211/03_Connect_device_to_IoT-Gateway.md)
 		- [04 Send Data N211](./SARA_N211/04_Send_Data_N211.md)
@@ -30,6 +35,8 @@
 	- **TELIT ME910C1-E2**
 		- [NBIoT Network Selection](./Telit_ME910C1-E2/NBIoT_Network_Selection.md)
 		- [CAT-M Network Selection](./Telit_ME910C1-E2/CAT-M_Network_Selection.md)
+
+
 
 - **Get Data to Endpoint**
 	- [05 Install and setup Postman](./Application_Enablement/05_Install_and_setup_Postman.md)
