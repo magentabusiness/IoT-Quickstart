@@ -23,7 +23,7 @@ Password:    <https://codebeautify.org/hmac-generator>
 
 
 ## 3. AT Commands for MQTT connection
-````javascript
+```javascript
 AT+QMTCFG="SSL",1,1,2       // SSL connection configuration
 ---> OK
 
@@ -34,9 +34,11 @@ AT+QMTOPEN=1,"160.44.204.79",8883   //IoT-Gateway Server IP and port
 AT+QMTCONN=1,"{nodeID}_2_0_2020040520","{Username}","{Password}"
 ---> OK
 ---> +QMTCONN: 1,0,0
-
+```
+```javascript
 AT+QMTPUB=1,0,0,0,"/huawei/v1/devices/{nodeID}/data/json"
-> {
+
+ {
   "identifier": "123",
   "msgType": "deviceReq",
   "hasMore": 0,
@@ -51,8 +53,8 @@ AT+QMTPUB=1,0,0,0,"/huawei/v1/devices/{nodeID}/data/json"
         "{parameter_N_Name}": {parameter_N_Value}
       }
     }
-  ]
-}
+   ]
+  }
 CTRL+Z
 
 ---> +QMTPUB: 2,0,0
