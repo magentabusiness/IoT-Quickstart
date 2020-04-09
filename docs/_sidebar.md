@@ -35,6 +35,7 @@
 	- **TELIT ME910C1-E2**
 		- [NBIoT Network Selection](./Telit_ME910C1-E2/NBIoT_Network_Selection.md)
 		- [CAT-M Network Selection](./Telit_ME910C1-E2/CAT-M_Network_Selection.md)
+		- [Connection_and_communication_with_Leshan_LwM2M_Server](./Telit_ME910C1-E2/Connection_and_communication_with_Leshan_LwM2M_Server.md)
 
 
 
