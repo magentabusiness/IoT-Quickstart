@@ -80,7 +80,7 @@ Here, we shown AT commands to add the Object 3303 (Temperature Object) via Telit
     // AT#M2MWRITE=<full_path_file_name>,<size>
     AT#M2MWRITE="/XML/object_3303.xml",5522
 
-    >>>  //upload the file from Telit AT controller ash shown in the figure below.
+    >>>  //upload the file from Telit AT controller as shown in the figure below.
 
     ---> OK
    ```
