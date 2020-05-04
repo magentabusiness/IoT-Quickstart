@@ -1,42 +1,48 @@
 # Getting Started with EC21 and IoT-Gateway with MQTT
 
-### Register Device in Ocean Connect with IMEI as nodeID and secret as a security. After registering the device, kindly note the device ID and device secret.
-### Make sure your UE is connected to the network with public APN for IoT-Gateway.
+### Register Device in Magenta IoT-Gateway with IMEI as nodeID. 
+
+### While registering device in IoT-Gateway, make sure authentication type selected as Secret and it's length should be 20 hexadecimal characters.
+
+![MQTT_secret](../images_new/Secret_MQTT.png)
+
+###  After registering the device, kindly note the device ID and device secret.
 
 ## 1. MQTT Configuration
 
-Server: 160.44.204.79 
+### In case of **Public APN** :  Server: 160.44.204.79 // Port: 8883  
+### In case of **Private APN** : Server: 10.112.28.20 // Port: 8883
 
-Port: 8883  
+MQTT_Client_ID: `{IMEI}_2_0_{KEY}`  
 
-MQTT_Client_ID: `{nodeID}_2_0_YYYYMMDDhh`  (use any Date)  
+For `{KEY}`, write any 10 digit number.
 
 ## 2. Password and Username configuration
 
-Username: `{nodeID}`
+Username: `{IMEI}`
 
 Password:    <https://codebeautify.org/hmac-generator>  
              Algorithm: HmacSHA256  
-             Key: `YYYYMMDDhh` -- same as in the MQTT_Client_ID  
-             Plain or Cipher Text: `device secret from Ocean connect, after successfully device registration`  
+             Key: `{KEY}` -- same as in the MQTT_Client_ID  
+             Plain or Cipher Text: `device secret` [ `Secret` should be same which is used while device registration in the IoT-Gateway.]  
              Result Hash-Value is the **Password!**
 
 
-## 3. AT Commands for MQTT connection
+## 3. AT Commands for MQTT connection and send the data
 ```javascript
 AT+QMTCFG="SSL",1,1,2       // SSL connection configuration
 ---> OK
 
-AT+QMTOPEN=1,"160.44.204.79",8883   //IoT-Gateway Server IP and port 
+AT+QMTOPEN=1,"160.44.204.79",8883   //IoT-Gateway Server IP and port, IP and port can be changed in case of public or private APN
 ---> OK
 ---> +QMTOPEN: 1,0
 
-AT+QMTCONN=1,"{MQTT_Client_ID}","{nodeID}","{Password}"
+AT+QMTCONN=1,"{MQTT_Client_ID}","{IMEI}","{Password}"
 ---> OK
 ---> +QMTCONN: 1,0,0
 ```
 ```javascript
-AT+QMTPUB=1,0,0,0,"/huawei/v1/devices/{nodeID}/data/json"
+AT+QMTPUB=1,0,0,0,"/huawei/v1/devices/{IMEI}/data/json"
 
  {
   "identifier": "123",
@@ -59,3 +65,85 @@ CTRL+Z
 
 ---> +QMTPUB: 2,0,0
 ```
+
+## 4. Send commands to Device via Postman
+
+### Before configure in Postman or or any other NA, Device must have subscribed the topic "`/huawei/v1/devices/{deviceID}/data/binary`". A deviceID of your device from IoT-Gateway.
+
+```javascript
+AT+QMTSUB=1,1,"/huawei/v1/devices//huawei/v1/devices/{deviceID}/data/binary",0
+---> OK
+---> +QMTSUB: 1,1,0,0
+
+AT+QMTSUB=1,1,"/huawei/v1/devices//huawei/v1/devices/{deviceID}/data/json",0
+---> OK
+---> +QMTSUB: 1,1,0,0
+```
+
+## 5. Postman setup 
+
+### If you are using same previous Postman environment, kindly change the respective APPID, deviceID and secret.
+
+**Method** : `POST`
+
+**URL** : `https://server:port/iocm/app/signaltrans/v1.1.0/devices/{deviceId}/services/{serviceId}/sendCommand?appId={appId}`  
+
+**Authorization** : Bearer token type, Token : `accessToken` from the login. (If you are using postman collection, select inherit auth from parent as type and click on collection name paste accessToken. Postman will keep this tocken for next requests.)
+
+**Headers** : 
+1. KEY : app_key  , VALUE : {appID}
+2. KEY : Content-Type ,  VALUE : application/json
+
+**Body** :
+```json
+{
+	"header":
+	{
+		"mode": "ACK" ,
+		"method": "xxxx"
+	},
+	"body":
+	{
+		"Parameter1": "value",
+        "Parameter2": "value",
+        .
+        .
+        "ParameterN": "value"
+	}
+}
+```
+
+**Request** **body** **example** **in** **case** **of** **Product** **model** **:** **TMA_KeyValue**
+```json
+{
+	"header":
+	{
+		"mode": "ACK" ,
+		"method": "IntCmd"
+	},
+	"body":
+	{
+		"IntParamKey": "Magent_LED",
+        "IntParamValue": 5     
+	}
+}
+```
+**Product model in IoT-Gateway, for ease to understand body.**
+
+![MQTT_sp_model](../images_new/SP_model.png)
+
+After completing body part, click on send ! 
+
+**Response in Postman :**
+
+![MQTT_Command_postman_response](../images_new/response_mqtt.png)
+
+**Commands in Putty :**
+
+![MQTT_Command_putty_response](../images_new/putty_mqtt_response.png)
+
+
+
+ 
+
+
