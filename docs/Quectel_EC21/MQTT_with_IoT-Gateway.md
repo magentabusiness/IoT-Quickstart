@@ -63,26 +63,38 @@ AT+QMTPUB=1,0,0,0,"/huawei/v1/devices/{IMEI}/data/json"
   }
 CTRL+Z
 
----> +QMTPUB: 2,0,0
+---> +QMTPUB: 1,0,0
 ```
 
 ## 4. Send commands to Device via Postman
 
-### Before configure in Postman or or any other NA, Device must have subscribed the topic "`/huawei/v1/devices/{deviceID}/data/binary`". A deviceID of your device from IoT-Gateway.
+### Before configure in Postman or or any other NA, Device must have subscribed the topic either "`/huawei/v1/devices/{IMEI}/data/binary`" or "`/huawei/v1/devices/{IMEI}/data/json`" depending on your requirement. 
+
+**IMPORTANT NOTE for subscribe MQTT topic :**
+
+**Binary command mode :** "`/huawei/v1/devices/{IMEI}/data/binary`": If you want to send binary command to the device. binary is only supported in case of Device profile along with CIG plugin in IoT-Gateway.
+
+**Json command mode :** "`/huawei/v1/devices/{IMEI}/data/json`": If you want to send Json command to the device. Json is only supported in case of Device profile without CIG plugin in IoT-Gateway. Such as raw data product model.
+
+**Only one mode is supported at a time, never both. (as it is depends on device product model)**
+****
+
 
 ```javascript
-AT+QMTSUB=1,1,"/huawei/v1/devices//huawei/v1/devices/{deviceID}/data/binary",0
+//Command as binary 
+AT+QMTSUB=1,1,"/huawei/v1/devices//huawei/v1/devices/{IMEI}/data/binary",0
 ---> OK
 ---> +QMTSUB: 1,1,0,0
 
-AT+QMTSUB=1,1,"/huawei/v1/devices//huawei/v1/devices/{deviceID}/data/json",0
+//Command as Json
+AT+QMTSUB=1,1,"/huawei/v1/devices//huawei/v1/devices/{IMEI}/data/json",0
 ---> OK
 ---> +QMTSUB: 1,1,0,0
 ```
 
 ## 5. Postman setup 
 
-### If you are using same previous Postman environment, kindly change the respective APPID, deviceID and secret.
+### If you are using same previous Postman environment, kindly change the respective appID, deviceID and secret.
 
 **Method** : `POST`
 
@@ -95,7 +107,7 @@ AT+QMTSUB=1,1,"/huawei/v1/devices//huawei/v1/devices/{deviceID}/data/json",0
 2. KEY : Content-Type ,  VALUE : application/json
 
 **Body** :
-```json
+```javascript
 {
 	"header":
 	{
@@ -114,7 +126,7 @@ AT+QMTSUB=1,1,"/huawei/v1/devices//huawei/v1/devices/{deviceID}/data/json",0
 ```
 
 **Request** **body** **example** **in** **case** **of** **Product** **model** **:** **TMA_KeyValue**
-```json
+```javascript
 {
 	"header":
 	{
@@ -123,7 +135,7 @@ AT+QMTSUB=1,1,"/huawei/v1/devices//huawei/v1/devices/{deviceID}/data/json",0
 	},
 	"body":
 	{
-		"IntParamKey": "Magent_LED",
+		"IntParamKey": "Magenta_LED",
         "IntParamValue": 5     
 	}
 }
@@ -138,12 +150,14 @@ After completing body part, click on send !
 
 ![MQTT_Command_postman_response](../images_new/response_mqtt.png)
 
-**Commands in Putty :**
+**Commands in Putty in Binary command mode: (in this case my device registered with device profile + CIG plugin in IoT-Gateway**
 
-![MQTT_Command_putty_response](../images_new/putty_mqtt_response.png)
+![MQTT_binary_Command_putty_response](../images_new/putty_binary_mqtt.png)
 
 
+**Commands in Putty in Json command mode: (in this case my device registered with only device profile.**
 
+![MQTT_json_Command_putty_response](../images_new/putty_json_mqtt.png)
  
 
 
