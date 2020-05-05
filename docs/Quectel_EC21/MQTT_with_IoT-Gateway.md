@@ -107,7 +107,7 @@ AT+QMTSUB=1,1,"/huawei/v1/devices//huawei/v1/devices/{IMEI}/data/json",0
 2. KEY : Content-Type ,  VALUE : application/json
 
 **Body** :
-```javascript
+```json
 {
 	"header":
 	{
@@ -116,7 +116,7 @@ AT+QMTSUB=1,1,"/huawei/v1/devices//huawei/v1/devices/{IMEI}/data/json",0
 	},
 	"body":
 	{
-	"Parameter1": "value",
+   	"Parameter1": "value",
     "Parameter2": "value",
     .
     .
@@ -126,17 +126,17 @@ AT+QMTSUB=1,1,"/huawei/v1/devices//huawei/v1/devices/{IMEI}/data/json",0
 ```
 
 **Request** **body** **example** **in** **case** **of** **Product** **model** **:** **TMA_KeyValue**
-```javascript
+```json
 {
 	"header":
 	{
 		"mode": "ACK" ,
 		"method": "IntCmd"
 	},
-	"body":
+	 "body":
 	{
-	"IntParamKey": "Magenta_LED",
-    "IntParamValue": 5     
+	  "IntParamKey": "Magenta_LED",
+      "IntParamValue": 5     
 	}
 }
 ```
