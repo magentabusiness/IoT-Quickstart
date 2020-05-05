@@ -68,7 +68,7 @@ CTRL+Z
 
 ## 4. Send commands to Device via Postman
 
-### Before configure in Postman or or any other NA, Device must have subscribed the topic either "`/huawei/v1/devices/{IMEI}/data/binary`" or "`/huawei/v1/devices/{IMEI}/data/json`" depending on your requirement. 
+Before configure in Postman or or any other NA, Device must have subscribed the topic either "`/huawei/v1/devices/{IMEI}/data/binary`" or "`/huawei/v1/devices/{IMEI}/data/json`" depending on your requirement.
 
 **IMPORTANT NOTE for subscribe MQTT topic :**
 
@@ -116,11 +116,11 @@ AT+QMTSUB=1,1,"/huawei/v1/devices//huawei/v1/devices/{IMEI}/data/json",0
 	},
 	"body":
 	{
-		"Parameter1": "value",
-        "Parameter2": "value",
-        .
-        .
-        "ParameterN": "value"
+	"Parameter1": "value",
+    "Parameter2": "value",
+    .
+    .
+    "ParameterN": "value"
 	}
 }
 ```
@@ -135,8 +135,8 @@ AT+QMTSUB=1,1,"/huawei/v1/devices//huawei/v1/devices/{IMEI}/data/json",0
 	},
 	"body":
 	{
-		"IntParamKey": "Magenta_LED",
-        "IntParamValue": 5     
+	"IntParamKey": "Magenta_LED",
+    "IntParamValue": 5     
 	}
 }
 ```
