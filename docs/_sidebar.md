@@ -25,16 +25,16 @@
 		- [Drivers and docs](./Quectel_EC21/Drivers_and_docs.md)
 		- [MQTT with IoT-Gateway](./Quectel_EC21/MQTT_with_IoT-Gateway.md)
 		- [TCP and UDP without IoT-Gateway](./Quectel_EC21/TCP_and_UDP_without_IoT-Gateway.md)
-	- **SARA N211**
-		- [03 Connect N211 to IoT-Gateway](./SARA_N211/03_Connect_device_to_IoT-Gateway.md)
-		- [04 Send Data N211](./SARA_N211/04_Send_Data_N211.md)
-	- **SARA R412**
-		- [CAT-M  Network Selection](./SARA_R412/CAT-M_Network_Selection.md)
-		- [NBIoT Network Selection](./SARA_R412/NBIoT_Network_Selection.md)
 	- **TELIT ME910C1-E2**
 		- [NBIoT Network Selection](./Telit_ME910C1-E2/NBIoT_Network_Selection.md)
 		- [CAT-M Network Selection](./Telit_ME910C1-E2/CAT-M_Network_Selection.md)
 		- [Connection_and_communication_with_Leshan_LwM2M_Server](./Telit_ME910C1-E2/Connection_and_communication_with_Leshan_LwM2M_Server.md)
+	- **Ublox SARA N211**
+		- [03 Connect N211 to IoT-Gateway](./Ublox_SARA_N211/03_Connect_device_to_IoT-Gateway.md)
+		- [04 Send Data N211](./Ublox_SARA_N211/04_Send_Data_N211.md)
+	- **Ublox SARA R412**
+		- [CAT-M  Network Selection](./Ublox_SARA_R412/CAT-M_Network_Selection.md)
+		- [NBIoT Network Selection](./Ublox_SARA_R412/NBIoT_Network_Selection.md)
 
 
 

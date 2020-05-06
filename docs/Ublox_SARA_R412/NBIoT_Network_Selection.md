@@ -1,10 +1,10 @@
-# Connect SARA R412 to Magenta LTE-M Network
+# Connect Ublox SARA R412 to Magenta NB-IoT Network
 
 !> Prerequisites
- >If you using R412 EVK (Evaluation kit), download m-center software from [U-Blox website download section.](https://www.u-blox.com/en/evk-downloads)  
+ > If you using R412 EVK (Evaluation kit), download m-center software from [U-Blox website download section.](https://www.u-blox.com/en/evk-downloads)  
  >Insert the Simcard in proper simcard slot and connect the antennas.  
  >If you using module, open the respective port for the AT commands.  
- >IF you using EVK, open m-center AT terminal.  
+ >IF you using EVK, open m-center AT terminal.
 
 # General AT commands and response from Module
 * For EVK users, just click on Get info button. Do not need to enter general information commands manually.
@@ -44,10 +44,11 @@ AT+CGSN                             //IMEI identification
 --> OK
 
 AT+CSQ                              //Signal quality
---> +CSQ: 31,99
+--> +CSQ: 18,99
 --> OK
 ```
-# AT commands to connect with network and response from Module
+
+# AT commands to connect with NBIoT network and response from Module
 
 ```
 
@@ -66,43 +67,48 @@ AT+CEREG=1          //EPS network registration status, 1 means network registrat
 AT+CMGF=1          //Preferred message format, 1 means text format
 --> OK
 
-AT+CGDCONT=1,"IP","catm","0.0.0.0",0,0  // Set the APN as a "catm" for the Magenta LTE-M sim cards
+AT+CGDCONT=1,"IP","m2m.nbiot.t-mobile.at","0.0.0.0",0,0  // Set the APN as a "m2m.nbiot.t-mobile.at" for the Magenta NBIoT sim cards
 --> OK
 
-AT+URAT=7           //Radio Access Technology selection, 7 means LTE CAT-M1
---> OK
-
-AT+COPS=?           //Check the available LTE-M network
---> +COPS: (0,"T-Mobile A","T-Mobile","23203",7),,(0,1,2,3,4),(0,1,2)
+AT+URAT=8           //Radio Access Technology selection, 8 means LTE-NB
 --> OK
 
 AT+CSCON=1          //Module connected mode or Ideal mode
 --> OK
 
-AT+COPS=0           //Automatic network selection 
+AT+COPS=1,2,"23203",9   //Manually network selection, 23203 is PLMN code for Magenta Telekom
 --> OK
---> +CREG: 2        // not registered but MT is trying to searching for the operator to register
---> +CGREG: 2
---> +CEREG: 2
 --> +CSCON: 1       // Connected mode
---> +CREG: 1        // successfully registered to home network
---> +CGREG: 1
---> +CEREG: 1
+--> +CREG: 3        // registration denied 
+    .
+    .
+--> +CGREG: 5       // successfully registered to roaming network
+--> +CEREG: 5       // successfully registered to roaming network
 
 AT+UCGED=5          //Channel and network environment description, 5 means RSRP and RSRQ reporting enabled
 --> OK
 
 AT+UCGED?           //RSRP and RSRQ report
---> +RSRP: 175,6400,"-053.70",
---> +RSRQ: 175,6400,"-03.20",
+--> +RSRP: 030,3547,"-044.00",127,3547,"-091.90",254,3547,"-089.90",
+--> +RSRQ: 030,3547,"-14.40",127,3547,"-14.70",254,3547,"-11.20",
+--> OK
+
+AT+CSQ              //Signal Quality
+--> +CSQ: 18,99
+--> OK
+
+AT+CEMODE?          //Check the CE level
+--> +CEMODE: 2
+--> OK
 ```
+
 ## Check IP Address
 
 ``` 
 
 AT+CGPADDR = 1      //Show address of the PDP context 1
         Response:
-        +CGPADDR: 1,10.184.84.84
+        +CGPADDR: 1,10.***.**.**
         OK
 ```
 
