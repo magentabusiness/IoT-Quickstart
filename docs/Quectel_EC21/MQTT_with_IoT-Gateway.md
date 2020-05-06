@@ -41,7 +41,9 @@ AT+QMTCONN=1,"{MQTT_Client_ID}","{IMEI}","{Password}"
 ---> OK
 ---> +QMTCONN: 1,0,0
 ```
+**Send data to IoT-Gateway with Json mode:**
 ```javascript
+
 AT+QMTPUB=1,0,0,0,"/huawei/v1/devices/{IMEI}/data/json"
 
  {
@@ -65,6 +67,22 @@ CTRL+Z
 
 ---> +QMTPUB: 1,0,0
 ```
+**Send data to IoT-Gateway with binary mode:**
+```javascript
+
+AT+QMTPUB=1,0,0,0,"/huawei/v1/devices/{IMEI}/data/binary"
+AT+QMTPUB=1,0,0,0,"/huawei/v1/devices/{IMEI}/data/binary"
+//Enter binary data
+> 4d6167656e74615f496f54
+^Z6167656e74615f496f54
+
+OK
+
++QMTPUB: 1,0,0
+
+//This data send via binary example using Rawdata model, "4d6167656e74615f496f54" (Magenta_IoT) sent and "NGQ2MTY3NjU2ZTc0NjE1ZjQ5NmY1NA0=" received by IoT platform which is base64 encoding.
+```
+
 
 ## 4. Send commands to Device via Postman
 
@@ -150,9 +168,14 @@ After completing body part, click on send !
 
 ![MQTT_Command_postman_response](../images_new/response_mqtt.png)
 
+**Commands in putty with example of Irrigation product model, Commands sent (Mode:65 --> binary command received "A", Mode:66 --> binary command received "B")**
+
+![MQTT_binary_Command_putty_response](../images_new/binary_irrigation_mqtt_command.png)
+
+
 **Commands in Putty in Binary command mode: (in this case my device registered with device profile + CIG plugin in IoT-Gateway**
 
-![MQTT_binary_Command_putty_response](../images_new/putty_binary_mqtt.png)
+![MQTT_binary_Command_putty_response](../images_new/putty_binary_response.png)
 
 
 **Commands in Putty in Json command mode: (in this case my device registered with only device profile.**
